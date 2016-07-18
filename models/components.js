@@ -12,5 +12,6 @@ function component(id) {
 }
 
 module.exports = {
-  all: all
+  all: all,
+  component
 }
