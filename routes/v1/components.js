@@ -9,6 +9,20 @@ router.get('/', function(req, res, next) {
     .then(function(components) {
       res.json(components);
     })
+    .catch(function(err) {
+    	res.send(err)
+    })
+});
+
+/* GET home page. */
+router.get('/:id', function(req, res, next) {
+  components.componentInfo(req.params.id)
+    .then(function(components) {
+      res.json(components);
+    })
+    .catch(function(err) {
+    	res.send(err)
+    })
 });
 
 module.exports = router;

@@ -15,8 +15,16 @@ function subComponent(assmId) {
 	return knex.from('bomJoin').where({assmId}).innerJoin('components', 'bomJoin.partId', 'components.id')
 }
 
+function componentInfo(id) {
+	return Promise.all([
+		component(id),
+		subComponent(id)
+	])
+}
+
 module.exports = {
   all,
   component,
-  subComponent
+  subComponent,
+  componentInfo
 }
