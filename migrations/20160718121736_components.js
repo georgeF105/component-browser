@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
   		table.increments('id').primary()
   		table.string('partNumber')
   		table.string('description')
-  		table.string('authors')
+  		table.string('author')
   		table.string('material')
   		table.string('finish')
   		table.string('revision')
