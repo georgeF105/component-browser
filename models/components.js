@@ -7,6 +7,10 @@ function all() {
  return knex.select().table('components') 
 }
 
+function component(id) {
+	return knex('components').where({id})
+}
+
 module.exports = {
   all: all
 }
