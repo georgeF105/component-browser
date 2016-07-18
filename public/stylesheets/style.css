@@ -1,8 +1,33 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+.navbar-username {
+    font-size: 18px;
+    line-height: 20px;
+    color: #9d9d9d;
+    padding-right: 25px;
+}
+.navbar-username > a:hover {
+    text-decoration: none;
 }
 
-a {
-  color: #00B7FF;
+.board-image{
+  border: 1px solid red;
+  height: 180px;
+  width: 495px;
+  padding: 0;
+}
+
+.placeholder{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.board-title {
+  margin-top: -20px;
+}
+
+#login-form{
+	display:none;
 }
