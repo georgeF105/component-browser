@@ -29,3 +29,15 @@ test('Get component from db', function(t) {
     })
 	t.end()
 })
+
+test('Get sub-components from db', function(t) {
+	components.subComponent(2)
+		.then(function(data){
+			console.log(data)
+			t.ok(1, 'Got data')
+		})
+		.catch(function(error){
+      t.ok(false, error)
+    })
+	t.end()
+})

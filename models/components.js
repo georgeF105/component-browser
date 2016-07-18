@@ -11,7 +11,12 @@ function component(id) {
 	return knex('components').where({id})
 }
 
+function subComponent(assmId) {
+	return knex.from('bomJoin').where({assmId}).innerJoin('components', 'bomJoin.partId', 'components.id')
+}
+
 module.exports = {
-  all: all,
-  component
+  all,
+  component,
+  subComponent
 }
