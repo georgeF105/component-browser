@@ -21,7 +21,7 @@ export default (props) => {
   	        <span className="icon-bar"></span>
   	        <span className="icon-bar"></span>
   	      </button>
-  	      <a className="navbar-brand" href="/">Surfatron</a>
+  	      <a className="navbar-brand" href="/">Component Browser</a>
   	    </div>
   	    <div id="navbar" className="navbar-collapse collapse">
 
