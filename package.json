@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:dev": "webpack-dev-server --inline --content-base public/ --history-api-fallback --watch --progress",
+    "start:prod": "webpack && node server.js",
     "test": "tape test/*.js | tap-spec"
   },
   "dependencies": {
