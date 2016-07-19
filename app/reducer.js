@@ -14,9 +14,14 @@ const INITAL_STATE = fromJS({
 
 export default (state = INITAL_STATE, action) => {
 	switch(action.type) {
-		case 'TEST':
-			console.log('TEST')
+		case 'REQUEST_PARTS':
+			console.log('REQUEST_PARTS')
+
 			return state
+		case 'RECEIVE_PARTS':
+			console.log('RECEIVE_PARTS')
+			
+			return state.set('parts', action.list)
 		default:
 			console.log('action.type not known', action.type)
 			return state
