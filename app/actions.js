@@ -1,4 +1,4 @@
-var components = require('../models/components')
+import request from 'superagent'
 
 export function requestParts () {
 	return {
@@ -24,14 +24,18 @@ export function reciveParts (error) {
 
 export function fetchAllParts () {
 	return function (dispatch) {
+		const target = 'http://localhost:8080/v1/components'
 		dispatch(requestParts())
-		components.all()
-			.then(function(data){
-				dispatch(reciveParts(data))
-			})
-			.catch(function(error){
-				console.log('DB ERROR: ', error)
-				dispatch(error(error))
-			})
+
+		request.get(target, (err, data) => {
+			if(err) {
+				console.log('request error',err)
+			}
+			else {
+				console.log('data.text', data)
+				const parts = JSON.parse(data.text)
+				dispatch(reciveParts(parts))
+			}
+		})
 	}
 }
