@@ -24612,7 +24612,8 @@
 		currentPart: {},
 		user: {
 			id: 0, userName: 'Guest', loggedIn: false
-		}
+		},
+		isFetching: false
 	});
 
 	exports.default = function () {
@@ -24624,16 +24625,16 @@
 		switch (action.type) {
 			case 'REQUEST_PARTS':
 				console.log('REQUEST_PARTS');
-				return state;
+				return state.set('isFetching', true);
 			case 'RECEIVE_PARTS':
 				console.log('RECEIVE_PARTS', action.list);
-				return state.set('parts', (_state$get = state.get('parts')).push.apply(_state$get, _toConsumableArray(action.list)));
+				return state.set('parts', (_state$get = state.get('parts')).push.apply(_state$get, _toConsumableArray(action.list))).set('isFetching', false);
 			case 'REQUEST_PART_INFO':
 				console.log('REQUEST_PART_INFO');
-				return state;
+				return state.set('isFetching', true);
 			case 'RECEIVE_PART_INFO':
 				console.log('RECEIVE_PART_INFO', action.list);
-				return state.set('currentPart', (0, _immutable.fromJS)(action.list));
+				return state.set('currentPart', (0, _immutable.fromJS)(action.list)).set('isFetching', false);
 			case 'ERROR':
 				console.log('ERROR', action.list);
 				return state;
@@ -35499,16 +35500,27 @@
 
 	var _PartFullDetails2 = _interopRequireDefault(_PartFullDetails);
 
+	var _actions = __webpack_require__(196);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var mapStateToProps = function mapStateToProps(state) {
 		console.log('State.currentPart', state.get('currentPart').toJS());
 		return {
-			currentPart: state.get('currentPart').toJS()
+			currentPart: state.get('currentPart').toJS(),
+			isFetching: state.get('isFetching')
 		};
 	};
 
-	var PartFullDetailsContainer = (0, _reactRedux.connect)(mapStateToProps)(_PartFullDetails2.default);
+	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+		return {
+			fetchPartInfo: function fetchPartInfo(id) {
+				dispatch((0, _actions.fetchPartInfo)(id));
+			}
+		};
+	};
+
+	var PartFullDetailsContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_PartFullDetails2.default);
 
 	exports.default = PartFullDetailsContainer;
 
@@ -35535,44 +35547,60 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = function (props) {
+		console.log('id', props.params.id);
+		!props.isFetching && props.currentPart.part.id != props.params.id ? props.fetchPartInfo(props.params.id) : null;
 		return _react2.default.createElement(
 			'div',
 			{ className: 'container' },
-			_react2.default.createElement(
-				'h2',
+			!props.isFetching && _react2.default.createElement(
+				'div',
 				null,
-				props.currentPart.part ? props.currentPart.part.description : 'Part Not Found'
-			),
-			_react2.default.createElement(
-				'h4',
-				null,
-				'Bill Of Materials:'
-			),
-			_react2.default.createElement(
-				'ul',
-				null,
-				props.currentPart.subParts ? props.currentPart.subParts.map(function (part, key) {
-					return _react2.default.createElement(_PartDetail2.default, _extends({}, part, { key: key }));
-				}) : _react2.default.createElement(
+				_react2.default.createElement(
+					'h2',
+					null,
+					'Description: ',
+					props.currentPart.part.description
+				),
+				_react2.default.createElement(
+					'h2',
+					null,
+					'Part Number: ',
+					props.currentPart.part.partNumber,
+					' Rev: ',
+					props.currentPart.part.revision,
+					' '
+				),
+				_react2.default.createElement(
 					'h4',
 					null,
-					'No Parts Found'
-				)
-			),
-			_react2.default.createElement(
-				'h4',
-				null,
-				'Used In'
-			),
-			_react2.default.createElement(
-				'ul',
-				null,
-				props.currentPart.parentParts ? props.currentPart.parentParts.map(function (part, key) {
-					return _react2.default.createElement(_PartDetail2.default, _extends({}, part, { key: key }));
-				}) : _react2.default.createElement(
+					'Bill Of Materials:'
+				),
+				_react2.default.createElement(
+					'ul',
+					null,
+					props.currentPart.subParts ? props.currentPart.subParts.map(function (part, key) {
+						return _react2.default.createElement(_PartDetail2.default, _extends({}, part, { key: key }));
+					}) : _react2.default.createElement(
+						'h4',
+						null,
+						'No Parts Found'
+					)
+				),
+				_react2.default.createElement(
 					'h4',
 					null,
-					'No Parts Found'
+					'Used In'
+				),
+				_react2.default.createElement(
+					'ul',
+					null,
+					props.currentPart.parentParts ? props.currentPart.parentParts.map(function (part, key) {
+						return _react2.default.createElement(_PartDetail2.default, _extends({}, part, { key: key }));
+					}) : _react2.default.createElement(
+						'h4',
+						null,
+						'No Parts Found'
+					)
 				)
 			)
 		);
