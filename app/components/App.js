@@ -7,7 +7,7 @@ export default React.createClass({
     return (
       <div>
         <NavBarContainer />
-        <div id='main'>{routes}</div>
+        {this.props.children}
       </div>
     )
   }

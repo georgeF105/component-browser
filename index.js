@@ -7,7 +7,7 @@ import createLogger from 'redux-logger'
 import { fetchAllParts } from './app/actions'
 
 import reducer from './app/reducer'
-import App from './app/components/App'
+import routes from './app/components/routes'
 
 const logger = createLogger()
 
@@ -23,6 +23,6 @@ store.dispatch(fetchAllParts())
 
 render((
   <Provider store={store}>
-  	<App />
+  	<div id='main'>{routes}</div>
   </Provider>
 ), document.getElementById('app'))

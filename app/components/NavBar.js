@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 export default (props) => {
 	const login = (event) => {
@@ -21,7 +22,7 @@ export default (props) => {
   	        <span className="icon-bar"></span>
   	        <span className="icon-bar"></span>
   	      </button>
-  	      <a className="navbar-brand" href="/">Component Browser</a>
+  	      <Link className="navbar-brand" to="/">Component Browser</Link>
   	    </div>
   	    <div id="navbar" className="navbar-collapse collapse">
 
