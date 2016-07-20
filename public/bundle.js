@@ -24569,7 +24569,7 @@
 	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 	var INITAL_STATE = (0, _immutable.fromJS)({
-		parts: [{ id: 1, partNumber: '100-00001', 'description': 'Wheely Chair', 'revision': 0 }, { id: 2, partNumber: '100-00002', 'description': 'Seat Assm', 'revision': 0 }, { id: 3, partNumber: '100-00003', 'description': 'Gas Strut', 'revision': 0 }, { id: 4, partNumber: '100-00004', 'description': 'Base Assm', 'revision': 0 }],
+		parts: [],
 		user: {
 			id: 0, userName: 'Guest', loggedIn: false
 		}
