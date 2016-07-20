@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:dev": "webpack-dev-server --inline --content-base public/ --history-api-fallback --watch --progress",
-    "start:prod": "webpack && node server.js",
+    "start:dev": "webpack --inline --watch --progress & node bin/www",
+    "start:prod": "webpack && node bin/www",
     "test": "tape test/*.js | tap-spec"
   },
   "dependencies": {
@@ -26,7 +26,8 @@
     "react-router": "^2.6.0",
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "superagent": "^2.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.10.4",
