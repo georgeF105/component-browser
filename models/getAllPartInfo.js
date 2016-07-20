@@ -9,8 +9,8 @@ module.exports = function getAllPartInfo (id) {
 	])
 		.then((dataArr) => {
 			partInfo.part = Object.assign({}, dataArr[0][0])
-			partInfo.subParts = Object.assign({}, dataArr[1])
-			partInfo.parentParts = Object.assign({}, dataArr[2])
+			partInfo.subParts = dataArr[1]
+			partInfo.parentParts = dataArr[2]
 			return partInfo
 		})
 		.catch((err) => {

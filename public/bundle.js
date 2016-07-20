@@ -35541,7 +35541,7 @@
 			_react2.default.createElement(
 				'h2',
 				null,
-				props.currentPart.part ? props.currentPart.part.name : null
+				props.currentPart.part ? props.currentPart.part.description : 'Part Not Found'
 			),
 			_react2.default.createElement(
 				'h4',
@@ -35567,7 +35567,7 @@
 			_react2.default.createElement(
 				'ul',
 				null,
-				props.currentPart.parentParts ? props.parentPart.parentParts.map(function (part, key) {
+				props.currentPart.parentParts ? props.currentPart.parentParts.map(function (part, key) {
 					return _react2.default.createElement(_PartDetail2.default, _extends({}, part, { key: key }));
 				}) : _react2.default.createElement(
 					'h4',
