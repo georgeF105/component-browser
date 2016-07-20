@@ -1,7 +1,7 @@
 var db = require('./db')
 
 module.exports = function getAllPartInfo (id) {
-	let partInfo = {}
+	var partInfo = {}
 	return Promise.all([
 		db.part(id),
 		db.subParts(id),
