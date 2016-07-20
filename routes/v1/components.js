@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var partDb = require('../../models/db')
+var getAllPartInfo = require('../../models/getAllPartInfo')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -16,9 +17,9 @@ router.get('/', function(req, res, next) {
 
 /* GET home page. */
 router.get('/:id', function(req, res, next) {
-  partDb.partInfo(req.params.id)
-    .then(function(components) {
-      res.json(components);
+  getAllPartInfo(req.params.id)
+    .then(function(partInfo) {
+      res.json(partInfo);
     })
     .catch(function(err) {
     	res.send(err)

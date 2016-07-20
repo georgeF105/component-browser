@@ -14,10 +14,16 @@ export function reciveParts (partsObj) {
 	}
 }
 
-export function error (error) {
+export function requestPartInfo () {
 	return {
-		type: 'ERROR',
-		list: error,
+		type: 'REQUEST_PART_INFO'
+	}
+}
+
+export function recivePartInfo (partObj) {
+	return {
+		type: 'RECEIVE_PART_INFO',
+		list: partObj,
 		receivedAt: Date.now()
 	}
 }
@@ -33,10 +39,36 @@ export function fetchAllParts () {
 				dispatch(error(err))
 			}
 			else {
-				console.log('data.text', data)
 				const parts = JSON.parse(data.text)
 				dispatch(reciveParts(parts))
 			}
 		})
+	}
+}
+
+export function fetchPartInfo (id) {
+	return function (dispatch) {
+		const target = '/v1/components/' + id
+		dispatch(requestPartInfo())
+
+		request.get(target, (err, data) => {
+			if(err) {
+				console.log('request error',err)
+				dispatch(error(err))
+			}
+			else {
+				console.log('PartInfo text', data.text)
+				const parts = JSON.parse(data.text)
+				dispatch(recivePartInfo(parts))
+			}
+		})
+	}
+}
+
+export function error (error) {
+	return {
+		type: 'ERROR',
+		list: error,
+		receivedAt: Date.now()
 	}
 }

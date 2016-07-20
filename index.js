@@ -4,22 +4,23 @@ import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import thunkMiddleware from 'redux-thunk'
 import createLogger from 'redux-logger'
-import { fetchAllParts } from './app/actions'
+import { fetchAllParts, fetchPartInfo } from './app/actions'
 
 import reducer from './app/reducer'
 import routes from './app/components/routes'
 
-const logger = createLogger()
+const logger = createLogger({collapsed:true,stateTransformer: state => state.toJS()})
 
 const store = createStore(
 	reducer,
 	applyMiddleware(
 		thunkMiddleware
-	)
-	// applyMiddleware(logger)
+	),
+	applyMiddleware(logger)
 )
 
 store.dispatch(fetchAllParts())
+store.dispatch(fetchPartInfo(1))
 
 render((
   <Provider store={store}>

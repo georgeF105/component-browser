@@ -76,13 +76,14 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var logger = (0, _reduxLogger2.default)();
+	var logger = (0, _reduxLogger2.default)({ collapsed: true, stateTransformer: function stateTransformer(state) {
+			return state.toJS();
+		} });
 
-	var store = (0, _redux.createStore)(_reducer2.default, (0, _redux.applyMiddleware)(_reduxThunk2.default)
-	// applyMiddleware(logger)
-	);
+	var store = (0, _redux.createStore)(_reducer2.default, (0, _redux.applyMiddleware)(_reduxThunk2.default), (0, _redux.applyMiddleware)(logger));
 
 	store.dispatch((0, _actions.fetchAllParts)());
+	store.dispatch((0, _actions.fetchPartInfo)(1));
 
 	(0, _reactDom.render)(_react2.default.createElement(
 		_reactRedux.Provider,
@@ -22950,8 +22951,11 @@
 	});
 	exports.requestParts = requestParts;
 	exports.reciveParts = reciveParts;
-	exports.error = error;
+	exports.requestPartInfo = requestPartInfo;
+	exports.recivePartInfo = recivePartInfo;
 	exports.fetchAllParts = fetchAllParts;
+	exports.fetchPartInfo = fetchPartInfo;
+	exports.error = error;
 
 	var _superagent = __webpack_require__(197);
 
@@ -22973,10 +22977,16 @@
 		};
 	}
 
-	function error(error) {
+	function requestPartInfo() {
 		return {
-			type: 'ERROR',
-			list: error,
+			type: 'REQUEST_PART_INFO'
+		};
+	}
+
+	function recivePartInfo(partObj) {
+		return {
+			type: 'RECEIVE_PART_INFO',
+			list: partObj,
 			receivedAt: Date.now()
 		};
 	}
@@ -22991,11 +23001,36 @@
 					console.log('request error', err);
 					dispatch(error(err));
 				} else {
-					console.log('data.text', data);
 					var parts = JSON.parse(data.text);
 					dispatch(reciveParts(parts));
 				}
 			});
+		};
+	}
+
+	function fetchPartInfo(id) {
+		return function (dispatch) {
+			var target = '/v1/components/' + id;
+			dispatch(requestPartInfo());
+
+			_superagent2.default.get(target, function (err, data) {
+				if (err) {
+					console.log('request error', err);
+					dispatch(error(err));
+				} else {
+					console.log('PartInfo text', data.text);
+					var parts = JSON.parse(data.text);
+					dispatch(recivePartInfo(parts));
+				}
+			});
+		};
+	}
+
+	function error(error) {
+		return {
+			type: 'ERROR',
+			list: error,
+			receivedAt: Date.now()
 		};
 	}
 
@@ -24574,6 +24609,7 @@
 
 	var INITAL_STATE = (0, _immutable.fromJS)({
 		parts: [],
+		part: {},
 		user: {
 			id: 0, userName: 'Guest', loggedIn: false
 		}
@@ -24592,6 +24628,12 @@
 			case 'RECEIVE_PARTS':
 				console.log('RECEIVE_PARTS', action.list);
 				return state.set('parts', (_state$get = state.get('parts')).push.apply(_state$get, _toConsumableArray(action.list)));
+			case 'REQUEST_PART_INFO':
+				console.log('REQUEST_PART_INFO');
+				return state;
+			case 'RECEIVE_PART_INFO':
+				console.log('RECEIVE_PART_INFO', action.list);
+				return state.setIn(['part'], action.list);
 			case 'ERROR':
 				console.log('ERROR', action.list);
 				return state;
