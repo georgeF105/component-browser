@@ -7,24 +7,24 @@ function all() {
  return knex.select().table('components') 
 }
 
-function component(id) {
+function part(id) {
 	return knex('components').where({id})
 }
 
-function subComponent(assmId) {
+function subParts(assmId) {
 	return knex.from('bomJoin').where({assmId}).innerJoin('components', 'bomJoin.partId', 'components.id')
 }
 
-function componentInfo(id) {
+function partInfo(id) {
 	return Promise.all([
 		component(id),
-		subComponent(id)
+		subParts(id)
 	])
 }
 
 module.exports = {
   all,
-  component,
-  subComponent,
-  componentInfo
+  part,
+  subParts,
+  partInfo
 }

@@ -1,4 +1,4 @@
-var components = require('../models/components')
+var components = require('../models/db')
 var test = require('tape')
 
 test('Test works', function(t) {
@@ -19,7 +19,7 @@ test('Get components from db', function(t) {
 })
 
 test('Get component from db', function(t) {
-	components.component(1)
+	components.part(1)
 		.then(function(data){
 			console.log(data)
 			t.ok(1, 'Got data')
@@ -31,7 +31,7 @@ test('Get component from db', function(t) {
 })
 
 test('Get sub-components from db', function(t) {
-	components.subComponent(1)
+	components.subParts(1)
 		.then(function(data){
 			console.log(data)
 			t.ok(1, 'Got data')
