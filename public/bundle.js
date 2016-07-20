@@ -24609,7 +24609,7 @@
 
 	var INITAL_STATE = (0, _immutable.fromJS)({
 		parts: [],
-		part: {},
+		currentPart: {},
 		user: {
 			id: 0, userName: 'Guest', loggedIn: false
 		}
@@ -24633,7 +24633,7 @@
 				return state;
 			case 'RECEIVE_PART_INFO':
 				console.log('RECEIVE_PART_INFO', action.list);
-				return state.setIn(['part'], action.list);
+				return state.set('currentPart', (0, _immutable.fromJS)(action.list));
 			case 'ERROR':
 				console.log('ERROR', action.list);
 				return state;
@@ -29655,6 +29655,10 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
+	var _PartFullDetailsContainer = __webpack_require__(274);
+
+	var _PartFullDetailsContainer2 = _interopRequireDefault(_PartFullDetailsContainer);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createElement(
@@ -29664,11 +29668,8 @@
 			_reactRouter.Route,
 			{ path: '/', component: _App2.default },
 			_react2.default.createElement(_reactRouter.IndexRoute, { component: _HomeContainer2.default }),
-			_react2.default.createElement(
-				_reactRouter.Route,
-				{ path: '/parts', component: _PartIndexContainer2.default },
-				_react2.default.createElement(_reactRouter.Route, { path: '/parts/:id', component: _PartIndexContainer2.default })
-			)
+			_react2.default.createElement(_reactRouter.Route, { path: 'parts', component: _PartIndexContainer2.default }),
+			_react2.default.createElement(_reactRouter.Route, { path: 'parts/:id', component: _PartFullDetailsContainer2.default })
 		)
 	);
 
@@ -35478,6 +35479,103 @@
 	      _react2.default.createElement('div', { id: 'navbar', className: 'navbar-collapse collapse' })
 	    )
 	  );
+	};
+
+/***/ },
+/* 274 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _reactRedux = __webpack_require__(185);
+
+	var _immutable = __webpack_require__(203);
+
+	var _PartFullDetails = __webpack_require__(275);
+
+	var _PartFullDetails2 = _interopRequireDefault(_PartFullDetails);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var mapStateToProps = function mapStateToProps(state) {
+		console.log('State.currentPart', state.get('currentPart').toJS());
+		return {
+			currentPart: state.get('currentPart').toJS()
+		};
+	};
+
+	var PartFullDetailsContainer = (0, _reactRedux.connect)(mapStateToProps)(_PartFullDetails2.default);
+
+	exports.default = PartFullDetailsContainer;
+
+/***/ },
+/* 275 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _PartDetail = __webpack_require__(268);
+
+	var _PartDetail2 = _interopRequireDefault(_PartDetail);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function (props) {
+		return _react2.default.createElement(
+			'div',
+			{ className: 'container' },
+			_react2.default.createElement(
+				'h2',
+				null,
+				props.currentPart.part ? props.currentPart.part.name : null
+			),
+			_react2.default.createElement(
+				'h4',
+				null,
+				'Bill Of Materials:'
+			),
+			_react2.default.createElement(
+				'ul',
+				null,
+				props.currentPart.subParts ? props.currentPart.subParts.map(function (part, key) {
+					return _react2.default.createElement(_PartDetail2.default, _extends({}, part, { key: key }));
+				}) : _react2.default.createElement(
+					'h4',
+					null,
+					'No Parts Found'
+				)
+			),
+			_react2.default.createElement(
+				'h4',
+				null,
+				'Used In'
+			),
+			_react2.default.createElement(
+				'ul',
+				null,
+				props.currentPart.parentParts ? props.parentPart.parentParts.map(function (part, key) {
+					return _react2.default.createElement(_PartDetail2.default, _extends({}, part, { key: key }));
+				}) : _react2.default.createElement(
+					'h4',
+					null,
+					'No Parts Found'
+				)
+			)
+		);
 	};
 
 /***/ }

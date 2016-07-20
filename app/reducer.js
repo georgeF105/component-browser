@@ -2,7 +2,7 @@ import {fromJS, toJS} from 'immutable'
 
 const INITAL_STATE = fromJS({
 	parts:[],
-	part:{},
+	currentPart:{},
 	user:{
 		id:0, userName:'Guest', loggedIn: false
 	}
@@ -21,7 +21,7 @@ export default (state = INITAL_STATE, action) => {
 			return state
 		case 'RECEIVE_PART_INFO':
 			console.log('RECEIVE_PART_INFO', action.list)
-			return state.setIn(['part'], action.list)
+			return state.set('currentPart', fromJS(action.list))
 		case 'ERROR':
 			console.log('ERROR', action.list)
 			return state
