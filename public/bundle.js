@@ -22946,7 +22946,7 @@
 	});
 	exports.requestParts = requestParts;
 	exports.reciveParts = reciveParts;
-	exports.reciveParts = reciveParts;
+	exports.error = error;
 	exports.fetchAllParts = fetchAllParts;
 
 	var _superagent = __webpack_require__(197);
@@ -22969,7 +22969,7 @@
 		};
 	}
 
-	function reciveParts(error) {
+	function error(error) {
 		return {
 			type: 'ERROR',
 			list: error,
@@ -22979,12 +22979,13 @@
 
 	function fetchAllParts() {
 		return function (dispatch) {
-			var target = 'http://localhost:8080/v1/components';
+			var target = '/v1/components';
 			dispatch(requestParts());
 
 			_superagent2.default.get(target, function (err, data) {
 				if (err) {
 					console.log('request error', err);
+					dispatch(error(err));
 				} else {
 					console.log('data.text', data);
 					var parts = JSON.parse(data.text);
@@ -24565,6 +24566,8 @@
 
 	var _immutable = __webpack_require__(203);
 
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 	var INITAL_STATE = (0, _immutable.fromJS)({
 		parts: [{ id: 1, partNumber: '100-00001', 'description': 'Wheely Chair', 'revision': 0 }, { id: 2, partNumber: '100-00002', 'description': 'Seat Assm', 'revision': 0 }, { id: 3, partNumber: '100-00003', 'description': 'Gas Strut', 'revision': 0 }, { id: 4, partNumber: '100-00004', 'description': 'Base Assm', 'revision': 0 }],
 		user: {
@@ -24573,18 +24576,21 @@
 	});
 
 	exports.default = function () {
+		var _state$get;
+
 		var state = arguments.length <= 0 || arguments[0] === undefined ? INITAL_STATE : arguments[0];
 		var action = arguments[1];
 
 		switch (action.type) {
 			case 'REQUEST_PARTS':
 				console.log('REQUEST_PARTS');
-
 				return state;
 			case 'RECEIVE_PARTS':
-				console.log('RECEIVE_PARTS');
-
-				return state.set('parts', action.list);
+				console.log('RECEIVE_PARTS', action.list);
+				return state.set('parts', (_state$get = state.get('parts')).push.apply(_state$get, _toConsumableArray(action.list)));
+			case 'ERROR':
+				console.log('ERROR', action.list);
+				return state;
 			default:
 				console.log('action.type not known', action.type);
 				return state;

@@ -5,6 +5,7 @@
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "build:client": "webpack",
+    "start:simp": "npm run build:client && node bin/www",
     "start:dev": "webpack-dev-server --inline --content-base public/ --history-api-fallback --watch --progress",
     "start:prod": "webpack && node server.js",
     "test": "tape test/*.js | tap-spec"

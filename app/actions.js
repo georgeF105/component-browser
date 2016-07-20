@@ -14,7 +14,7 @@ export function reciveParts (partsObj) {
 	}
 }
 
-export function reciveParts (error) {
+export function error (error) {
 	return {
 		type: 'ERROR',
 		list: error,
@@ -24,12 +24,13 @@ export function reciveParts (error) {
 
 export function fetchAllParts () {
 	return function (dispatch) {
-		const target = 'http://localhost:8080/v1/components'
+		const target = '/v1/components'
 		dispatch(requestParts())
 
 		request.get(target, (err, data) => {
 			if(err) {
 				console.log('request error',err)
+				dispatch(error(err))
 			}
 			else {
 				console.log('data.text', data)
