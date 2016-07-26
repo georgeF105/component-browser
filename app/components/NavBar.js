@@ -27,8 +27,8 @@ export default (props) => {
         </HeaderRow>
         <HeaderRow>
           <Navigation>
-            <a to="">Link</a>
-            <a to="">Link</a>
+            <Link to="/parts">Part Index</Link>
+            <Link to="">Something Else</Link>
           </Navigation>
         </HeaderRow>
       </Header>

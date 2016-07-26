@@ -35485,14 +35485,14 @@
 	          _reactMdl.Navigation,
 	          null,
 	          _react2.default.createElement(
-	            'a',
-	            { to: '' },
-	            'Link'
+	            _reactRouter.Link,
+	            { to: '/parts' },
+	            'Part Index'
 	          ),
 	          _react2.default.createElement(
-	            'a',
+	            _reactRouter.Link,
 	            { to: '' },
-	            'Link'
+	            'Something Else'
 	          )
 	        )
 	      )
