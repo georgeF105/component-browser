@@ -29656,7 +29656,7 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _PartFullDetailsContainer = __webpack_require__(274);
+	var _PartFullDetailsContainer = __webpack_require__(338);
 
 	var _PartFullDetailsContainer2 = _interopRequireDefault(_PartFullDetailsContainer);
 
@@ -35377,16 +35377,26 @@
 
 	var _routes2 = _interopRequireDefault(_routes);
 
+	var _reactMdl = __webpack_require__(274);
+
+	var _reactRouter = __webpack_require__(205);
+
+	__webpack_require__(340);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
 	  displayName: 'App',
 	  render: function render() {
 	    return _react2.default.createElement(
-	      'div',
+	      _reactMdl.Layout,
 	      null,
 	      _react2.default.createElement(_NavBarContainer2.default, null),
-	      this.props.children
+	      _react2.default.createElement(
+	        _reactMdl.Content,
+	        null,
+	        this.props.children
+	      )
 	    );
 	  }
 	});
@@ -35437,6 +35447,8 @@
 
 	var _reactRouter = __webpack_require__(205);
 
+	var _reactMdl = __webpack_require__(274);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = function (props) {
@@ -35450,40 +35462,6723 @@
 	    event.preventDefault();
 	    props.logOut();
 	  };
-	  return _react2.default.createElement(
-	    'nav',
-	    { className: 'navbar navbar-inverse navbar-fixed-top' },
+	  return(
+	    // <div>
 	    _react2.default.createElement(
-	      'div',
-	      { className: 'container' },
+	      _reactMdl.Header,
+	      { waterfall: true },
 	      _react2.default.createElement(
-	        'div',
-	        { className: 'navbar-header' },
-	        _react2.default.createElement(
-	          'button',
-	          { type: 'button', className: 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#navbar', 'aria-expanded': 'false', 'aria-controls': 'navbar' },
-	          _react2.default.createElement(
-	            'span',
-	            { className: 'sr-only' },
-	            'Toggle navigation'
-	          ),
-	          _react2.default.createElement('span', { className: 'icon-bar' }),
-	          _react2.default.createElement('span', { className: 'icon-bar' }),
-	          _react2.default.createElement('span', { className: 'icon-bar' })
-	        ),
-	        _react2.default.createElement(
-	          _reactRouter.Link,
-	          { className: 'navbar-brand', to: '/' },
-	          'Component Browser'
-	        )
+	        _reactMdl.HeaderRow,
+	        { title: 'Parts' },
+	        _react2.default.createElement(_reactMdl.Textfield, {
+	          value: '',
+	          onChange: function onChange() {},
+	          label: 'Search',
+	          expandable: true,
+	          expandableIcon: 'search'
+	        })
 	      ),
-	      _react2.default.createElement('div', { id: 'navbar', className: 'navbar-collapse collapse' })
+	      _react2.default.createElement(
+	        _reactMdl.HeaderRow,
+	        null,
+	        _react2.default.createElement(
+	          _reactMdl.Navigation,
+	          null,
+	          _react2.default.createElement(
+	            'a',
+	            { to: '' },
+	            'Link'
+	          ),
+	          _react2.default.createElement(
+	            'a',
+	            { to: '' },
+	            'Link'
+	          )
+	        )
+	      )
 	    )
+
+	    // </div>
+
 	  );
 	};
 
 /***/ },
 /* 274 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _mdlUpgrade = __webpack_require__(275);
+
+	Object.defineProperty(exports, 'mdlUpgrade', {
+	    enumerable: true,
+	    get: function get() {
+	        return _interopRequireDefault(_mdlUpgrade).default;
+	    }
+	});
+
+	var _MDLComponent = __webpack_require__(276);
+
+	Object.defineProperty(exports, 'MDLComponent', {
+	    enumerable: true,
+	    get: function get() {
+	        return _interopRequireDefault(_MDLComponent).default;
+	    }
+	});
+
+	var _Badge = __webpack_require__(277);
+
+	Object.defineProperty(exports, 'Badge', {
+	    enumerable: true,
+	    get: function get() {
+	        return _interopRequireDefault(_Badge).default;
+	    }
+	});
+
+	var _Button = __webpack_require__(280);
+
+	Object.defineProperty(exports, 'Button', {
+	    enumerable: true,
+	    get: function get() {
+	        return _interopRequireDefault(_Button).default;
+	    }
+	});
+
+	var _Card = __webpack_require__(281);
+
+	Object.defineProperty(exports, 'Card', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Card.Card;
+	    }
+	});
+	Object.defineProperty(exports, 'CardTitle', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Card.CardTitle;
+	    }
+	});
+	Object.defineProperty(exports, 'CardActions', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Card.CardActions;
+	    }
+	});
+	Object.defineProperty(exports, 'CardMedia', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Card.CardMedia;
+	    }
+	});
+	Object.defineProperty(exports, 'CardText', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Card.CardText;
+	    }
+	});
+	Object.defineProperty(exports, 'CardMenu', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Card.CardMenu;
+	    }
+	});
+
+	var _Checkbox = __webpack_require__(288);
+
+	Object.defineProperty(exports, 'Checkbox', {
+	    enumerable: true,
+	    get: function get() {
+	        return _interopRequireDefault(_Checkbox).default;
+	    }
+	});
+
+	var _DataTable = __webpack_require__(289);
+
+	Object.defineProperty(exports, 'DataTable', {
+	    enumerable: true,
+	    get: function get() {
+	        return _interopRequireDefault(_DataTable).default;
+	    }
+	});
+	Object.defineProperty(exports, 'Table', {
+	    enumerable: true,
+	    get: function get() {
+	        return _DataTable.Table;
+	    }
+	});
+	Object.defineProperty(exports, 'TableHeader', {
+	    enumerable: true,
+	    get: function get() {
+	        return _DataTable.TableHeader;
+	    }
+	});
+
+	var _Dialog = __webpack_require__(297);
+
+	Object.defineProperty(exports, 'Dialog', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Dialog.Dialog;
+	    }
+	});
+	Object.defineProperty(exports, 'DialogTitle', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Dialog.DialogTitle;
+	    }
+	});
+	Object.defineProperty(exports, 'DialogContent', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Dialog.DialogContent;
+	    }
+	});
+	Object.defineProperty(exports, 'DialogActions', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Dialog.DialogActions;
+	    }
+	});
+
+	var _FABButton = __webpack_require__(301);
+
+	Object.defineProperty(exports, 'FABButton', {
+	    enumerable: true,
+	    get: function get() {
+	        return _interopRequireDefault(_FABButton).default;
+	    }
+	});
+
+	var _Footer = __webpack_require__(302);
+
+	Object.defineProperty(exports, 'Footer', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Footer.Footer;
+	    }
+	});
+	Object.defineProperty(exports, 'FooterSection', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Footer.FooterSection;
+	    }
+	});
+	Object.defineProperty(exports, 'FooterDropDownSection', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Footer.FooterDropDownSection;
+	    }
+	});
+	Object.defineProperty(exports, 'FooterLinkList', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Footer.FooterLinkList;
+	    }
+	});
+
+	var _Grid = __webpack_require__(308);
+
+	Object.defineProperty(exports, 'Grid', {
+	    enumerable: true,
+	    get: function get() {
+	        return _interopRequireDefault(_Grid).default;
+	    }
+	});
+	Object.defineProperty(exports, 'Cell', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Grid.Cell;
+	    }
+	});
+
+	var _Icon = __webpack_require__(309);
+
+	Object.defineProperty(exports, 'Icon', {
+	    enumerable: true,
+	    get: function get() {
+	        return _interopRequireDefault(_Icon).default;
+	    }
+	});
+
+	var _IconButton = __webpack_require__(310);
+
+	Object.defineProperty(exports, 'IconButton', {
+	    enumerable: true,
+	    get: function get() {
+	        return _interopRequireDefault(_IconButton).default;
+	    }
+	});
+
+	var _IconToggle = __webpack_require__(311);
+
+	Object.defineProperty(exports, 'IconToggle', {
+	    enumerable: true,
+	    get: function get() {
+	        return _interopRequireDefault(_IconToggle).default;
+	    }
+	});
+
+	var _Layout = __webpack_require__(312);
+
+	Object.defineProperty(exports, 'Layout', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Layout.Layout;
+	    }
+	});
+	Object.defineProperty(exports, 'Header', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Layout.Header;
+	    }
+	});
+	Object.defineProperty(exports, 'Drawer', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Layout.Drawer;
+	    }
+	});
+	Object.defineProperty(exports, 'HeaderRow', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Layout.HeaderRow;
+	    }
+	});
+	Object.defineProperty(exports, 'HeaderTabs', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Layout.HeaderTabs;
+	    }
+	});
+	Object.defineProperty(exports, 'Spacer', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Layout.Spacer;
+	    }
+	});
+	Object.defineProperty(exports, 'Navigation', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Layout.Navigation;
+	    }
+	});
+	Object.defineProperty(exports, 'Content', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Layout.Content;
+	    }
+	});
+
+	var _List = __webpack_require__(322);
+
+	Object.defineProperty(exports, 'List', {
+	    enumerable: true,
+	    get: function get() {
+	        return _List.List;
+	    }
+	});
+	Object.defineProperty(exports, 'ListItem', {
+	    enumerable: true,
+	    get: function get() {
+	        return _List.ListItem;
+	    }
+	});
+	Object.defineProperty(exports, 'ListItemAction', {
+	    enumerable: true,
+	    get: function get() {
+	        return _List.ListItemAction;
+	    }
+	});
+	Object.defineProperty(exports, 'ListItemContent', {
+	    enumerable: true,
+	    get: function get() {
+	        return _List.ListItemContent;
+	    }
+	});
+
+	var _Menu = __webpack_require__(326);
+
+	Object.defineProperty(exports, 'Menu', {
+	    enumerable: true,
+	    get: function get() {
+	        return _interopRequireDefault(_Menu).default;
+	    }
+	});
+	Object.defineProperty(exports, 'MenuItem', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Menu.MenuItem;
+	    }
+	});
+
+	var _ProgressBar = __webpack_require__(327);
+
+	Object.defineProperty(exports, 'ProgressBar', {
+	    enumerable: true,
+	    get: function get() {
+	        return _interopRequireDefault(_ProgressBar).default;
+	    }
+	});
+
+	var _Radio = __webpack_require__(328);
+
+	Object.defineProperty(exports, 'Radio', {
+	    enumerable: true,
+	    get: function get() {
+	        return _interopRequireDefault(_Radio).default;
+	    }
+	});
+
+	var _RadioGroup = __webpack_require__(329);
+
+	Object.defineProperty(exports, 'RadioGroup', {
+	    enumerable: true,
+	    get: function get() {
+	        return _interopRequireDefault(_RadioGroup).default;
+	    }
+	});
+
+	var _Slider = __webpack_require__(330);
+
+	Object.defineProperty(exports, 'Slider', {
+	    enumerable: true,
+	    get: function get() {
+	        return _interopRequireDefault(_Slider).default;
+	    }
+	});
+
+	var _Snackbar = __webpack_require__(331);
+
+	Object.defineProperty(exports, 'Snackbar', {
+	    enumerable: true,
+	    get: function get() {
+	        return _interopRequireDefault(_Snackbar).default;
+	    }
+	});
+
+	var _Spinner = __webpack_require__(332);
+
+	Object.defineProperty(exports, 'Spinner', {
+	    enumerable: true,
+	    get: function get() {
+	        return _interopRequireDefault(_Spinner).default;
+	    }
+	});
+
+	var _Switch = __webpack_require__(333);
+
+	Object.defineProperty(exports, 'Switch', {
+	    enumerable: true,
+	    get: function get() {
+	        return _interopRequireDefault(_Switch).default;
+	    }
+	});
+
+	var _Tabs = __webpack_require__(334);
+
+	Object.defineProperty(exports, 'Tabs', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Tabs.Tabs;
+	    }
+	});
+	Object.defineProperty(exports, 'Tab', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Tabs.Tab;
+	    }
+	});
+	Object.defineProperty(exports, 'TabBar', {
+	    enumerable: true,
+	    get: function get() {
+	        return _Tabs.TabBar;
+	    }
+	});
+
+	var _Textfield = __webpack_require__(337);
+
+	Object.defineProperty(exports, 'Textfield', {
+	    enumerable: true,
+	    get: function get() {
+	        return _interopRequireDefault(_Textfield).default;
+	    }
+	});
+
+	var _Tooltip = __webpack_require__(291);
+
+	Object.defineProperty(exports, 'Tooltip', {
+	    enumerable: true,
+	    get: function get() {
+	        return _interopRequireDefault(_Tooltip).default;
+	    }
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 275 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _MDLComponent = __webpack_require__(276);
+
+	var _MDLComponent2 = _interopRequireDefault(_MDLComponent);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function (Component) {
+	    var render = Component.prototype.render;
+
+	    Component.prototype.render = function rendr() {
+	        // eslint-disable-line no-param-reassign
+	        var renderBound = render.bind(this);
+	        return _react2.default.createElement(
+	            _MDLComponent2.default,
+	            null,
+	            renderBound()
+	        );
+	    };
+
+	    return Component;
+	};
+
+/***/ },
+/* 276 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _reactDom = __webpack_require__(33);
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var MDLComponent = function (_Component) {
+	    _inherits(MDLComponent, _Component);
+
+	    function MDLComponent() {
+	        _classCallCheck(this, MDLComponent);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(MDLComponent).apply(this, arguments));
+	    }
+
+	    _createClass(MDLComponent, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            window.componentHandler.upgradeElement((0, _reactDom.findDOMNode)(this));
+	        }
+	    }, {
+	        key: 'componentWillUnmount',
+	        value: function componentWillUnmount() {
+	            window.componentHandler.downgradeElements((0, _reactDom.findDOMNode)(this));
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return _react.Children.only(this.props.children);
+	        }
+	    }]);
+
+	    return MDLComponent;
+	}(_react.Component);
+
+	exports.default = MDLComponent;
+
+/***/ },
+/* 277 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _Badge = __webpack_require__(278);
+
+	Object.defineProperty(exports, 'default', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_Badge).default;
+	  }
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 278 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var propTypes = {
+	    children: _react.PropTypes.oneOfType([_react.PropTypes.element, _react.PropTypes.string]),
+	    className: _react.PropTypes.string,
+	    text: _react.PropTypes.oneOfType([_react2.default.PropTypes.string, _react2.default.PropTypes.number]),
+	    overlap: _react.PropTypes.bool,
+	    noBackground: _react.PropTypes.bool
+	};
+
+	var Badge = function Badge(props) {
+	    var children = props.children;
+	    var className = props.className;
+	    var text = props.text;
+	    var overlap = props.overlap;
+	    var noBackground = props.noBackground;
+
+	    // No badge if no children
+	    // TODO: In React 15, we can return null instead
+
+	    if (!_react2.default.Children.count(children)) return _react2.default.createElement('noscript', null);
+
+	    var element = typeof children === 'string' ? _react2.default.createElement(
+	        'span',
+	        null,
+	        children
+	    ) : _react2.default.Children.only(children);
+
+	    // No text -> No need of badge
+	    if (text === null || typeof text === 'undefined') return element;
+
+	    return _react2.default.cloneElement(element, {
+	        className: (0, _classnames2.default)(className, element.props.className, 'mdl-badge', {
+	            'mdl-badge--overlap': !!overlap,
+	            'mdl-badge--no-background': !!noBackground
+	        }),
+	        'data-badge': text
+	    });
+	};
+
+	Badge.propTypes = propTypes;
+
+	exports.default = Badge;
+
+/***/ },
+/* 279 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	  Copyright (c) 2016 Jed Watson.
+	  Licensed under the MIT License (MIT), see
+	  http://jedwatson.github.io/classnames
+	*/
+	/* global define */
+
+	(function () {
+		'use strict';
+
+		var hasOwn = {}.hasOwnProperty;
+
+		function classNames () {
+			var classes = [];
+
+			for (var i = 0; i < arguments.length; i++) {
+				var arg = arguments[i];
+				if (!arg) continue;
+
+				var argType = typeof arg;
+
+				if (argType === 'string' || argType === 'number') {
+					classes.push(arg);
+				} else if (Array.isArray(arg)) {
+					classes.push(classNames.apply(null, arg));
+				} else if (argType === 'object') {
+					for (var key in arg) {
+						if (hasOwn.call(arg, key) && arg[key]) {
+							classes.push(key);
+						}
+					}
+				}
+			}
+
+			return classes.join(' ');
+		}
+
+		if (typeof module !== 'undefined' && module.exports) {
+			module.exports = classNames;
+		} else if (true) {
+			// register as 'classnames', consistent with npm package name
+			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+				return classNames;
+			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		} else {
+			window.classNames = classNames;
+		}
+	}());
+
+
+/***/ },
+/* 280 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _mdlUpgrade = __webpack_require__(275);
+
+	var _mdlUpgrade2 = _interopRequireDefault(_mdlUpgrade);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var propTypes = {
+	    accent: _react.PropTypes.bool,
+	    className: _react.PropTypes.string,
+	    colored: _react.PropTypes.bool,
+	    component: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element, _react.PropTypes.func]),
+	    href: _react.PropTypes.string,
+	    primary: _react.PropTypes.bool,
+	    raised: _react.PropTypes.bool,
+	    ripple: _react.PropTypes.bool
+	};
+
+	// eslint-disable-next-line react/prefer-stateless-function
+
+	var Button = function (_React$Component) {
+	    _inherits(Button, _React$Component);
+
+	    function Button() {
+	        _classCallCheck(this, Button);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Button).apply(this, arguments));
+	    }
+
+	    _createClass(Button, [{
+	        key: 'render',
+	        value: function render() {
+	            var _props = this.props;
+	            var accent = _props.accent;
+	            var className = _props.className;
+	            var colored = _props.colored;
+	            var primary = _props.primary;
+	            var raised = _props.raised;
+	            var ripple = _props.ripple;
+	            var component = _props.component;
+	            var href = _props.href;
+	            var children = _props.children;
+
+	            var otherProps = _objectWithoutProperties(_props, ['accent', 'className', 'colored', 'primary', 'raised', 'ripple', 'component', 'href', 'children']);
+
+	            var buttonClasses = (0, _classnames2.default)('mdl-button mdl-js-button', {
+	                'mdl-js-ripple-effect': ripple,
+	                'mdl-button--raised': raised,
+	                'mdl-button--colored': colored,
+	                'mdl-button--primary': primary,
+	                'mdl-button--accent': accent
+	            }, className);
+
+	            return _react2.default.createElement(component || (href ? 'a' : 'button'), _extends({
+	                className: buttonClasses,
+	                href: href
+	            }, otherProps), children);
+	        }
+	    }]);
+
+	    return Button;
+	}(_react2.default.Component);
+
+	Button.propTypes = propTypes;
+
+	exports.default = (0, _mdlUpgrade2.default)(Button);
+
+/***/ },
+/* 281 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.CardMedia = exports.CardActions = exports.CardTitle = exports.CardMenu = exports.CardText = exports.Card = undefined;
+
+	var _Card = __webpack_require__(282);
+
+	Object.defineProperty(exports, 'Card', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_Card).default;
+	  }
+	});
+
+	var _CardTitle = __webpack_require__(285);
+
+	Object.defineProperty(exports, 'CardTitle', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_CardTitle).default;
+	  }
+	});
+
+	var _CardActions = __webpack_require__(286);
+
+	Object.defineProperty(exports, 'CardActions', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_CardActions).default;
+	  }
+	});
+
+	var _basicClassCreator = __webpack_require__(287);
+
+	var _basicClassCreator2 = _interopRequireDefault(_basicClassCreator);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var CardText = exports.CardText = (0, _basicClassCreator2.default)('CardText', 'mdl-card__supporting-text');
+	var CardMenu = exports.CardMenu = (0, _basicClassCreator2.default)('CardMenu', 'mdl-card__menu');
+	var CardMedia = exports.CardMedia = (0, _basicClassCreator2.default)('CardMedia', 'mdl-card__media');
+
+/***/ },
+/* 282 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _clamp = __webpack_require__(283);
+
+	var _clamp2 = _interopRequireDefault(_clamp);
+
+	var _shadows = __webpack_require__(284);
+
+	var _shadows2 = _interopRequireDefault(_shadows);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var Card = function Card(props) {
+	    var className = props.className;
+	    var shadow = props.shadow;
+	    var children = props.children;
+
+	    var otherProps = _objectWithoutProperties(props, ['className', 'shadow', 'children']);
+
+	    var hasShadow = typeof shadow !== 'undefined';
+	    var shadowLevel = (0, _clamp2.default)(shadow || 0, 0, _shadows2.default.length - 1);
+
+	    var classes = (0, _classnames2.default)('mdl-card', _defineProperty({}, _shadows2.default[shadowLevel], hasShadow), className);
+
+	    return _react2.default.createElement(
+	        'div',
+	        _extends({ className: classes }, otherProps),
+	        children
+	    );
+	};
+	Card.propTypes = {
+	    className: _react.PropTypes.string,
+	    shadow: _react.PropTypes.number
+	};
+
+	exports.default = Card;
+
+/***/ },
+/* 283 */
+/***/ function(module, exports) {
+
+	module.exports = clamp
+
+	function clamp(value, min, max) {
+	  return min < max
+	    ? (value < min ? min : value > max ? max : value)
+	    : (value < max ? max : value > min ? min : value)
+	}
+
+
+/***/ },
+/* 284 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var values = [2, 3, 4, 6, 8, 16, 24];
+	exports.default = values.map(function (v) {
+	  return "mdl-shadow--" + v + "dp";
+	});
+
+/***/ },
+/* 285 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var propTypes = {
+	    className: _react.PropTypes.string,
+	    expand: _react.PropTypes.bool
+	};
+
+	var CardTitle = function CardTitle(props) {
+	    var className = props.className;
+	    var children = props.children;
+	    var expand = props.expand;
+
+	    var otherProps = _objectWithoutProperties(props, ['className', 'children', 'expand']);
+
+	    var classes = (0, _classnames2.default)('mdl-card__title', {
+	        'mdl-card--expand': expand
+	    }, className);
+
+	    var title = typeof children === 'string' ? _react2.default.createElement('h2', { className: 'mdl-card__title-text' }, children) : children;
+
+	    return _react2.default.createElement(
+	        'div',
+	        _extends({ className: classes }, otherProps),
+	        title
+	    );
+	};
+
+	CardTitle.propTypes = propTypes;
+
+	exports.default = CardTitle;
+
+/***/ },
+/* 286 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var CardActions = function CardActions(props) {
+	    var className = props.className;
+	    var border = props.border;
+	    var children = props.children;
+
+	    var otherProps = _objectWithoutProperties(props, ['className', 'border', 'children']);
+
+	    var classes = (0, _classnames2.default)('mdl-card__actions', {
+	        'mdl-card--border': border
+	    }, className);
+
+	    return _react2.default.createElement(
+	        'div',
+	        _extends({ className: classes }, otherProps),
+	        children
+	    );
+	};
+
+	CardActions.propTypes = {
+	    border: _react.PropTypes.bool,
+	    className: _react.PropTypes.string
+	};
+
+	exports.default = CardActions;
+
+/***/ },
+/* 287 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	exports.default = function (displayName, defaultClassName) {
+	    var element = arguments.length <= 2 || arguments[2] === undefined ? 'div' : arguments[2];
+
+	    var fn = function fn(props) {
+	        var className = props.className;
+	        var children = props.children;
+
+	        var otherProps = _objectWithoutProperties(props, ['className', 'children']);
+
+	        return _react2.default.createElement(element, _extends({
+	            className: (0, _classnames2.default)(defaultClassName, className)
+	        }, otherProps), children);
+	    };
+
+	    fn.displayName = displayName;
+	    fn.propTypes = {
+	        className: _react.PropTypes.string
+	    };
+
+	    return fn;
+	};
+
+/***/ },
+/* 288 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(33);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _mdlUpgrade = __webpack_require__(275);
+
+	var _mdlUpgrade2 = _interopRequireDefault(_mdlUpgrade);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var propTypes = {
+	    checked: _react.PropTypes.bool,
+	    className: _react.PropTypes.string,
+	    disabled: _react.PropTypes.bool,
+	    label: _react.PropTypes.string,
+	    onChange: _react.PropTypes.func,
+	    ripple: _react.PropTypes.bool
+	};
+
+	var Checkbox = function (_React$Component) {
+	    _inherits(Checkbox, _React$Component);
+
+	    function Checkbox() {
+	        _classCallCheck(this, Checkbox);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Checkbox).apply(this, arguments));
+	    }
+
+	    _createClass(Checkbox, [{
+	        key: 'componentDidUpdate',
+	        value: function componentDidUpdate(prevProps) {
+	            if (this.props.disabled !== prevProps.disabled) {
+	                var fnName = this.props.disabled ? 'disable' : 'enable';
+	                (0, _reactDom.findDOMNode)(this).MaterialCheckbox[fnName]();
+	            }
+	            if (this.props.checked !== prevProps.checked) {
+	                var _fnName = this.props.checked ? 'check' : 'uncheck';
+	                (0, _reactDom.findDOMNode)(this).MaterialCheckbox[_fnName]();
+	            }
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _props = this.props;
+	            var className = _props.className;
+	            var label = _props.label;
+	            var ripple = _props.ripple;
+
+	            var inputProps = _objectWithoutProperties(_props, ['className', 'label', 'ripple']);
+
+	            var classes = (0, _classnames2.default)('mdl-checkbox mdl-js-checkbox', {
+	                'mdl-js-ripple-effect': ripple
+	            }, className);
+
+	            return _react2.default.createElement(
+	                'label',
+	                { className: classes },
+	                _react2.default.createElement('input', _extends({
+	                    type: 'checkbox',
+	                    className: 'mdl-checkbox__input'
+	                }, inputProps)),
+	                label && _react2.default.createElement(
+	                    'span',
+	                    { className: 'mdl-checkbox__label' },
+	                    label
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Checkbox;
+	}(_react2.default.Component);
+
+	Checkbox.propTypes = propTypes;
+
+	exports.default = (0, _mdlUpgrade2.default)(Checkbox);
+
+/***/ },
+/* 289 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _TableHeader = __webpack_require__(290);
+
+	Object.defineProperty(exports, 'TableHeader', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_TableHeader).default;
+	  }
+	});
+
+	var _Table = __webpack_require__(292);
+
+	Object.defineProperty(exports, 'Table', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_Table).default;
+	  }
+	});
+	Object.defineProperty(exports, 'default', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_Table).default;
+	  }
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 290 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _Tooltip = __webpack_require__(291);
+
+	var _Tooltip2 = _interopRequireDefault(_Tooltip);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var propTypes = {
+	    cellFormatter: _react.PropTypes.func, // Used by the Table component to format the cell content for this "column"
+	    className: _react.PropTypes.string,
+	    name: _react.PropTypes.string.isRequired,
+	    numeric: _react.PropTypes.bool,
+	    onClick: _react.PropTypes.func,
+	    nosort: _react.PropTypes.bool,
+	    sortFn: _react.PropTypes.func, // Used by the Sortable component
+	    tooltip: _react.PropTypes.node
+	};
+
+	var TableHeader = function TableHeader(props) {
+	    var className = props.className;
+	    var name = props.name;
+	    var numeric = props.numeric;
+	    var onClick = props.onClick;
+	    var nosort = props.nosort;
+	    var tooltip = props.tooltip;
+	    var children = props.children;
+
+	    var otherProps = _objectWithoutProperties(props, ['className', 'name', 'numeric', 'onClick', 'nosort', 'tooltip', 'children']);
+
+	    // remove unwanted props
+	    // see https://github.com/Hacker0x01/react-datepicker/issues/517#issuecomment-230171426
+
+
+	    delete otherProps.cellFormatter;
+	    delete otherProps.sortFn;
+
+	    var classes = (0, _classnames2.default)({
+	        'mdl-data-table__cell--non-numeric': !numeric
+	    }, className);
+
+	    var clickFn = !nosort && onClick ? function (e) {
+	        return onClick(e, name);
+	    } : null;
+
+	    return _react2.default.createElement(
+	        'th',
+	        _extends({ className: classes, onClick: clickFn }, otherProps),
+	        !!tooltip ? _react2.default.createElement(
+	            _Tooltip2.default,
+	            { label: tooltip },
+	            children
+	        ) : children
+	    );
+	};
+
+	TableHeader.propTypes = propTypes;
+
+	exports.default = TableHeader;
+
+/***/ },
+/* 291 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _MDLComponent = __webpack_require__(276);
+
+	var _MDLComponent2 = _interopRequireDefault(_MDLComponent);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var Tooltip = function Tooltip(props) {
+	    var label = props.label;
+	    var large = props.large;
+	    var children = props.children;
+	    var position = props.position;
+
+	    var otherProps = _objectWithoutProperties(props, ['label', 'large', 'children', 'position']);
+
+	    var id = Math.random().toString(36).substr(2);
+
+	    var newLabel = typeof label === 'string' ? _react2.default.createElement(
+	        'span',
+	        null,
+	        label
+	    ) : label;
+
+	    var element = void 0;
+	    if (typeof children === 'string') {
+	        element = _react2.default.createElement(
+	            'span',
+	            null,
+	            children
+	        );
+	    } else {
+	        element = _react2.default.Children.only(children);
+	    }
+
+	    return _react2.default.createElement(
+	        'div',
+	        _extends({ style: { display: 'inline-block' } }, otherProps),
+	        _react2.default.cloneElement(element, { id: id }),
+	        _react2.default.createElement(
+	            _MDLComponent2.default,
+	            null,
+	            _react2.default.cloneElement(newLabel, {
+	                htmlFor: id,
+	                className: (0, _classnames2.default)('mdl-tooltip', _defineProperty({
+	                    'mdl-tooltip--large': large
+	                }, 'mdl-tooltip--' + position, typeof position !== 'undefined'))
+	            })
+	        )
+	    );
+	};
+
+	Tooltip.propTypes = {
+	    children: _react.PropTypes.node.isRequired,
+	    label: _react.PropTypes.node.isRequired,
+	    large: _react.PropTypes.bool,
+	    position: _react.PropTypes.oneOf(['left', 'right', 'top', 'bottom'])
+	};
+
+	exports.default = Tooltip;
+
+/***/ },
+/* 292 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.UndecoratedTable = undefined;
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _clamp = __webpack_require__(283);
+
+	var _clamp2 = _interopRequireDefault(_clamp);
+
+	var _shadows = __webpack_require__(284);
+
+	var _shadows2 = _interopRequireDefault(_shadows);
+
+	var _TableHeader = __webpack_require__(290);
+
+	var _TableHeader2 = _interopRequireDefault(_TableHeader);
+
+	var _Selectable = __webpack_require__(293);
+
+	var _Selectable2 = _interopRequireDefault(_Selectable);
+
+	var _Sortable = __webpack_require__(296);
+
+	var _Sortable2 = _interopRequireDefault(_Sortable);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var propTypes = {
+	    className: _react.PropTypes.string,
+	    columns: function columns(props, propName, componentName) {
+	        return props[propName] && new Error(componentName + ': `' + propName + '` is deprecated, please use the component `TableHeader` instead.');
+	    },
+	    data: function data(props, propName, componentName) {
+	        return props[propName] && new Error(componentName + ': `' + propName + '` is deprecated, please use `rows` instead. `' + propName + '` will be removed in the next major release.');
+	    },
+	    rowKeyColumn: _react.PropTypes.string,
+	    rows: _react.PropTypes.arrayOf(_react.PropTypes.object).isRequired,
+	    shadow: _react.PropTypes.number
+	};
+
+	var Table = function (_React$Component) {
+	    _inherits(Table, _React$Component);
+
+	    function Table() {
+	        _classCallCheck(this, Table);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Table).apply(this, arguments));
+	    }
+
+	    _createClass(Table, [{
+	        key: 'renderCell',
+	        value: function renderCell(column, row, idx) {
+	            var className = !column.numeric ? 'mdl-data-table__cell--non-numeric' : '';
+	            return _react2.default.createElement(
+	                'td',
+	                { key: column.name, className: className },
+	                column.cellFormatter ? column.cellFormatter(row[column.name], row, idx) : row[column.name]
+	            );
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _this2 = this;
+
+	            var _props = this.props;
+	            var className = _props.className;
+	            var columns = _props.columns;
+	            var shadow = _props.shadow;
+	            var children = _props.children;
+	            var rowKeyColumn = _props.rowKeyColumn;
+	            var rows = _props.rows;
+	            var data = _props.data;
+
+	            var otherProps = _objectWithoutProperties(_props, ['className', 'columns', 'shadow', 'children', 'rowKeyColumn', 'rows', 'data']);
+
+	            var realRows = rows || data;
+
+	            var hasShadow = typeof shadow !== 'undefined';
+	            var shadowLevel = (0, _clamp2.default)(shadow || 0, 0, _shadows2.default.length - 1);
+
+	            var classes = (0, _classnames2.default)('mdl-data-table', _defineProperty({}, _shadows2.default[shadowLevel], hasShadow), className);
+
+	            var columnChildren = !!children ? _react2.default.Children.toArray(children) : columns.map(function (column) {
+	                return _react2.default.createElement(
+	                    _TableHeader2.default,
+	                    {
+	                        key: column.name,
+	                        className: column.className,
+	                        name: column.name,
+	                        numeric: column.numeric,
+	                        tooltip: column.tooltip
+	                    },
+	                    column.label
+	                );
+	            });
+	            return _react2.default.createElement(
+	                'table',
+	                _extends({ className: classes }, otherProps),
+	                _react2.default.createElement(
+	                    'thead',
+	                    null,
+	                    _react2.default.createElement(
+	                        'tr',
+	                        null,
+	                        columnChildren
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'tbody',
+	                    null,
+	                    realRows.map(function (row, idx) {
+	                        return _react2.default.createElement(
+	                            'tr',
+	                            { key: row[rowKeyColumn] || row.key || idx, className: row.className },
+	                            columnChildren.map(function (child) {
+	                                return _this2.renderCell(child.props, row, idx);
+	                            })
+	                        );
+	                    })
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Table;
+	}(_react2.default.Component);
+
+	Table.propTypes = propTypes;
+
+	exports.default = (0, _Sortable2.default)((0, _Selectable2.default)(Table));
+	var UndecoratedTable = exports.UndecoratedTable = Table;
+
+/***/ },
+/* 293 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _lodash = __webpack_require__(294);
+
+	var _lodash2 = _interopRequireDefault(_lodash);
+
+	var _TableHeader = __webpack_require__(290);
+
+	var _TableHeader2 = _interopRequireDefault(_TableHeader);
+
+	var _Checkbox = __webpack_require__(288);
+
+	var _Checkbox2 = _interopRequireDefault(_Checkbox);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var propTypes = {
+	    columns: function columns(props, propName, componentName) {
+	        return props[propName] && new Error(componentName + ': `' + propName + '` is deprecated, please use the component `TableHeader` instead.');
+	    },
+	    data: function data(props, propName, componentName) {
+	        return props[propName] && new Error(componentName + ': `' + propName + '` is deprecated, please use `rows` instead. `' + propName + '` will be removed in the next major release.');
+	    },
+	    onSelectionChanged: _react.PropTypes.func,
+	    rowKeyColumn: _react.PropTypes.string,
+	    rows: _react.PropTypes.arrayOf(_react.PropTypes.object).isRequired,
+	    selectable: _react.PropTypes.bool
+	};
+
+	var defaultProps = {
+	    onSelectionChanged: function onSelectionChanged() {
+	        // do nothing
+	    }
+	};
+
+	exports.default = function (Component) {
+	    var Selectable = function (_React$Component) {
+	        _inherits(Selectable, _React$Component);
+
+	        function Selectable(props) {
+	            _classCallCheck(this, Selectable);
+
+	            var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Selectable).call(this, props));
+
+	            _this.handleChangeHeaderCheckbox = _this.handleChangeHeaderCheckbox.bind(_this);
+	            _this.handleChangeRowCheckbox = _this.handleChangeRowCheckbox.bind(_this);
+	            _this.builRowCheckbox = _this.builRowCheckbox.bind(_this);
+
+	            if (props.selectable) {
+	                _this.state = {
+	                    headerSelected: false,
+	                    selectedRows: []
+	                };
+	            }
+	            return _this;
+	        }
+
+	        _createClass(Selectable, [{
+	            key: 'componentWillReceiveProps',
+	            value: function componentWillReceiveProps(nextProps) {
+	                var _this2 = this;
+
+	                if (nextProps.selectable) {
+	                    (function () {
+	                        var rows = nextProps.rows;
+	                        var data = nextProps.data;
+	                        var rowKeyColumn = nextProps.rowKeyColumn;
+
+	                        var rrows = rows || data;
+
+	                        if (!(0, _lodash2.default)(_this2.props.rows || _this2.props.data, rrows)) {
+	                            // keep only existing rows
+	                            var selectedRows = _this2.state.selectedRows.filter(function (k) {
+	                                return rrows.map(function (row, i) {
+	                                    return row[rowKeyColumn] || row.key || i;
+	                                }).indexOf(k) > -1;
+	                            });
+
+	                            _this2.setState({
+	                                headerSelected: selectedRows.length === rrows.length,
+	                                selectedRows: selectedRows
+	                            });
+
+	                            nextProps.onSelectionChanged(selectedRows);
+	                        }
+	                    })();
+	                }
+	            }
+	        }, {
+	            key: 'handleChangeHeaderCheckbox',
+	            value: function handleChangeHeaderCheckbox(e) {
+	                var _props = this.props;
+	                var rowKeyColumn = _props.rowKeyColumn;
+	                var rows = _props.rows;
+	                var data = _props.data;
+
+	                var selected = e.target.checked;
+	                var selectedRows = selected ? (rows || data).map(function (row, idx) {
+	                    return row[rowKeyColumn] || row.key || idx;
+	                }) : [];
+
+	                this.setState({
+	                    headerSelected: selected,
+	                    selectedRows: selectedRows
+	                });
+
+	                this.props.onSelectionChanged(selectedRows);
+	            }
+	        }, {
+	            key: 'handleChangeRowCheckbox',
+	            value: function handleChangeRowCheckbox(e) {
+	                var _props2 = this.props;
+	                var rows = _props2.rows;
+	                var data = _props2.data;
+
+	                var rowId = JSON.parse(e.target.dataset.reactmdl).id;
+	                var rowChecked = e.target.checked;
+	                var selectedRows = this.state.selectedRows;
+
+	                if (rowChecked) {
+	                    selectedRows.push(rowId);
+	                } else {
+	                    var idx = selectedRows.indexOf(rowId);
+	                    selectedRows.splice(idx, 1);
+	                }
+
+	                this.setState({
+	                    headerSelected: (rows || data).length === selectedRows.length,
+	                    selectedRows: selectedRows
+	                });
+
+	                this.props.onSelectionChanged(selectedRows);
+	            }
+	        }, {
+	            key: 'builRowCheckbox',
+	            value: function builRowCheckbox(content, row, idx) {
+	                var rowKey = row[this.props.rowKeyColumn] || row.key || idx;
+	                var isSelected = this.state.selectedRows.indexOf(rowKey) > -1;
+	                return _react2.default.createElement(_Checkbox2.default, {
+	                    className: 'mdl-data-table__select',
+	                    'data-reactmdl': JSON.stringify({ id: rowKey }),
+	                    checked: isSelected,
+	                    onChange: this.handleChangeRowCheckbox
+	                });
+	            }
+	        }, {
+	            key: 'render',
+	            value: function render() {
+	                var _this3 = this;
+
+	                var _props3 = this.props;
+	                var rows = _props3.rows;
+	                var data = _props3.data;
+	                var selectable = _props3.selectable;
+	                var children = _props3.children;
+	                var rowKeyColumn = _props3.rowKeyColumn;
+
+	                var otherProps = _objectWithoutProperties(_props3, ['rows', 'data', 'selectable', 'children', 'rowKeyColumn']);
+
+	                // remove unwatned props
+	                // see https://github.com/Hacker0x01/react-datepicker/issues/517#issuecomment-230171426
+
+
+	                delete otherProps.onSelectionChanged;
+
+	                var realRows = selectable ? (rows || data).map(function (row, idx) {
+	                    var rowKey = row[rowKeyColumn] || row.key || idx;
+	                    return _extends({}, row, {
+	                        className: (0, _classnames2.default)({
+	                            'is-selected': _this3.state.selectedRows.indexOf(rowKey) > -1
+	                        }, row.className)
+	                    });
+	                }) : rows || data;
+
+	                return _react2.default.createElement(
+	                    Component,
+	                    _extends({ rows: realRows }, otherProps),
+	                    selectable && _react2.default.createElement(
+	                        _TableHeader2.default,
+	                        { name: 'mdl-header-select', cellFormatter: this.builRowCheckbox },
+	                        _react2.default.createElement(_Checkbox2.default, {
+	                            className: 'mdl-data-table__select',
+	                            checked: this.state.headerSelected,
+	                            onChange: this.handleChangeHeaderCheckbox
+	                        })
+	                    ),
+	                    children
+	                );
+	            }
+	        }]);
+
+	        return Selectable;
+	    }(_react2.default.Component);
+
+	    Selectable.propTypes = propTypes;
+	    Selectable.defaultProps = defaultProps;
+	    return Selectable;
+	};
+
+/***/ },
+/* 294 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global, module) {/**
+	 * lodash (Custom Build) <https://lodash.com/>
+	 * Build: `lodash modularize exports="npm" -o ./`
+	 * Copyright jQuery Foundation and other contributors <https://jquery.org/>
+	 * Released under MIT license <https://lodash.com/license>
+	 * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+	 * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 */
+
+	/** Used as the size to enable large array optimizations. */
+	var LARGE_ARRAY_SIZE = 200;
+
+	/** Used to stand-in for `undefined` hash values. */
+	var HASH_UNDEFINED = '__lodash_hash_undefined__';
+
+	/** Used to compose bitmasks for comparison styles. */
+	var UNORDERED_COMPARE_FLAG = 1,
+	    PARTIAL_COMPARE_FLAG = 2;
+
+	/** Used as references for various `Number` constants. */
+	var MAX_SAFE_INTEGER = 9007199254740991;
+
+	/** `Object#toString` result references. */
+	var argsTag = '[object Arguments]',
+	    arrayTag = '[object Array]',
+	    boolTag = '[object Boolean]',
+	    dateTag = '[object Date]',
+	    errorTag = '[object Error]',
+	    funcTag = '[object Function]',
+	    genTag = '[object GeneratorFunction]',
+	    mapTag = '[object Map]',
+	    numberTag = '[object Number]',
+	    objectTag = '[object Object]',
+	    promiseTag = '[object Promise]',
+	    regexpTag = '[object RegExp]',
+	    setTag = '[object Set]',
+	    stringTag = '[object String]',
+	    symbolTag = '[object Symbol]',
+	    weakMapTag = '[object WeakMap]';
+
+	var arrayBufferTag = '[object ArrayBuffer]',
+	    dataViewTag = '[object DataView]',
+	    float32Tag = '[object Float32Array]',
+	    float64Tag = '[object Float64Array]',
+	    int8Tag = '[object Int8Array]',
+	    int16Tag = '[object Int16Array]',
+	    int32Tag = '[object Int32Array]',
+	    uint8Tag = '[object Uint8Array]',
+	    uint8ClampedTag = '[object Uint8ClampedArray]',
+	    uint16Tag = '[object Uint16Array]',
+	    uint32Tag = '[object Uint32Array]';
+
+	/**
+	 * Used to match `RegExp`
+	 * [syntax characters](http://ecma-international.org/ecma-262/6.0/#sec-patterns).
+	 */
+	var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
+
+	/** Used to detect host constructors (Safari). */
+	var reIsHostCtor = /^\[object .+?Constructor\]$/;
+
+	/** Used to detect unsigned integer values. */
+	var reIsUint = /^(?:0|[1-9]\d*)$/;
+
+	/** Used to identify `toStringTag` values of typed arrays. */
+	var typedArrayTags = {};
+	typedArrayTags[float32Tag] = typedArrayTags[float64Tag] =
+	typedArrayTags[int8Tag] = typedArrayTags[int16Tag] =
+	typedArrayTags[int32Tag] = typedArrayTags[uint8Tag] =
+	typedArrayTags[uint8ClampedTag] = typedArrayTags[uint16Tag] =
+	typedArrayTags[uint32Tag] = true;
+	typedArrayTags[argsTag] = typedArrayTags[arrayTag] =
+	typedArrayTags[arrayBufferTag] = typedArrayTags[boolTag] =
+	typedArrayTags[dataViewTag] = typedArrayTags[dateTag] =
+	typedArrayTags[errorTag] = typedArrayTags[funcTag] =
+	typedArrayTags[mapTag] = typedArrayTags[numberTag] =
+	typedArrayTags[objectTag] = typedArrayTags[regexpTag] =
+	typedArrayTags[setTag] = typedArrayTags[stringTag] =
+	typedArrayTags[weakMapTag] = false;
+
+	/** Detect free variable `global` from Node.js. */
+	var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+
+	/** Detect free variable `self`. */
+	var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+	/** Used as a reference to the global object. */
+	var root = freeGlobal || freeSelf || Function('return this')();
+
+	/** Detect free variable `exports`. */
+	var freeExports = freeGlobal && typeof exports == 'object' && exports;
+
+	/** Detect free variable `module`. */
+	var freeModule = freeExports && typeof module == 'object' && module;
+
+	/** Detect the popular CommonJS extension `module.exports`. */
+	var moduleExports = freeModule && freeModule.exports === freeExports;
+
+	/** Detect free variable `process` from Node.js. */
+	var freeProcess = moduleExports && freeGlobal.process;
+
+	/** Used to access faster Node.js helpers. */
+	var nodeUtil = (function() {
+	  try {
+	    return freeProcess && freeProcess.binding('util');
+	  } catch (e) {}
+	}());
+
+	/* Node.js helper references. */
+	var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
+
+	/**
+	 * A specialized version of `_.some` for arrays without support for iteratee
+	 * shorthands.
+	 *
+	 * @private
+	 * @param {Array} [array] The array to iterate over.
+	 * @param {Function} predicate The function invoked per iteration.
+	 * @returns {boolean} Returns `true` if any element passes the predicate check,
+	 *  else `false`.
+	 */
+	function arraySome(array, predicate) {
+	  var index = -1,
+	      length = array ? array.length : 0;
+
+	  while (++index < length) {
+	    if (predicate(array[index], index, array)) {
+	      return true;
+	    }
+	  }
+	  return false;
+	}
+
+	/**
+	 * The base implementation of `_.property` without support for deep paths.
+	 *
+	 * @private
+	 * @param {string} key The key of the property to get.
+	 * @returns {Function} Returns the new accessor function.
+	 */
+	function baseProperty(key) {
+	  return function(object) {
+	    return object == null ? undefined : object[key];
+	  };
+	}
+
+	/**
+	 * The base implementation of `_.times` without support for iteratee shorthands
+	 * or max array length checks.
+	 *
+	 * @private
+	 * @param {number} n The number of times to invoke `iteratee`.
+	 * @param {Function} iteratee The function invoked per iteration.
+	 * @returns {Array} Returns the array of results.
+	 */
+	function baseTimes(n, iteratee) {
+	  var index = -1,
+	      result = Array(n);
+
+	  while (++index < n) {
+	    result[index] = iteratee(index);
+	  }
+	  return result;
+	}
+
+	/**
+	 * The base implementation of `_.unary` without support for storing metadata.
+	 *
+	 * @private
+	 * @param {Function} func The function to cap arguments for.
+	 * @returns {Function} Returns the new capped function.
+	 */
+	function baseUnary(func) {
+	  return function(value) {
+	    return func(value);
+	  };
+	}
+
+	/**
+	 * Gets the value at `key` of `object`.
+	 *
+	 * @private
+	 * @param {Object} [object] The object to query.
+	 * @param {string} key The key of the property to get.
+	 * @returns {*} Returns the property value.
+	 */
+	function getValue(object, key) {
+	  return object == null ? undefined : object[key];
+	}
+
+	/**
+	 * Checks if `value` is a host object in IE < 9.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is a host object, else `false`.
+	 */
+	function isHostObject(value) {
+	  // Many host objects are `Object` objects that can coerce to strings
+	  // despite having improperly defined `toString` methods.
+	  var result = false;
+	  if (value != null && typeof value.toString != 'function') {
+	    try {
+	      result = !!(value + '');
+	    } catch (e) {}
+	  }
+	  return result;
+	}
+
+	/**
+	 * Converts `map` to its key-value pairs.
+	 *
+	 * @private
+	 * @param {Object} map The map to convert.
+	 * @returns {Array} Returns the key-value pairs.
+	 */
+	function mapToArray(map) {
+	  var index = -1,
+	      result = Array(map.size);
+
+	  map.forEach(function(value, key) {
+	    result[++index] = [key, value];
+	  });
+	  return result;
+	}
+
+	/**
+	 * Creates a function that invokes `func` with its first argument transformed.
+	 *
+	 * @private
+	 * @param {Function} func The function to wrap.
+	 * @param {Function} transform The argument transform.
+	 * @returns {Function} Returns the new function.
+	 */
+	function overArg(func, transform) {
+	  return function(arg) {
+	    return func(transform(arg));
+	  };
+	}
+
+	/**
+	 * Converts `set` to an array of its values.
+	 *
+	 * @private
+	 * @param {Object} set The set to convert.
+	 * @returns {Array} Returns the values.
+	 */
+	function setToArray(set) {
+	  var index = -1,
+	      result = Array(set.size);
+
+	  set.forEach(function(value) {
+	    result[++index] = value;
+	  });
+	  return result;
+	}
+
+	/** Used for built-in method references. */
+	var arrayProto = Array.prototype,
+	    objectProto = Object.prototype;
+
+	/** Used to detect overreaching core-js shims. */
+	var coreJsData = root['__core-js_shared__'];
+
+	/** Used to detect methods masquerading as native. */
+	var maskSrcKey = (function() {
+	  var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
+	  return uid ? ('Symbol(src)_1.' + uid) : '';
+	}());
+
+	/** Used to resolve the decompiled source of functions. */
+	var funcToString = Function.prototype.toString;
+
+	/** Used to check objects for own properties. */
+	var hasOwnProperty = objectProto.hasOwnProperty;
+
+	/**
+	 * Used to resolve the
+	 * [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
+	 * of values.
+	 */
+	var objectToString = objectProto.toString;
+
+	/** Used to detect if a method is native. */
+	var reIsNative = RegExp('^' +
+	  funcToString.call(hasOwnProperty).replace(reRegExpChar, '\\$&')
+	  .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
+	);
+
+	/** Built-in value references. */
+	var Symbol = root.Symbol,
+	    Uint8Array = root.Uint8Array,
+	    propertyIsEnumerable = objectProto.propertyIsEnumerable,
+	    splice = arrayProto.splice;
+
+	/* Built-in method references for those with the same name as other `lodash` methods. */
+	var nativeGetPrototype = Object.getPrototypeOf,
+	    nativeKeys = Object.keys;
+
+	/* Built-in method references that are verified to be native. */
+	var DataView = getNative(root, 'DataView'),
+	    Map = getNative(root, 'Map'),
+	    Promise = getNative(root, 'Promise'),
+	    Set = getNative(root, 'Set'),
+	    WeakMap = getNative(root, 'WeakMap'),
+	    nativeCreate = getNative(Object, 'create');
+
+	/** Used to detect maps, sets, and weakmaps. */
+	var dataViewCtorString = toSource(DataView),
+	    mapCtorString = toSource(Map),
+	    promiseCtorString = toSource(Promise),
+	    setCtorString = toSource(Set),
+	    weakMapCtorString = toSource(WeakMap);
+
+	/** Used to convert symbols to primitives and strings. */
+	var symbolProto = Symbol ? Symbol.prototype : undefined,
+	    symbolValueOf = symbolProto ? symbolProto.valueOf : undefined;
+
+	/**
+	 * Creates a hash object.
+	 *
+	 * @private
+	 * @constructor
+	 * @param {Array} [entries] The key-value pairs to cache.
+	 */
+	function Hash(entries) {
+	  var index = -1,
+	      length = entries ? entries.length : 0;
+
+	  this.clear();
+	  while (++index < length) {
+	    var entry = entries[index];
+	    this.set(entry[0], entry[1]);
+	  }
+	}
+
+	/**
+	 * Removes all key-value entries from the hash.
+	 *
+	 * @private
+	 * @name clear
+	 * @memberOf Hash
+	 */
+	function hashClear() {
+	  this.__data__ = nativeCreate ? nativeCreate(null) : {};
+	}
+
+	/**
+	 * Removes `key` and its value from the hash.
+	 *
+	 * @private
+	 * @name delete
+	 * @memberOf Hash
+	 * @param {Object} hash The hash to modify.
+	 * @param {string} key The key of the value to remove.
+	 * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+	 */
+	function hashDelete(key) {
+	  return this.has(key) && delete this.__data__[key];
+	}
+
+	/**
+	 * Gets the hash value for `key`.
+	 *
+	 * @private
+	 * @name get
+	 * @memberOf Hash
+	 * @param {string} key The key of the value to get.
+	 * @returns {*} Returns the entry value.
+	 */
+	function hashGet(key) {
+	  var data = this.__data__;
+	  if (nativeCreate) {
+	    var result = data[key];
+	    return result === HASH_UNDEFINED ? undefined : result;
+	  }
+	  return hasOwnProperty.call(data, key) ? data[key] : undefined;
+	}
+
+	/**
+	 * Checks if a hash value for `key` exists.
+	 *
+	 * @private
+	 * @name has
+	 * @memberOf Hash
+	 * @param {string} key The key of the entry to check.
+	 * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+	 */
+	function hashHas(key) {
+	  var data = this.__data__;
+	  return nativeCreate ? data[key] !== undefined : hasOwnProperty.call(data, key);
+	}
+
+	/**
+	 * Sets the hash `key` to `value`.
+	 *
+	 * @private
+	 * @name set
+	 * @memberOf Hash
+	 * @param {string} key The key of the value to set.
+	 * @param {*} value The value to set.
+	 * @returns {Object} Returns the hash instance.
+	 */
+	function hashSet(key, value) {
+	  var data = this.__data__;
+	  data[key] = (nativeCreate && value === undefined) ? HASH_UNDEFINED : value;
+	  return this;
+	}
+
+	// Add methods to `Hash`.
+	Hash.prototype.clear = hashClear;
+	Hash.prototype['delete'] = hashDelete;
+	Hash.prototype.get = hashGet;
+	Hash.prototype.has = hashHas;
+	Hash.prototype.set = hashSet;
+
+	/**
+	 * Creates an list cache object.
+	 *
+	 * @private
+	 * @constructor
+	 * @param {Array} [entries] The key-value pairs to cache.
+	 */
+	function ListCache(entries) {
+	  var index = -1,
+	      length = entries ? entries.length : 0;
+
+	  this.clear();
+	  while (++index < length) {
+	    var entry = entries[index];
+	    this.set(entry[0], entry[1]);
+	  }
+	}
+
+	/**
+	 * Removes all key-value entries from the list cache.
+	 *
+	 * @private
+	 * @name clear
+	 * @memberOf ListCache
+	 */
+	function listCacheClear() {
+	  this.__data__ = [];
+	}
+
+	/**
+	 * Removes `key` and its value from the list cache.
+	 *
+	 * @private
+	 * @name delete
+	 * @memberOf ListCache
+	 * @param {string} key The key of the value to remove.
+	 * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+	 */
+	function listCacheDelete(key) {
+	  var data = this.__data__,
+	      index = assocIndexOf(data, key);
+
+	  if (index < 0) {
+	    return false;
+	  }
+	  var lastIndex = data.length - 1;
+	  if (index == lastIndex) {
+	    data.pop();
+	  } else {
+	    splice.call(data, index, 1);
+	  }
+	  return true;
+	}
+
+	/**
+	 * Gets the list cache value for `key`.
+	 *
+	 * @private
+	 * @name get
+	 * @memberOf ListCache
+	 * @param {string} key The key of the value to get.
+	 * @returns {*} Returns the entry value.
+	 */
+	function listCacheGet(key) {
+	  var data = this.__data__,
+	      index = assocIndexOf(data, key);
+
+	  return index < 0 ? undefined : data[index][1];
+	}
+
+	/**
+	 * Checks if a list cache value for `key` exists.
+	 *
+	 * @private
+	 * @name has
+	 * @memberOf ListCache
+	 * @param {string} key The key of the entry to check.
+	 * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+	 */
+	function listCacheHas(key) {
+	  return assocIndexOf(this.__data__, key) > -1;
+	}
+
+	/**
+	 * Sets the list cache `key` to `value`.
+	 *
+	 * @private
+	 * @name set
+	 * @memberOf ListCache
+	 * @param {string} key The key of the value to set.
+	 * @param {*} value The value to set.
+	 * @returns {Object} Returns the list cache instance.
+	 */
+	function listCacheSet(key, value) {
+	  var data = this.__data__,
+	      index = assocIndexOf(data, key);
+
+	  if (index < 0) {
+	    data.push([key, value]);
+	  } else {
+	    data[index][1] = value;
+	  }
+	  return this;
+	}
+
+	// Add methods to `ListCache`.
+	ListCache.prototype.clear = listCacheClear;
+	ListCache.prototype['delete'] = listCacheDelete;
+	ListCache.prototype.get = listCacheGet;
+	ListCache.prototype.has = listCacheHas;
+	ListCache.prototype.set = listCacheSet;
+
+	/**
+	 * Creates a map cache object to store key-value pairs.
+	 *
+	 * @private
+	 * @constructor
+	 * @param {Array} [entries] The key-value pairs to cache.
+	 */
+	function MapCache(entries) {
+	  var index = -1,
+	      length = entries ? entries.length : 0;
+
+	  this.clear();
+	  while (++index < length) {
+	    var entry = entries[index];
+	    this.set(entry[0], entry[1]);
+	  }
+	}
+
+	/**
+	 * Removes all key-value entries from the map.
+	 *
+	 * @private
+	 * @name clear
+	 * @memberOf MapCache
+	 */
+	function mapCacheClear() {
+	  this.__data__ = {
+	    'hash': new Hash,
+	    'map': new (Map || ListCache),
+	    'string': new Hash
+	  };
+	}
+
+	/**
+	 * Removes `key` and its value from the map.
+	 *
+	 * @private
+	 * @name delete
+	 * @memberOf MapCache
+	 * @param {string} key The key of the value to remove.
+	 * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+	 */
+	function mapCacheDelete(key) {
+	  return getMapData(this, key)['delete'](key);
+	}
+
+	/**
+	 * Gets the map value for `key`.
+	 *
+	 * @private
+	 * @name get
+	 * @memberOf MapCache
+	 * @param {string} key The key of the value to get.
+	 * @returns {*} Returns the entry value.
+	 */
+	function mapCacheGet(key) {
+	  return getMapData(this, key).get(key);
+	}
+
+	/**
+	 * Checks if a map value for `key` exists.
+	 *
+	 * @private
+	 * @name has
+	 * @memberOf MapCache
+	 * @param {string} key The key of the entry to check.
+	 * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+	 */
+	function mapCacheHas(key) {
+	  return getMapData(this, key).has(key);
+	}
+
+	/**
+	 * Sets the map `key` to `value`.
+	 *
+	 * @private
+	 * @name set
+	 * @memberOf MapCache
+	 * @param {string} key The key of the value to set.
+	 * @param {*} value The value to set.
+	 * @returns {Object} Returns the map cache instance.
+	 */
+	function mapCacheSet(key, value) {
+	  getMapData(this, key).set(key, value);
+	  return this;
+	}
+
+	// Add methods to `MapCache`.
+	MapCache.prototype.clear = mapCacheClear;
+	MapCache.prototype['delete'] = mapCacheDelete;
+	MapCache.prototype.get = mapCacheGet;
+	MapCache.prototype.has = mapCacheHas;
+	MapCache.prototype.set = mapCacheSet;
+
+	/**
+	 *
+	 * Creates an array cache object to store unique values.
+	 *
+	 * @private
+	 * @constructor
+	 * @param {Array} [values] The values to cache.
+	 */
+	function SetCache(values) {
+	  var index = -1,
+	      length = values ? values.length : 0;
+
+	  this.__data__ = new MapCache;
+	  while (++index < length) {
+	    this.add(values[index]);
+	  }
+	}
+
+	/**
+	 * Adds `value` to the array cache.
+	 *
+	 * @private
+	 * @name add
+	 * @memberOf SetCache
+	 * @alias push
+	 * @param {*} value The value to cache.
+	 * @returns {Object} Returns the cache instance.
+	 */
+	function setCacheAdd(value) {
+	  this.__data__.set(value, HASH_UNDEFINED);
+	  return this;
+	}
+
+	/**
+	 * Checks if `value` is in the array cache.
+	 *
+	 * @private
+	 * @name has
+	 * @memberOf SetCache
+	 * @param {*} value The value to search for.
+	 * @returns {number} Returns `true` if `value` is found, else `false`.
+	 */
+	function setCacheHas(value) {
+	  return this.__data__.has(value);
+	}
+
+	// Add methods to `SetCache`.
+	SetCache.prototype.add = SetCache.prototype.push = setCacheAdd;
+	SetCache.prototype.has = setCacheHas;
+
+	/**
+	 * Creates a stack cache object to store key-value pairs.
+	 *
+	 * @private
+	 * @constructor
+	 * @param {Array} [entries] The key-value pairs to cache.
+	 */
+	function Stack(entries) {
+	  this.__data__ = new ListCache(entries);
+	}
+
+	/**
+	 * Removes all key-value entries from the stack.
+	 *
+	 * @private
+	 * @name clear
+	 * @memberOf Stack
+	 */
+	function stackClear() {
+	  this.__data__ = new ListCache;
+	}
+
+	/**
+	 * Removes `key` and its value from the stack.
+	 *
+	 * @private
+	 * @name delete
+	 * @memberOf Stack
+	 * @param {string} key The key of the value to remove.
+	 * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+	 */
+	function stackDelete(key) {
+	  return this.__data__['delete'](key);
+	}
+
+	/**
+	 * Gets the stack value for `key`.
+	 *
+	 * @private
+	 * @name get
+	 * @memberOf Stack
+	 * @param {string} key The key of the value to get.
+	 * @returns {*} Returns the entry value.
+	 */
+	function stackGet(key) {
+	  return this.__data__.get(key);
+	}
+
+	/**
+	 * Checks if a stack value for `key` exists.
+	 *
+	 * @private
+	 * @name has
+	 * @memberOf Stack
+	 * @param {string} key The key of the entry to check.
+	 * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+	 */
+	function stackHas(key) {
+	  return this.__data__.has(key);
+	}
+
+	/**
+	 * Sets the stack `key` to `value`.
+	 *
+	 * @private
+	 * @name set
+	 * @memberOf Stack
+	 * @param {string} key The key of the value to set.
+	 * @param {*} value The value to set.
+	 * @returns {Object} Returns the stack cache instance.
+	 */
+	function stackSet(key, value) {
+	  var cache = this.__data__;
+	  if (cache instanceof ListCache) {
+	    var pairs = cache.__data__;
+	    if (!Map || (pairs.length < LARGE_ARRAY_SIZE - 1)) {
+	      pairs.push([key, value]);
+	      return this;
+	    }
+	    cache = this.__data__ = new MapCache(pairs);
+	  }
+	  cache.set(key, value);
+	  return this;
+	}
+
+	// Add methods to `Stack`.
+	Stack.prototype.clear = stackClear;
+	Stack.prototype['delete'] = stackDelete;
+	Stack.prototype.get = stackGet;
+	Stack.prototype.has = stackHas;
+	Stack.prototype.set = stackSet;
+
+	/**
+	 * Gets the index at which the `key` is found in `array` of key-value pairs.
+	 *
+	 * @private
+	 * @param {Array} array The array to search.
+	 * @param {*} key The key to search for.
+	 * @returns {number} Returns the index of the matched value, else `-1`.
+	 */
+	function assocIndexOf(array, key) {
+	  var length = array.length;
+	  while (length--) {
+	    if (eq(array[length][0], key)) {
+	      return length;
+	    }
+	  }
+	  return -1;
+	}
+
+	/**
+	 * The base implementation of `getTag`.
+	 *
+	 * @private
+	 * @param {*} value The value to query.
+	 * @returns {string} Returns the `toStringTag`.
+	 */
+	function baseGetTag(value) {
+	  return objectToString.call(value);
+	}
+
+	/**
+	 * The base implementation of `_.has` without support for deep paths.
+	 *
+	 * @private
+	 * @param {Object} [object] The object to query.
+	 * @param {Array|string} key The key to check.
+	 * @returns {boolean} Returns `true` if `key` exists, else `false`.
+	 */
+	function baseHas(object, key) {
+	  // Avoid a bug in IE 10-11 where objects with a [[Prototype]] of `null`,
+	  // that are composed entirely of index properties, return `false` for
+	  // `hasOwnProperty` checks of them.
+	  return object != null &&
+	    (hasOwnProperty.call(object, key) ||
+	      (typeof object == 'object' && key in object && getPrototype(object) === null));
+	}
+
+	/**
+	 * The base implementation of `_.isEqual` which supports partial comparisons
+	 * and tracks traversed objects.
+	 *
+	 * @private
+	 * @param {*} value The value to compare.
+	 * @param {*} other The other value to compare.
+	 * @param {Function} [customizer] The function to customize comparisons.
+	 * @param {boolean} [bitmask] The bitmask of comparison flags.
+	 *  The bitmask may be composed of the following flags:
+	 *     1 - Unordered comparison
+	 *     2 - Partial comparison
+	 * @param {Object} [stack] Tracks traversed `value` and `other` objects.
+	 * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+	 */
+	function baseIsEqual(value, other, customizer, bitmask, stack) {
+	  if (value === other) {
+	    return true;
+	  }
+	  if (value == null || other == null || (!isObject(value) && !isObjectLike(other))) {
+	    return value !== value && other !== other;
+	  }
+	  return baseIsEqualDeep(value, other, baseIsEqual, customizer, bitmask, stack);
+	}
+
+	/**
+	 * A specialized version of `baseIsEqual` for arrays and objects which performs
+	 * deep comparisons and tracks traversed objects enabling objects with circular
+	 * references to be compared.
+	 *
+	 * @private
+	 * @param {Object} object The object to compare.
+	 * @param {Object} other The other object to compare.
+	 * @param {Function} equalFunc The function to determine equivalents of values.
+	 * @param {Function} [customizer] The function to customize comparisons.
+	 * @param {number} [bitmask] The bitmask of comparison flags. See `baseIsEqual`
+	 *  for more details.
+	 * @param {Object} [stack] Tracks traversed `object` and `other` objects.
+	 * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
+	 */
+	function baseIsEqualDeep(object, other, equalFunc, customizer, bitmask, stack) {
+	  var objIsArr = isArray(object),
+	      othIsArr = isArray(other),
+	      objTag = arrayTag,
+	      othTag = arrayTag;
+
+	  if (!objIsArr) {
+	    objTag = getTag(object);
+	    objTag = objTag == argsTag ? objectTag : objTag;
+	  }
+	  if (!othIsArr) {
+	    othTag = getTag(other);
+	    othTag = othTag == argsTag ? objectTag : othTag;
+	  }
+	  var objIsObj = objTag == objectTag && !isHostObject(object),
+	      othIsObj = othTag == objectTag && !isHostObject(other),
+	      isSameTag = objTag == othTag;
+
+	  if (isSameTag && !objIsObj) {
+	    stack || (stack = new Stack);
+	    return (objIsArr || isTypedArray(object))
+	      ? equalArrays(object, other, equalFunc, customizer, bitmask, stack)
+	      : equalByTag(object, other, objTag, equalFunc, customizer, bitmask, stack);
+	  }
+	  if (!(bitmask & PARTIAL_COMPARE_FLAG)) {
+	    var objIsWrapped = objIsObj && hasOwnProperty.call(object, '__wrapped__'),
+	        othIsWrapped = othIsObj && hasOwnProperty.call(other, '__wrapped__');
+
+	    if (objIsWrapped || othIsWrapped) {
+	      var objUnwrapped = objIsWrapped ? object.value() : object,
+	          othUnwrapped = othIsWrapped ? other.value() : other;
+
+	      stack || (stack = new Stack);
+	      return equalFunc(objUnwrapped, othUnwrapped, customizer, bitmask, stack);
+	    }
+	  }
+	  if (!isSameTag) {
+	    return false;
+	  }
+	  stack || (stack = new Stack);
+	  return equalObjects(object, other, equalFunc, customizer, bitmask, stack);
+	}
+
+	/**
+	 * The base implementation of `_.isNative` without bad shim checks.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is a native function,
+	 *  else `false`.
+	 */
+	function baseIsNative(value) {
+	  if (!isObject(value) || isMasked(value)) {
+	    return false;
+	  }
+	  var pattern = (isFunction(value) || isHostObject(value)) ? reIsNative : reIsHostCtor;
+	  return pattern.test(toSource(value));
+	}
+
+	/**
+	 * The base implementation of `_.isTypedArray` without Node.js optimizations.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
+	 */
+	function baseIsTypedArray(value) {
+	  return isObjectLike(value) &&
+	    isLength(value.length) && !!typedArrayTags[objectToString.call(value)];
+	}
+
+	/**
+	 * The base implementation of `_.keys` which doesn't skip the constructor
+	 * property of prototypes or treat sparse arrays as dense.
+	 *
+	 * @private
+	 * @param {Object} object The object to query.
+	 * @returns {Array} Returns the array of property names.
+	 */
+	var baseKeys = overArg(nativeKeys, Object);
+
+	/**
+	 * A specialized version of `baseIsEqualDeep` for arrays with support for
+	 * partial deep comparisons.
+	 *
+	 * @private
+	 * @param {Array} array The array to compare.
+	 * @param {Array} other The other array to compare.
+	 * @param {Function} equalFunc The function to determine equivalents of values.
+	 * @param {Function} customizer The function to customize comparisons.
+	 * @param {number} bitmask The bitmask of comparison flags. See `baseIsEqual`
+	 *  for more details.
+	 * @param {Object} stack Tracks traversed `array` and `other` objects.
+	 * @returns {boolean} Returns `true` if the arrays are equivalent, else `false`.
+	 */
+	function equalArrays(array, other, equalFunc, customizer, bitmask, stack) {
+	  var isPartial = bitmask & PARTIAL_COMPARE_FLAG,
+	      arrLength = array.length,
+	      othLength = other.length;
+
+	  if (arrLength != othLength && !(isPartial && othLength > arrLength)) {
+	    return false;
+	  }
+	  // Assume cyclic values are equal.
+	  var stacked = stack.get(array);
+	  if (stacked && stack.get(other)) {
+	    return stacked == other;
+	  }
+	  var index = -1,
+	      result = true,
+	      seen = (bitmask & UNORDERED_COMPARE_FLAG) ? new SetCache : undefined;
+
+	  stack.set(array, other);
+	  stack.set(other, array);
+
+	  // Ignore non-index properties.
+	  while (++index < arrLength) {
+	    var arrValue = array[index],
+	        othValue = other[index];
+
+	    if (customizer) {
+	      var compared = isPartial
+	        ? customizer(othValue, arrValue, index, other, array, stack)
+	        : customizer(arrValue, othValue, index, array, other, stack);
+	    }
+	    if (compared !== undefined) {
+	      if (compared) {
+	        continue;
+	      }
+	      result = false;
+	      break;
+	    }
+	    // Recursively compare arrays (susceptible to call stack limits).
+	    if (seen) {
+	      if (!arraySome(other, function(othValue, othIndex) {
+	            if (!seen.has(othIndex) &&
+	                (arrValue === othValue || equalFunc(arrValue, othValue, customizer, bitmask, stack))) {
+	              return seen.add(othIndex);
+	            }
+	          })) {
+	        result = false;
+	        break;
+	      }
+	    } else if (!(
+	          arrValue === othValue ||
+	            equalFunc(arrValue, othValue, customizer, bitmask, stack)
+	        )) {
+	      result = false;
+	      break;
+	    }
+	  }
+	  stack['delete'](array);
+	  return result;
+	}
+
+	/**
+	 * A specialized version of `baseIsEqualDeep` for comparing objects of
+	 * the same `toStringTag`.
+	 *
+	 * **Note:** This function only supports comparing values with tags of
+	 * `Boolean`, `Date`, `Error`, `Number`, `RegExp`, or `String`.
+	 *
+	 * @private
+	 * @param {Object} object The object to compare.
+	 * @param {Object} other The other object to compare.
+	 * @param {string} tag The `toStringTag` of the objects to compare.
+	 * @param {Function} equalFunc The function to determine equivalents of values.
+	 * @param {Function} customizer The function to customize comparisons.
+	 * @param {number} bitmask The bitmask of comparison flags. See `baseIsEqual`
+	 *  for more details.
+	 * @param {Object} stack Tracks traversed `object` and `other` objects.
+	 * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
+	 */
+	function equalByTag(object, other, tag, equalFunc, customizer, bitmask, stack) {
+	  switch (tag) {
+	    case dataViewTag:
+	      if ((object.byteLength != other.byteLength) ||
+	          (object.byteOffset != other.byteOffset)) {
+	        return false;
+	      }
+	      object = object.buffer;
+	      other = other.buffer;
+
+	    case arrayBufferTag:
+	      if ((object.byteLength != other.byteLength) ||
+	          !equalFunc(new Uint8Array(object), new Uint8Array(other))) {
+	        return false;
+	      }
+	      return true;
+
+	    case boolTag:
+	    case dateTag:
+	    case numberTag:
+	      // Coerce booleans to `1` or `0` and dates to milliseconds.
+	      // Invalid dates are coerced to `NaN`.
+	      return eq(+object, +other);
+
+	    case errorTag:
+	      return object.name == other.name && object.message == other.message;
+
+	    case regexpTag:
+	    case stringTag:
+	      // Coerce regexes to strings and treat strings, primitives and objects,
+	      // as equal. See http://www.ecma-international.org/ecma-262/6.0/#sec-regexp.prototype.tostring
+	      // for more details.
+	      return object == (other + '');
+
+	    case mapTag:
+	      var convert = mapToArray;
+
+	    case setTag:
+	      var isPartial = bitmask & PARTIAL_COMPARE_FLAG;
+	      convert || (convert = setToArray);
+
+	      if (object.size != other.size && !isPartial) {
+	        return false;
+	      }
+	      // Assume cyclic values are equal.
+	      var stacked = stack.get(object);
+	      if (stacked) {
+	        return stacked == other;
+	      }
+	      bitmask |= UNORDERED_COMPARE_FLAG;
+
+	      // Recursively compare objects (susceptible to call stack limits).
+	      stack.set(object, other);
+	      var result = equalArrays(convert(object), convert(other), equalFunc, customizer, bitmask, stack);
+	      stack['delete'](object);
+	      return result;
+
+	    case symbolTag:
+	      if (symbolValueOf) {
+	        return symbolValueOf.call(object) == symbolValueOf.call(other);
+	      }
+	  }
+	  return false;
+	}
+
+	/**
+	 * A specialized version of `baseIsEqualDeep` for objects with support for
+	 * partial deep comparisons.
+	 *
+	 * @private
+	 * @param {Object} object The object to compare.
+	 * @param {Object} other The other object to compare.
+	 * @param {Function} equalFunc The function to determine equivalents of values.
+	 * @param {Function} customizer The function to customize comparisons.
+	 * @param {number} bitmask The bitmask of comparison flags. See `baseIsEqual`
+	 *  for more details.
+	 * @param {Object} stack Tracks traversed `object` and `other` objects.
+	 * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
+	 */
+	function equalObjects(object, other, equalFunc, customizer, bitmask, stack) {
+	  var isPartial = bitmask & PARTIAL_COMPARE_FLAG,
+	      objProps = keys(object),
+	      objLength = objProps.length,
+	      othProps = keys(other),
+	      othLength = othProps.length;
+
+	  if (objLength != othLength && !isPartial) {
+	    return false;
+	  }
+	  var index = objLength;
+	  while (index--) {
+	    var key = objProps[index];
+	    if (!(isPartial ? key in other : baseHas(other, key))) {
+	      return false;
+	    }
+	  }
+	  // Assume cyclic values are equal.
+	  var stacked = stack.get(object);
+	  if (stacked && stack.get(other)) {
+	    return stacked == other;
+	  }
+	  var result = true;
+	  stack.set(object, other);
+	  stack.set(other, object);
+
+	  var skipCtor = isPartial;
+	  while (++index < objLength) {
+	    key = objProps[index];
+	    var objValue = object[key],
+	        othValue = other[key];
+
+	    if (customizer) {
+	      var compared = isPartial
+	        ? customizer(othValue, objValue, key, other, object, stack)
+	        : customizer(objValue, othValue, key, object, other, stack);
+	    }
+	    // Recursively compare objects (susceptible to call stack limits).
+	    if (!(compared === undefined
+	          ? (objValue === othValue || equalFunc(objValue, othValue, customizer, bitmask, stack))
+	          : compared
+	        )) {
+	      result = false;
+	      break;
+	    }
+	    skipCtor || (skipCtor = key == 'constructor');
+	  }
+	  if (result && !skipCtor) {
+	    var objCtor = object.constructor,
+	        othCtor = other.constructor;
+
+	    // Non `Object` object instances with different constructors are not equal.
+	    if (objCtor != othCtor &&
+	        ('constructor' in object && 'constructor' in other) &&
+	        !(typeof objCtor == 'function' && objCtor instanceof objCtor &&
+	          typeof othCtor == 'function' && othCtor instanceof othCtor)) {
+	      result = false;
+	    }
+	  }
+	  stack['delete'](object);
+	  return result;
+	}
+
+	/**
+	 * Gets the "length" property value of `object`.
+	 *
+	 * **Note:** This function is used to avoid a
+	 * [JIT bug](https://bugs.webkit.org/show_bug.cgi?id=142792) that affects
+	 * Safari on at least iOS 8.1-8.3 ARM64.
+	 *
+	 * @private
+	 * @param {Object} object The object to query.
+	 * @returns {*} Returns the "length" value.
+	 */
+	var getLength = baseProperty('length');
+
+	/**
+	 * Gets the data for `map`.
+	 *
+	 * @private
+	 * @param {Object} map The map to query.
+	 * @param {string} key The reference key.
+	 * @returns {*} Returns the map data.
+	 */
+	function getMapData(map, key) {
+	  var data = map.__data__;
+	  return isKeyable(key)
+	    ? data[typeof key == 'string' ? 'string' : 'hash']
+	    : data.map;
+	}
+
+	/**
+	 * Gets the native function at `key` of `object`.
+	 *
+	 * @private
+	 * @param {Object} object The object to query.
+	 * @param {string} key The key of the method to get.
+	 * @returns {*} Returns the function if it's native, else `undefined`.
+	 */
+	function getNative(object, key) {
+	  var value = getValue(object, key);
+	  return baseIsNative(value) ? value : undefined;
+	}
+
+	/**
+	 * Gets the `[[Prototype]]` of `value`.
+	 *
+	 * @private
+	 * @param {*} value The value to query.
+	 * @returns {null|Object} Returns the `[[Prototype]]`.
+	 */
+	var getPrototype = overArg(nativeGetPrototype, Object);
+
+	/**
+	 * Gets the `toStringTag` of `value`.
+	 *
+	 * @private
+	 * @param {*} value The value to query.
+	 * @returns {string} Returns the `toStringTag`.
+	 */
+	var getTag = baseGetTag;
+
+	// Fallback for data views, maps, sets, and weak maps in IE 11,
+	// for data views in Edge, and promises in Node.js.
+	if ((DataView && getTag(new DataView(new ArrayBuffer(1))) != dataViewTag) ||
+	    (Map && getTag(new Map) != mapTag) ||
+	    (Promise && getTag(Promise.resolve()) != promiseTag) ||
+	    (Set && getTag(new Set) != setTag) ||
+	    (WeakMap && getTag(new WeakMap) != weakMapTag)) {
+	  getTag = function(value) {
+	    var result = objectToString.call(value),
+	        Ctor = result == objectTag ? value.constructor : undefined,
+	        ctorString = Ctor ? toSource(Ctor) : undefined;
+
+	    if (ctorString) {
+	      switch (ctorString) {
+	        case dataViewCtorString: return dataViewTag;
+	        case mapCtorString: return mapTag;
+	        case promiseCtorString: return promiseTag;
+	        case setCtorString: return setTag;
+	        case weakMapCtorString: return weakMapTag;
+	      }
+	    }
+	    return result;
+	  };
+	}
+
+	/**
+	 * Creates an array of index keys for `object` values of arrays,
+	 * `arguments` objects, and strings, otherwise `null` is returned.
+	 *
+	 * @private
+	 * @param {Object} object The object to query.
+	 * @returns {Array|null} Returns index keys, else `null`.
+	 */
+	function indexKeys(object) {
+	  var length = object ? object.length : undefined;
+	  if (isLength(length) &&
+	      (isArray(object) || isString(object) || isArguments(object))) {
+	    return baseTimes(length, String);
+	  }
+	  return null;
+	}
+
+	/**
+	 * Checks if `value` is a valid array-like index.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
+	 * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
+	 */
+	function isIndex(value, length) {
+	  length = length == null ? MAX_SAFE_INTEGER : length;
+	  return !!length &&
+	    (typeof value == 'number' || reIsUint.test(value)) &&
+	    (value > -1 && value % 1 == 0 && value < length);
+	}
+
+	/**
+	 * Checks if `value` is suitable for use as unique object key.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is suitable, else `false`.
+	 */
+	function isKeyable(value) {
+	  var type = typeof value;
+	  return (type == 'string' || type == 'number' || type == 'symbol' || type == 'boolean')
+	    ? (value !== '__proto__')
+	    : (value === null);
+	}
+
+	/**
+	 * Checks if `func` has its source masked.
+	 *
+	 * @private
+	 * @param {Function} func The function to check.
+	 * @returns {boolean} Returns `true` if `func` is masked, else `false`.
+	 */
+	function isMasked(func) {
+	  return !!maskSrcKey && (maskSrcKey in func);
+	}
+
+	/**
+	 * Checks if `value` is likely a prototype object.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is a prototype, else `false`.
+	 */
+	function isPrototype(value) {
+	  var Ctor = value && value.constructor,
+	      proto = (typeof Ctor == 'function' && Ctor.prototype) || objectProto;
+
+	  return value === proto;
+	}
+
+	/**
+	 * Converts `func` to its source code.
+	 *
+	 * @private
+	 * @param {Function} func The function to process.
+	 * @returns {string} Returns the source code.
+	 */
+	function toSource(func) {
+	  if (func != null) {
+	    try {
+	      return funcToString.call(func);
+	    } catch (e) {}
+	    try {
+	      return (func + '');
+	    } catch (e) {}
+	  }
+	  return '';
+	}
+
+	/**
+	 * Performs a
+	 * [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
+	 * comparison between two values to determine if they are equivalent.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 4.0.0
+	 * @category Lang
+	 * @param {*} value The value to compare.
+	 * @param {*} other The other value to compare.
+	 * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+	 * @example
+	 *
+	 * var object = { 'a': 1 };
+	 * var other = { 'a': 1 };
+	 *
+	 * _.eq(object, object);
+	 * // => true
+	 *
+	 * _.eq(object, other);
+	 * // => false
+	 *
+	 * _.eq('a', 'a');
+	 * // => true
+	 *
+	 * _.eq('a', Object('a'));
+	 * // => false
+	 *
+	 * _.eq(NaN, NaN);
+	 * // => true
+	 */
+	function eq(value, other) {
+	  return value === other || (value !== value && other !== other);
+	}
+
+	/**
+	 * Checks if `value` is likely an `arguments` object.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 0.1.0
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is an `arguments` object,
+	 *  else `false`.
+	 * @example
+	 *
+	 * _.isArguments(function() { return arguments; }());
+	 * // => true
+	 *
+	 * _.isArguments([1, 2, 3]);
+	 * // => false
+	 */
+	function isArguments(value) {
+	  // Safari 8.1 incorrectly makes `arguments.callee` enumerable in strict mode.
+	  return isArrayLikeObject(value) && hasOwnProperty.call(value, 'callee') &&
+	    (!propertyIsEnumerable.call(value, 'callee') || objectToString.call(value) == argsTag);
+	}
+
+	/**
+	 * Checks if `value` is classified as an `Array` object.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 0.1.0
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is an array, else `false`.
+	 * @example
+	 *
+	 * _.isArray([1, 2, 3]);
+	 * // => true
+	 *
+	 * _.isArray(document.body.children);
+	 * // => false
+	 *
+	 * _.isArray('abc');
+	 * // => false
+	 *
+	 * _.isArray(_.noop);
+	 * // => false
+	 */
+	var isArray = Array.isArray;
+
+	/**
+	 * Checks if `value` is array-like. A value is considered array-like if it's
+	 * not a function and has a `value.length` that's an integer greater than or
+	 * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 4.0.0
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+	 * @example
+	 *
+	 * _.isArrayLike([1, 2, 3]);
+	 * // => true
+	 *
+	 * _.isArrayLike(document.body.children);
+	 * // => true
+	 *
+	 * _.isArrayLike('abc');
+	 * // => true
+	 *
+	 * _.isArrayLike(_.noop);
+	 * // => false
+	 */
+	function isArrayLike(value) {
+	  return value != null && isLength(getLength(value)) && !isFunction(value);
+	}
+
+	/**
+	 * This method is like `_.isArrayLike` except that it also checks if `value`
+	 * is an object.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 4.0.0
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is an array-like object,
+	 *  else `false`.
+	 * @example
+	 *
+	 * _.isArrayLikeObject([1, 2, 3]);
+	 * // => true
+	 *
+	 * _.isArrayLikeObject(document.body.children);
+	 * // => true
+	 *
+	 * _.isArrayLikeObject('abc');
+	 * // => false
+	 *
+	 * _.isArrayLikeObject(_.noop);
+	 * // => false
+	 */
+	function isArrayLikeObject(value) {
+	  return isObjectLike(value) && isArrayLike(value);
+	}
+
+	/**
+	 * Performs a deep comparison between two values to determine if they are
+	 * equivalent.
+	 *
+	 * **Note:** This method supports comparing arrays, array buffers, booleans,
+	 * date objects, error objects, maps, numbers, `Object` objects, regexes,
+	 * sets, strings, symbols, and typed arrays. `Object` objects are compared
+	 * by their own, not inherited, enumerable properties. Functions and DOM
+	 * nodes are **not** supported.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 0.1.0
+	 * @category Lang
+	 * @param {*} value The value to compare.
+	 * @param {*} other The other value to compare.
+	 * @returns {boolean} Returns `true` if the values are equivalent,
+	 *  else `false`.
+	 * @example
+	 *
+	 * var object = { 'a': 1 };
+	 * var other = { 'a': 1 };
+	 *
+	 * _.isEqual(object, other);
+	 * // => true
+	 *
+	 * object === other;
+	 * // => false
+	 */
+	function isEqual(value, other) {
+	  return baseIsEqual(value, other);
+	}
+
+	/**
+	 * Checks if `value` is classified as a `Function` object.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 0.1.0
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is a function, else `false`.
+	 * @example
+	 *
+	 * _.isFunction(_);
+	 * // => true
+	 *
+	 * _.isFunction(/abc/);
+	 * // => false
+	 */
+	function isFunction(value) {
+	  // The use of `Object#toString` avoids issues with the `typeof` operator
+	  // in Safari 8 which returns 'object' for typed array and weak map constructors,
+	  // and PhantomJS 1.9 which returns 'function' for `NodeList` instances.
+	  var tag = isObject(value) ? objectToString.call(value) : '';
+	  return tag == funcTag || tag == genTag;
+	}
+
+	/**
+	 * Checks if `value` is a valid array-like length.
+	 *
+	 * **Note:** This function is loosely based on
+	 * [`ToLength`](http://ecma-international.org/ecma-262/6.0/#sec-tolength).
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 4.0.0
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is a valid length,
+	 *  else `false`.
+	 * @example
+	 *
+	 * _.isLength(3);
+	 * // => true
+	 *
+	 * _.isLength(Number.MIN_VALUE);
+	 * // => false
+	 *
+	 * _.isLength(Infinity);
+	 * // => false
+	 *
+	 * _.isLength('3');
+	 * // => false
+	 */
+	function isLength(value) {
+	  return typeof value == 'number' &&
+	    value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
+	}
+
+	/**
+	 * Checks if `value` is the
+	 * [language type](http://www.ecma-international.org/ecma-262/6.0/#sec-ecmascript-language-types)
+	 * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 0.1.0
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+	 * @example
+	 *
+	 * _.isObject({});
+	 * // => true
+	 *
+	 * _.isObject([1, 2, 3]);
+	 * // => true
+	 *
+	 * _.isObject(_.noop);
+	 * // => true
+	 *
+	 * _.isObject(null);
+	 * // => false
+	 */
+	function isObject(value) {
+	  var type = typeof value;
+	  return !!value && (type == 'object' || type == 'function');
+	}
+
+	/**
+	 * Checks if `value` is object-like. A value is object-like if it's not `null`
+	 * and has a `typeof` result of "object".
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 4.0.0
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+	 * @example
+	 *
+	 * _.isObjectLike({});
+	 * // => true
+	 *
+	 * _.isObjectLike([1, 2, 3]);
+	 * // => true
+	 *
+	 * _.isObjectLike(_.noop);
+	 * // => false
+	 *
+	 * _.isObjectLike(null);
+	 * // => false
+	 */
+	function isObjectLike(value) {
+	  return !!value && typeof value == 'object';
+	}
+
+	/**
+	 * Checks if `value` is classified as a `String` primitive or object.
+	 *
+	 * @static
+	 * @since 0.1.0
+	 * @memberOf _
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is a string, else `false`.
+	 * @example
+	 *
+	 * _.isString('abc');
+	 * // => true
+	 *
+	 * _.isString(1);
+	 * // => false
+	 */
+	function isString(value) {
+	  return typeof value == 'string' ||
+	    (!isArray(value) && isObjectLike(value) && objectToString.call(value) == stringTag);
+	}
+
+	/**
+	 * Checks if `value` is classified as a typed array.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 3.0.0
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
+	 * @example
+	 *
+	 * _.isTypedArray(new Uint8Array);
+	 * // => true
+	 *
+	 * _.isTypedArray([]);
+	 * // => false
+	 */
+	var isTypedArray = nodeIsTypedArray ? baseUnary(nodeIsTypedArray) : baseIsTypedArray;
+
+	/**
+	 * Creates an array of the own enumerable property names of `object`.
+	 *
+	 * **Note:** Non-object values are coerced to objects. See the
+	 * [ES spec](http://ecma-international.org/ecma-262/6.0/#sec-object.keys)
+	 * for more details.
+	 *
+	 * @static
+	 * @since 0.1.0
+	 * @memberOf _
+	 * @category Object
+	 * @param {Object} object The object to query.
+	 * @returns {Array} Returns the array of property names.
+	 * @example
+	 *
+	 * function Foo() {
+	 *   this.a = 1;
+	 *   this.b = 2;
+	 * }
+	 *
+	 * Foo.prototype.c = 3;
+	 *
+	 * _.keys(new Foo);
+	 * // => ['a', 'b'] (iteration order is not guaranteed)
+	 *
+	 * _.keys('hi');
+	 * // => ['0', '1']
+	 */
+	function keys(object) {
+	  var isProto = isPrototype(object);
+	  if (!(isProto || isArrayLike(object))) {
+	    return baseKeys(object);
+	  }
+	  var indexes = indexKeys(object),
+	      skipIndexes = !!indexes,
+	      result = indexes || [],
+	      length = result.length;
+
+	  for (var key in object) {
+	    if (baseHas(object, key) &&
+	        !(skipIndexes && (key == 'length' || isIndex(key, length))) &&
+	        !(isProto && key == 'constructor')) {
+	      result.push(key);
+	    }
+	  }
+	  return result;
+	}
+
+	module.exports = isEqual;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(295)(module)))
+
+/***/ },
+/* 295 */
+/***/ function(module, exports) {
+
+	module.exports = function(module) {
+		if(!module.webpackPolyfill) {
+			module.deprecate = function() {};
+			module.paths = [];
+			// module.parent = undefined by default
+			module.children = [];
+			module.webpackPolyfill = 1;
+		}
+		return module;
+	}
+
+
+/***/ },
+/* 296 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _TableHeader = __webpack_require__(290);
+
+	var _TableHeader2 = _interopRequireDefault(_TableHeader);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	function initState(props) {
+	    return {
+	        rows: (props.rows || props.data).slice(),
+	        sortHeader: null,
+	        isAsc: true
+	    };
+	}
+
+	var propTypes = {
+	    columns: function columns(props, propName, componentName) {
+	        return props[propName] && new Error(componentName + ': `' + propName + '` is deprecated, please use the component `TableHeader` instead.');
+	    },
+	    data: function data(props, propName, componentName) {
+	        return props[propName] && new Error(componentName + ': `' + propName + '` is deprecated, please use `rows` instead. `' + propName + '` will be removed in the next major release.');
+	    },
+	    rows: _react.PropTypes.arrayOf(_react.PropTypes.object).isRequired,
+	    sortable: _react.PropTypes.bool
+	};
+
+	exports.default = function (Component) {
+	    var Sortable = function (_React$Component) {
+	        _inherits(Sortable, _React$Component);
+
+	        function Sortable(props) {
+	            _classCallCheck(this, Sortable);
+
+	            var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Sortable).call(this, props));
+
+	            _this.handleClickColumn = _this.handleClickColumn.bind(_this);
+
+	            if (props.sortable) {
+	                _this.state = initState(props);
+	            }
+	            return _this;
+	        }
+
+	        _createClass(Sortable, [{
+	            key: 'componentWillReceiveProps',
+	            value: function componentWillReceiveProps(nextProps) {
+	                if (nextProps.sortable) {
+	                    var realRows = nextProps.rows || nextProps.data;
+	                    var rows = this.state.sortHeader ? this.getSortedRowsForColumn(this.state.isAsc, this.state.sortHeader, realRows) : realRows;
+
+	                    this.setState({
+	                        rows: rows
+	                    });
+	                }
+	            }
+	        }, {
+	            key: 'getColumnClass',
+	            value: function getColumnClass(column) {
+	                var _state = this.state;
+	                var sortHeader = _state.sortHeader;
+	                var isAsc = _state.isAsc;
+
+
+	                return (0, _classnames2.default)(column.className, {
+	                    'mdl-data-table__header--sorted-ascending': sortHeader === column.name && isAsc,
+	                    'mdl-data-table__header--sorted-descending': sortHeader === column.name && !isAsc
+	                });
+	            }
+	        }, {
+	            key: 'getDefaultSortFn',
+	            value: function getDefaultSortFn(a, b, isAsc) {
+	                return isAsc ? a.localeCompare(b) : b.localeCompare(a);
+	            }
+	        }, {
+	            key: 'getSortedRowsForColumn',
+	            value: function getSortedRowsForColumn(isAsc, columnName, rows) {
+	                var columns = !!this.props.children ? _react2.default.Children.map(this.props.children, function (child) {
+	                    return child.props;
+	                }) : this.props.columns;
+
+	                var sortFn = this.getDefaultSortFn;
+	                for (var i = 0; i < columns.length; i++) {
+	                    if (columns[i].name === columnName && columns[i].sortFn) {
+	                        sortFn = columns[i].sortFn;
+	                        break;
+	                    }
+	                }
+
+	                return rows.sort(function (a, b) {
+	                    return sortFn(String(a[columnName]), String(b[columnName]), isAsc);
+	                });
+	            }
+	        }, {
+	            key: 'handleClickColumn',
+	            value: function handleClickColumn(e, columnName) {
+	                var isAsc = this.state.sortHeader === columnName ? !this.state.isAsc : true;
+	                var rows = this.getSortedRowsForColumn(isAsc, columnName, this.state.rows);
+	                this.setState({
+	                    sortHeader: columnName,
+	                    isAsc: isAsc,
+	                    rows: rows
+	                });
+	            }
+	        }, {
+	            key: 'renderTableHeaders',
+	            value: function renderTableHeaders() {
+	                var _this2 = this;
+
+	                var _props = this.props;
+	                var children = _props.children;
+	                var columns = _props.columns;
+	                var sortable = _props.sortable;
+
+
+	                if (sortable) {
+	                    return children ? _react2.default.Children.map(children, function (child) {
+	                        return _react2.default.cloneElement(child, {
+	                            className: _this2.getColumnClass(child.props),
+	                            onClick: _this2.handleClickColumn
+	                        });
+	                    }) : columns.map(function (column) {
+	                        return _react2.default.createElement(
+	                            _TableHeader2.default,
+	                            {
+	                                key: column.name,
+	                                className: _this2.getColumnClass(column),
+	                                name: column.name,
+	                                numeric: column.numeric,
+	                                tooltip: column.tooltip,
+	                                onClick: _this2.handleClickColumn
+	                            },
+	                            column.label
+	                        );
+	                    });
+	                }
+	                return children;
+	            }
+	        }, {
+	            key: 'render',
+	            value: function render() {
+	                var _props2 = this.props;
+	                var rows = _props2.rows;
+	                var data = _props2.data;
+
+	                var otherProps = _objectWithoutProperties(_props2, ['rows', 'data']);
+
+	                var realRows = this.state && this.state.rows || rows || data;
+
+	                // remove unwanted props
+	                delete otherProps.sortable;
+
+	                return _react2.default.createElement(
+	                    Component,
+	                    _extends({ rows: realRows }, otherProps),
+	                    this.renderTableHeaders()
+	                );
+	            }
+	        }]);
+
+	        return Sortable;
+	    }(_react2.default.Component);
+
+	    Sortable.propTypes = propTypes;
+	    return Sortable;
+	};
+
+/***/ },
+/* 297 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.DialogActions = exports.DialogContent = exports.DialogTitle = exports.Dialog = undefined;
+
+	var _Dialog = __webpack_require__(298);
+
+	Object.defineProperty(exports, 'Dialog', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_Dialog).default;
+	  }
+	});
+
+	var _DialogTitle = __webpack_require__(299);
+
+	Object.defineProperty(exports, 'DialogTitle', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_DialogTitle).default;
+	  }
+	});
+
+	var _DialogActions = __webpack_require__(300);
+
+	Object.defineProperty(exports, 'DialogActions', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_DialogActions).default;
+	  }
+	});
+
+	var _basicClassCreator = __webpack_require__(287);
+
+	var _basicClassCreator2 = _interopRequireDefault(_basicClassCreator);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var DialogContent = exports.DialogContent = (0, _basicClassCreator2.default)('DialogContent', 'mdl-dialog__content');
+
+/***/ },
+/* 298 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(33);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var propTypes = {
+	    className: _react.PropTypes.string,
+	    onCancel: _react.PropTypes.func,
+	    open: _react.PropTypes.bool
+	};
+
+	var defaultProps = {
+	    onCancel: function onCancel(e) {
+	        return e.preventDefault();
+	    }
+	};
+
+	var Dialog = function (_React$Component) {
+	    _inherits(Dialog, _React$Component);
+
+	    function Dialog() {
+	        _classCallCheck(this, Dialog);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Dialog).apply(this, arguments));
+	    }
+
+	    _createClass(Dialog, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            this.refs.dialog.addEventListener('cancel', this.props.onCancel);
+	            if (this.props.open) {
+	                (0, _reactDom.findDOMNode)(this).showModal();
+	            }
+	        }
+	    }, {
+	        key: 'componentDidUpdate',
+	        value: function componentDidUpdate(prevProps) {
+	            if (this.props.open !== prevProps.open) {
+	                if (this.props.open) {
+	                    (0, _reactDom.findDOMNode)(this).showModal();
+
+	                    // display the dialog at the right location
+	                    // needed for the polyfill, otherwise it's not at the right position
+	                    var bodyHeight = document.body.clientHeight;
+	                    var dialogHeight = this.refs.dialog.clientHeight;
+	                    this.refs.dialog.style.position = 'fixed';
+	                    this.refs.dialog.style.top = (bodyHeight - dialogHeight) / 2 + 'px';
+	                } else {
+	                    (0, _reactDom.findDOMNode)(this).close();
+	                }
+	            }
+	        }
+	    }, {
+	        key: 'componentWillUnmount',
+	        value: function componentWillUnmount() {
+	            this.refs.dialog.removeEventListener('cancel', this.props.onCancel);
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            // We cannot set the `open` prop on the Dialog if we manage its state manually with `showModal`,
+	            // this the disabled eslint rule
+	            // eslint-disable-next-line no-unused-vars
+	            var _props = this.props;
+	            var className = _props.className;
+	            var open = _props.open;
+	            var onCancel = _props.onCancel;
+	            var children = _props.children;
+
+	            var otherProps = _objectWithoutProperties(_props, ['className', 'open', 'onCancel', 'children']);
+
+	            var classes = (0, _classnames2.default)('mdl-dialog', className);
+
+	            return _react2.default.createElement(
+	                'dialog',
+	                _extends({ ref: 'dialog', className: classes }, otherProps),
+	                children
+	            );
+	        }
+	    }]);
+
+	    return Dialog;
+	}(_react2.default.Component);
+
+	Dialog.propTypes = propTypes;
+	Dialog.defaultProps = defaultProps;
+
+	exports.default = Dialog;
+
+/***/ },
+/* 299 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var DialogTitle = function DialogTitle(props) {
+	    var className = props.className;
+	    var component = props.component;
+	    var children = props.children;
+
+	    var otherProps = _objectWithoutProperties(props, ['className', 'component', 'children']);
+
+	    return _react2.default.createElement(component || 'h4', _extends({
+	        className: (0, _classnames2.default)('mdl-dialog__title', className)
+	    }, otherProps), children);
+	};
+
+	DialogTitle.propTypes = {
+	    className: _react.PropTypes.string,
+	    component: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element, _react.PropTypes.func])
+	};
+
+	exports.default = DialogTitle;
+
+/***/ },
+/* 300 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var DialogActions = function DialogActions(props) {
+	    var className = props.className;
+	    var fullWidth = props.fullWidth;
+	    var children = props.children;
+
+	    var otherProps = _objectWithoutProperties(props, ['className', 'fullWidth', 'children']);
+
+	    var classes = (0, _classnames2.default)('mdl-dialog__actions', {
+	        'mdl-dialog__actions--full-width': fullWidth
+	    }, className);
+
+	    return _react2.default.createElement(
+	        'div',
+	        _extends({ className: classes }, otherProps),
+	        children
+	    );
+	};
+
+	DialogActions.propTypes = {
+	    className: _react.PropTypes.string,
+	    fullWidth: _react.PropTypes.bool
+	};
+
+	exports.default = DialogActions;
+
+/***/ },
+/* 301 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _Button = __webpack_require__(280);
+
+	var _Button2 = _interopRequireDefault(_Button);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var FABButton = function FABButton(props) {
+	    var mini = props.mini;
+	    var className = props.className;
+	    var children = props.children;
+
+	    var otherProps = _objectWithoutProperties(props, ['mini', 'className', 'children']);
+
+	    var classes = (0, _classnames2.default)('mdl-button--fab', {
+	        'mdl-button--mini-fab': mini
+	    }, className);
+
+	    return _react2.default.createElement(
+	        _Button2.default,
+	        _extends({ className: classes }, otherProps),
+	        children
+	    );
+	};
+
+	FABButton.propTypes = {
+	    className: _react.PropTypes.string,
+	    mini: _react.PropTypes.bool
+	};
+
+	exports.default = FABButton;
+
+/***/ },
+/* 302 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _Footer = __webpack_require__(303);
+
+	Object.defineProperty(exports, 'Footer', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_Footer).default;
+	  }
+	});
+
+	var _Section = __webpack_require__(305);
+
+	Object.defineProperty(exports, 'FooterSection', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_Section).default;
+	  }
+	});
+
+	var _DropDownSection = __webpack_require__(306);
+
+	Object.defineProperty(exports, 'FooterDropDownSection', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_DropDownSection).default;
+	  }
+	});
+
+	var _LinkList = __webpack_require__(307);
+
+	Object.defineProperty(exports, 'FooterLinkList', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_LinkList).default;
+	  }
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 303 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _cloneChildren = __webpack_require__(304);
+
+	var _cloneChildren2 = _interopRequireDefault(_cloneChildren);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var Footer = function Footer(props) {
+	    var className = props.className;
+	    var size = props.size;
+	    var children = props.children;
+
+	    var otherProps = _objectWithoutProperties(props, ['className', 'size', 'children']);
+
+	    var classes = (0, _classnames2.default)(_defineProperty({}, 'mdl-' + size + '-footer', true), className);
+
+	    return _react2.default.createElement(
+	        'footer',
+	        _extends({ className: classes }, otherProps),
+	        (0, _cloneChildren2.default)(children, { size: size })
+	    );
+	};
+
+	Footer.propTypes = {
+	    className: _react.PropTypes.string,
+	    size: _react.PropTypes.oneOf(['mini', 'mega'])
+	};
+	Footer.defaultProps = {
+	    size: 'mega'
+	};
+
+	exports.default = Footer;
+
+/***/ },
+/* 304 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function (children, props) {
+	    return _react2.default.Children.map(children, function (child) {
+	        if (!child) return child;
+	        var newProps = typeof props === 'function' ? props(child) : props;
+	        return _react2.default.cloneElement(child, newProps);
+	    });
+	};
+
+/***/ },
+/* 305 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _cloneChildren = __webpack_require__(304);
+
+	var _cloneChildren2 = _interopRequireDefault(_cloneChildren);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var Section = function Section(props) {
+	    var className = props.className;
+	    var logo = props.logo;
+	    var size = props.size;
+	    var type = props.type;
+	    var children = props.children;
+
+	    var otherProps = _objectWithoutProperties(props, ['className', 'logo', 'size', 'type', 'children']);
+
+	    var classes = (0, _classnames2.default)(_defineProperty({}, 'mdl-' + size + '-footer__' + type + '-section', true), className);
+
+	    return _react2.default.createElement(
+	        'div',
+	        _extends({ className: classes }, otherProps),
+	        logo ? _react2.default.createElement(
+	            'div',
+	            { className: 'mdl-logo' },
+	            logo
+	        ) : null,
+	        (0, _cloneChildren2.default)(children, { size: size })
+	    );
+	};
+
+	Section.propTypes = {
+	    className: _react.PropTypes.string,
+	    logo: _react.PropTypes.node,
+	    size: _react.PropTypes.oneOf(['mini', 'mega']),
+	    type: _react.PropTypes.oneOf(['top', 'middle', 'bottom', 'left', 'right'])
+	};
+	Section.defaultProps = {
+	    size: 'mega',
+	    type: 'left'
+	};
+
+	exports.default = Section;
+
+/***/ },
+/* 306 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _cloneChildren = __webpack_require__(304);
+
+	var _cloneChildren2 = _interopRequireDefault(_cloneChildren);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var DropDownSection = function DropDownSection(props) {
+	    var className = props.className;
+	    var size = props.size;
+	    var title = props.title;
+	    var children = props.children;
+
+	    var otherProps = _objectWithoutProperties(props, ['className', 'size', 'title', 'children']);
+
+	    var classes = (0, _classnames2.default)(_defineProperty({}, 'mdl-' + size + '-footer__drop-down-section', true), className);
+
+	    return _react2.default.createElement(
+	        'div',
+	        _extends({ className: classes }, otherProps),
+	        _react2.default.createElement('input', { className: 'mdl-' + size + '-footer__heading-checkbox', type: 'checkbox', defaultChecked: true }),
+	        _react2.default.createElement(
+	            'h1',
+	            { className: 'mdl-' + size + '-footer__heading' },
+	            title
+	        ),
+	        (0, _cloneChildren2.default)(children, { size: size })
+	    );
+	};
+
+	DropDownSection.propTypes = {
+	    className: _react.PropTypes.string,
+	    size: _react.PropTypes.oneOf(['mini', 'mega']),
+	    title: _react.PropTypes.node.isRequired
+	};
+	DropDownSection.defaultProps = {
+	    size: 'mega'
+	};
+
+	exports.default = DropDownSection;
+
+/***/ },
+/* 307 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var LinkList = function LinkList(props) {
+	    var className = props.className;
+	    var size = props.size;
+	    var children = props.children;
+
+	    var otherProps = _objectWithoutProperties(props, ['className', 'size', 'children']);
+
+	    var classes = (0, _classnames2.default)(_defineProperty({}, 'mdl-' + size + '-footer__link-list', true), className);
+
+	    return _react2.default.createElement(
+	        'ul',
+	        _extends({ className: classes }, otherProps),
+	        _react2.default.Children.map(children, function (child) {
+	            return _react2.default.createElement(
+	                'li',
+	                null,
+	                child
+	            );
+	        })
+	    );
+	};
+
+	LinkList.propTypes = {
+	    className: _react.PropTypes.string,
+	    size: _react.PropTypes.oneOf(['mini', 'mega'])
+	};
+	LinkList.defaultProps = {
+	    size: 'mega'
+	};
+
+	exports.default = LinkList;
+
+/***/ },
+/* 308 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.Cell = undefined;
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _clamp = __webpack_require__(283);
+
+	var _clamp2 = _interopRequireDefault(_clamp);
+
+	var _shadows = __webpack_require__(284);
+
+	var _shadows2 = _interopRequireDefault(_shadows);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var Grid = function Grid(props) {
+	    var noSpacing = props.noSpacing;
+	    var className = props.className;
+	    var children = props.children;
+	    var component = props.component;
+	    var shadow = props.shadow;
+
+	    var otherProps = _objectWithoutProperties(props, ['noSpacing', 'className', 'children', 'component', 'shadow']);
+
+	    var hasShadow = typeof shadow !== 'undefined';
+	    var shadowLevel = (0, _clamp2.default)(shadow || 0, 0, _shadows2.default.length - 1);
+
+	    var classes = (0, _classnames2.default)('mdl-grid', _defineProperty({
+	        'mdl-grid--no-spacing': noSpacing
+	    }, _shadows2.default[shadowLevel], hasShadow), className);
+
+	    return _react2.default.createElement(component || 'div', _extends({
+	        className: classes
+	    }, otherProps), children);
+	};
+
+	Grid.propTypes = {
+	    className: _react.PropTypes.string,
+	    component: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element, _react.PropTypes.func]),
+	    noSpacing: _react.PropTypes.bool,
+	    shadow: _react.PropTypes.number
+	};
+
+	function isDefined(data) {
+	    return typeof data !== 'undefined';
+	}
+
+	/* eslint-disable react/no-multi-comp */
+	var Cell = function Cell(props) {
+	    var _classNames2;
+
+	    var align = props.align;
+	    var className = props.className;
+	    var children = props.children;
+	    var col = props.col;
+	    var phone = props.phone;
+	    var tablet = props.tablet;
+	    var component = props.component;
+	    var hideDesktop = props.hideDesktop;
+	    var hidePhone = props.hidePhone;
+	    var hideTablet = props.hideTablet;
+	    var shadow = props.shadow;
+	    var offset = props.offset;
+	    var offsetDesktop = props.offsetDesktop;
+	    var offsetTablet = props.offsetTablet;
+	    var offsetPhone = props.offsetPhone;
+
+	    var otherProps = _objectWithoutProperties(props, ['align', 'className', 'children', 'col', 'phone', 'tablet', 'component', 'hideDesktop', 'hidePhone', 'hideTablet', 'shadow', 'offset', 'offsetDesktop', 'offsetTablet', 'offsetPhone']);
+
+	    var hasShadow = isDefined(shadow);
+	    var shadowLevel = (0, _clamp2.default)(shadow || 0, 0, _shadows2.default.length - 1);
+
+	    var classes = (0, _classnames2.default)('mdl-cell', (_classNames2 = {}, _defineProperty(_classNames2, 'mdl-cell--' + col + '-col', true), _defineProperty(_classNames2, 'mdl-cell--' + phone + '-col-phone', isDefined(phone)), _defineProperty(_classNames2, 'mdl-cell--' + tablet + '-col-tablet', isDefined(tablet)), _defineProperty(_classNames2, 'mdl-cell--' + align, isDefined(align)), _defineProperty(_classNames2, 'mdl-cell--' + offset + '-offset', isDefined(offset)), _defineProperty(_classNames2, 'mdl-cell--' + offsetDesktop + '-offset-desktop', isDefined(offsetDesktop)), _defineProperty(_classNames2, 'mdl-cell--' + offsetTablet + '-offset-tablet', isDefined(offsetTablet)), _defineProperty(_classNames2, 'mdl-cell--' + offsetPhone + '-offset-phone', isDefined(offsetPhone)), _defineProperty(_classNames2, 'mdl-cell--hide-desktop', hideDesktop), _defineProperty(_classNames2, 'mdl-cell--hide-phone', hidePhone), _defineProperty(_classNames2, 'mdl-cell--hide-tablet', hideTablet), _defineProperty(_classNames2, _shadows2.default[shadowLevel], hasShadow), _classNames2), className);
+
+	    return _react2.default.createElement(component || 'div', _extends({
+	        className: classes
+	    }, otherProps), children);
+	};
+
+	Cell.propTypes = {
+	    align: _react.PropTypes.oneOf(['top', 'middle', 'bottom', 'stretch']),
+	    className: _react.PropTypes.string,
+	    col: _react.PropTypes.number.isRequired,
+	    component: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element, _react.PropTypes.func]),
+	    phone: _react.PropTypes.number,
+	    tablet: _react.PropTypes.number,
+	    offset: _react.PropTypes.number,
+	    offsetDesktop: _react.PropTypes.number,
+	    offsetTablet: _react.PropTypes.number,
+	    offsetPhone: _react.PropTypes.number,
+	    hideDesktop: _react.PropTypes.bool,
+	    hidePhone: _react.PropTypes.bool,
+	    hideTablet: _react.PropTypes.bool,
+	    shadow: _react.PropTypes.number
+	};
+
+	exports.default = Grid;
+	exports.Cell = Cell;
+
+/***/ },
+/* 309 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var Icon = function Icon(props) {
+	    var className = props.className;
+	    var name = props.name;
+
+	    var otherProps = _objectWithoutProperties(props, ['className', 'name']);
+
+	    var classes = (0, _classnames2.default)('material-icons', className);
+
+	    return _react2.default.createElement(
+	        'i',
+	        _extends({ className: classes }, otherProps),
+	        name
+	    );
+	};
+
+	Icon.propTypes = {
+	    className: _react.PropTypes.string,
+	    name: _react.PropTypes.string.isRequired
+	};
+
+	exports.default = Icon;
+
+/***/ },
+/* 310 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _Button = __webpack_require__(280);
+
+	var _Button2 = _interopRequireDefault(_Button);
+
+	var _Icon = __webpack_require__(309);
+
+	var _Icon2 = _interopRequireDefault(_Icon);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var IconButton = function IconButton(props) {
+	    var className = props.className;
+	    var name = props.name;
+
+	    var otherProps = _objectWithoutProperties(props, ['className', 'name']);
+
+	    var classes = (0, _classnames2.default)('mdl-button--icon', className);
+
+	    return _react2.default.createElement(
+	        _Button2.default,
+	        _extends({ className: classes }, otherProps),
+	        _react2.default.createElement(_Icon2.default, { name: name })
+	    );
+	};
+
+	IconButton.propTypes = {
+	    className: _react.PropTypes.string,
+	    name: _react.PropTypes.string.isRequired
+	};
+
+	exports.default = IconButton;
+
+/***/ },
+/* 311 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(33);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _Icon = __webpack_require__(309);
+
+	var _Icon2 = _interopRequireDefault(_Icon);
+
+	var _mdlUpgrade = __webpack_require__(275);
+
+	var _mdlUpgrade2 = _interopRequireDefault(_mdlUpgrade);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var propTypes = {
+	    checked: _react.PropTypes.bool,
+	    className: _react.PropTypes.string,
+	    disabled: _react.PropTypes.bool,
+	    name: _react.PropTypes.string.isRequired,
+	    onChange: _react.PropTypes.func,
+	    ripple: _react.PropTypes.bool
+	};
+
+	var IconToggle = function (_React$Component) {
+	    _inherits(IconToggle, _React$Component);
+
+	    function IconToggle() {
+	        _classCallCheck(this, IconToggle);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(IconToggle).apply(this, arguments));
+	    }
+
+	    _createClass(IconToggle, [{
+	        key: 'componentDidUpdate',
+	        value: function componentDidUpdate(prevProps) {
+	            if (this.props.disabled !== prevProps.disabled) {
+	                var fnName = this.props.disabled ? 'disable' : 'enable';
+	                (0, _reactDom.findDOMNode)(this).MaterialIconToggle[fnName]();
+	            }
+	            if (this.props.checked !== prevProps.checked) {
+	                var _fnName = this.props.checked ? 'check' : 'uncheck';
+	                (0, _reactDom.findDOMNode)(this).MaterialIconToggle[_fnName]();
+	            }
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _props = this.props;
+	            var className = _props.className;
+	            var name = _props.name;
+	            var ripple = _props.ripple;
+
+	            var inputProps = _objectWithoutProperties(_props, ['className', 'name', 'ripple']);
+
+	            var classes = (0, _classnames2.default)('mdl-icon-toggle mdl-js-icon-toggle', {
+	                'mdl-js-ripple-effect': ripple
+	            }, className);
+
+	            return _react2.default.createElement(
+	                'label',
+	                { className: classes },
+	                _react2.default.createElement('input', _extends({
+	                    type: 'checkbox',
+	                    className: 'mdl-icon-toggle__input'
+	                }, inputProps)),
+	                _react2.default.createElement(_Icon2.default, { className: 'mdl-icon-toggle__label', name: name })
+	            );
+	        }
+	    }]);
+
+	    return IconToggle;
+	}(_react2.default.Component);
+
+	IconToggle.propTypes = propTypes;
+
+	exports.default = (0, _mdlUpgrade2.default)(IconToggle);
+
+/***/ },
+/* 312 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _Layout = __webpack_require__(313);
+
+	Object.defineProperty(exports, 'Layout', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_Layout).default;
+	  }
+	});
+
+	var _Content = __webpack_require__(314);
+
+	Object.defineProperty(exports, 'Content', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_Content).default;
+	  }
+	});
+
+	var _Drawer = __webpack_require__(315);
+
+	Object.defineProperty(exports, 'Drawer', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_Drawer).default;
+	  }
+	});
+
+	var _Header = __webpack_require__(316);
+
+	Object.defineProperty(exports, 'Header', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_Header).default;
+	  }
+	});
+
+	var _HeaderRow = __webpack_require__(317);
+
+	Object.defineProperty(exports, 'HeaderRow', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_HeaderRow).default;
+	  }
+	});
+
+	var _HeaderTabs = __webpack_require__(319);
+
+	Object.defineProperty(exports, 'HeaderTabs', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_HeaderTabs).default;
+	  }
+	});
+
+	var _Navigation = __webpack_require__(321);
+
+	Object.defineProperty(exports, 'Navigation', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_Navigation).default;
+	  }
+	});
+
+	var _Spacer = __webpack_require__(318);
+
+	Object.defineProperty(exports, 'Spacer', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_Spacer).default;
+	  }
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 313 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _mdlUpgrade = __webpack_require__(275);
+
+	var _mdlUpgrade2 = _interopRequireDefault(_mdlUpgrade);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var propTypes = {
+	    className: _react.PropTypes.string,
+	    fixedDrawer: _react.PropTypes.bool,
+	    fixedHeader: _react.PropTypes.bool,
+	    fixedTabs: _react.PropTypes.bool
+	};
+
+	// eslint-disable-next-line react/prefer-stateless-function
+
+	var Layout = function (_React$Component) {
+	    _inherits(Layout, _React$Component);
+
+	    function Layout() {
+	        _classCallCheck(this, Layout);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Layout).apply(this, arguments));
+	    }
+
+	    _createClass(Layout, [{
+	        key: 'render',
+	        value: function render() {
+	            var _props = this.props;
+	            var className = _props.className;
+	            var fixedDrawer = _props.fixedDrawer;
+	            var fixedHeader = _props.fixedHeader;
+	            var fixedTabs = _props.fixedTabs;
+
+	            var otherProps = _objectWithoutProperties(_props, ['className', 'fixedDrawer', 'fixedHeader', 'fixedTabs']);
+
+	            var classes = (0, _classnames2.default)('mdl-layout mdl-js-layout', {
+	                'mdl-layout--fixed-drawer': fixedDrawer,
+	                'mdl-layout--fixed-header': fixedHeader,
+	                'mdl-layout--fixed-tabs': fixedTabs
+	            }, className);
+
+	            return _react2.default.createElement(
+	                'div',
+	                _extends({ className: classes }, otherProps),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'mdl-layout__inner-container' },
+	                    this.props.children
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Layout;
+	}(_react2.default.Component);
+
+	Layout.propTypes = propTypes;
+
+	exports.default = (0, _mdlUpgrade2.default)(Layout);
+
+/***/ },
+/* 314 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var Content = function Content(props) {
+	    var children = props.children;
+	    var className = props.className;
+	    var component = props.component;
+
+	    var otherProps = _objectWithoutProperties(props, ['children', 'className', 'component']);
+
+	    var classes = (0, _classnames2.default)('mdl-layout__content', className);
+
+	    return _react2.default.createElement(component || 'div', _extends({
+	        className: classes
+	    }, otherProps), children);
+	};
+
+	Content.propTypes = {
+	    className: _react.PropTypes.string,
+	    component: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element, _react.PropTypes.func])
+	};
+
+	exports.default = Content;
+
+/***/ },
+/* 315 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var Drawer = function Drawer(props) {
+	    var className = props.className;
+	    var title = props.title;
+	    var children = props.children;
+
+	    var otherProps = _objectWithoutProperties(props, ['className', 'title', 'children']);
+
+	    var classes = (0, _classnames2.default)('mdl-layout__drawer', className);
+
+	    return _react2.default.createElement(
+	        'div',
+	        _extends({ className: classes }, otherProps),
+	        title ? _react2.default.createElement(
+	            'span',
+	            { className: 'mdl-layout-title' },
+	            title
+	        ) : null,
+	        children
+	    );
+	};
+	Drawer.propTypes = {
+	    className: _react.PropTypes.string,
+	    title: _react.PropTypes.node
+	};
+
+	exports.default = Drawer;
+
+/***/ },
+/* 316 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _HeaderRow = __webpack_require__(317);
+
+	var _HeaderRow2 = _interopRequireDefault(_HeaderRow);
+
+	var _HeaderTabs = __webpack_require__(319);
+
+	var _HeaderTabs2 = _interopRequireDefault(_HeaderTabs);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var Header = function Header(props) {
+	    var className = props.className;
+	    var scroll = props.scroll;
+	    var seamed = props.seamed;
+	    var title = props.title;
+	    var transparent = props.transparent;
+	    var waterfall = props.waterfall;
+	    var hideTop = props.hideTop;
+	    var hideSpacer = props.hideSpacer;
+	    var children = props.children;
+
+	    var otherProps = _objectWithoutProperties(props, ['className', 'scroll', 'seamed', 'title', 'transparent', 'waterfall', 'hideTop', 'hideSpacer', 'children']);
+
+	    var classes = (0, _classnames2.default)('mdl-layout__header', {
+	        'mdl-layout__header--scroll': scroll,
+	        'mdl-layout__header--seamed': seamed,
+	        'mdl-layout__header--transparent': transparent,
+	        'mdl-layout__header--waterfall': waterfall,
+	        'mdl-layout__header--waterfall-hide-top': waterfall && hideTop
+	    }, className);
+
+	    var isRowOrTab = false;
+	    _react2.default.Children.forEach(children, function (child) {
+	        if (child && (child.type === _HeaderRow2.default || child.type === _HeaderTabs2.default)) {
+	            isRowOrTab = true;
+	        }
+	    });
+
+	    return _react2.default.createElement(
+	        'header',
+	        _extends({ className: classes }, otherProps),
+	        isRowOrTab ? children : _react2.default.createElement(
+	            _HeaderRow2.default,
+	            { title: title, hideSpacer: hideSpacer },
+	            children
+	        )
+	    );
+	};
+	Header.propTypes = {
+	    className: _react.PropTypes.string,
+	    scroll: _react.PropTypes.bool,
+	    seamed: _react.PropTypes.bool,
+	    title: _react.PropTypes.node,
+	    transparent: _react.PropTypes.bool,
+	    waterfall: _react.PropTypes.bool,
+	    hideTop: _react.PropTypes.bool,
+	    hideSpacer: _react.PropTypes.bool
+	};
+
+	exports.default = Header;
+
+/***/ },
+/* 317 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _Spacer = __webpack_require__(318);
+
+	var _Spacer2 = _interopRequireDefault(_Spacer);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var HeaderRow = function HeaderRow(props) {
+	    var className = props.className;
+	    var title = props.title;
+	    var children = props.children;
+	    var hideSpacer = props.hideSpacer;
+
+	    var otherProps = _objectWithoutProperties(props, ['className', 'title', 'children', 'hideSpacer']);
+
+	    var classes = (0, _classnames2.default)('mdl-layout__header-row', className);
+
+	    return _react2.default.createElement(
+	        'div',
+	        _extends({ className: classes }, otherProps),
+	        title && _react2.default.createElement(
+	            'span',
+	            { className: 'mdl-layout-title' },
+	            title
+	        ),
+	        title && !hideSpacer && _react2.default.createElement(_Spacer2.default, null),
+	        children
+	    );
+	};
+	HeaderRow.propTypes = {
+	    className: _react.PropTypes.string,
+	    title: _react.PropTypes.node,
+	    hideSpacer: _react.PropTypes.bool
+	};
+
+	exports.default = HeaderRow;
+
+/***/ },
+/* 318 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _basicClassCreator = __webpack_require__(287);
+
+	var _basicClassCreator2 = _interopRequireDefault(_basicClassCreator);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = (0, _basicClassCreator2.default)('Spacer', 'mdl-layout-spacer');
+
+/***/ },
+/* 319 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _TabBar = __webpack_require__(320);
+
+	var _TabBar2 = _interopRequireDefault(_TabBar);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var HeaderTabs = function HeaderTabs(props) {
+	    var className = props.className;
+	    var ripple = props.ripple;
+	    var children = props.children;
+
+	    var otherProps = _objectWithoutProperties(props, ['className', 'ripple', 'children']);
+
+	    var classes = (0, _classnames2.default)({
+	        'mdl-js-ripple-effect': ripple
+	    }, className);
+
+	    return _react2.default.createElement(
+	        _TabBar2.default,
+	        _extends({ cssPrefix: 'mdl-layout', className: classes }, otherProps),
+	        children
+	    );
+	};
+	HeaderTabs.propTypes = {
+	    activeTab: _react.PropTypes.number,
+	    className: _react.PropTypes.string,
+	    onChange: _react.PropTypes.func,
+	    ripple: _react.PropTypes.bool
+	};
+
+	exports.default = HeaderTabs;
+
+/***/ },
+/* 320 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var propTypes = {
+	    activeTab: _react.PropTypes.number,
+	    className: _react.PropTypes.string,
+	    cssPrefix: _react.PropTypes.string.isRequired,
+	    onChange: _react.PropTypes.func
+	};
+
+	var defaultProps = {
+	    activeTab: 0
+	};
+
+	var TabBar = function (_React$Component) {
+	    _inherits(TabBar, _React$Component);
+
+	    function TabBar(props) {
+	        _classCallCheck(this, TabBar);
+
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(TabBar).call(this, props));
+
+	        _this.handleClickTab = _this.handleClickTab.bind(_this);
+	        return _this;
+	    }
+
+	    _createClass(TabBar, [{
+	        key: 'handleClickTab',
+	        value: function handleClickTab(tabId) {
+	            if (this.props.onChange) {
+	                this.props.onChange(tabId);
+	            }
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _this2 = this;
+
+	            var _props = this.props;
+	            var activeTab = _props.activeTab;
+	            var className = _props.className;
+	            var cssPrefix = _props.cssPrefix;
+	            var children = _props.children;
+
+	            var otherProps = _objectWithoutProperties(_props, ['activeTab', 'className', 'cssPrefix', 'children']);
+
+	            var classes = (0, _classnames2.default)(_defineProperty({}, cssPrefix + '__tab-bar', true), className);
+
+	            return _react2.default.createElement(
+	                'div',
+	                _extends({ className: classes }, otherProps),
+	                _react2.default.Children.map(children, function (child, tabId) {
+	                    return _react2.default.cloneElement(child, {
+	                        cssPrefix: cssPrefix,
+	                        tabId: tabId,
+	                        active: tabId === activeTab,
+	                        onTabClick: _this2.handleClickTab
+	                    });
+	                })
+	            );
+	        }
+	    }]);
+
+	    return TabBar;
+	}(_react2.default.Component);
+
+	TabBar.propTypes = propTypes;
+	TabBar.defaultProps = defaultProps;
+
+	exports.default = TabBar;
+
+/***/ },
+/* 321 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _cloneChildren = __webpack_require__(304);
+
+	var _cloneChildren2 = _interopRequireDefault(_cloneChildren);
+
+	var _Spacer = __webpack_require__(318);
+
+	var _Spacer2 = _interopRequireDefault(_Spacer);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var Navigation = function Navigation(props) {
+	    var className = props.className;
+	    var children = props.children;
+
+	    var otherProps = _objectWithoutProperties(props, ['className', 'children']);
+
+	    var classes = (0, _classnames2.default)('mdl-navigation', className);
+
+	    return _react2.default.createElement(
+	        'nav',
+	        _extends({ className: classes }, otherProps),
+	        (0, _cloneChildren2.default)(children, function (child) {
+	            return {
+	                className: (0, _classnames2.default)({ 'mdl-navigation__link': child.type !== _Spacer2.default }, child.props.className)
+	            };
+	        })
+	    );
+	};
+	Navigation.propTypes = {
+	    className: _react.PropTypes.string
+	};
+
+	exports.default = Navigation;
+
+/***/ },
+/* 322 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.ListItemContent = exports.ListItemAction = exports.ListItem = exports.List = undefined;
+
+	var _ListItem = __webpack_require__(323);
+
+	Object.defineProperty(exports, 'ListItem', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_ListItem).default;
+	  }
+	});
+
+	var _ListItemAction = __webpack_require__(325);
+
+	Object.defineProperty(exports, 'ListItemAction', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_ListItemAction).default;
+	  }
+	});
+
+	var _ListItemContent = __webpack_require__(324);
+
+	Object.defineProperty(exports, 'ListItemContent', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_ListItemContent).default;
+	  }
+	});
+
+	var _basicClassCreator = __webpack_require__(287);
+
+	var _basicClassCreator2 = _interopRequireDefault(_basicClassCreator);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var List = exports.List = (0, _basicClassCreator2.default)('List', 'mdl-list', 'ul');
+
+/***/ },
+/* 323 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _ListItemContent = __webpack_require__(324);
+
+	var _ListItemContent2 = _interopRequireDefault(_ListItemContent);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var propTypes = {
+	    children: _react.PropTypes.node,
+	    className: _react.PropTypes.string,
+	    twoLine: _react.PropTypes.bool,
+	    threeLine: _react.PropTypes.bool
+	};
+
+	var ListItem = function ListItem(props) {
+	    var className = props.className;
+	    var twoLine = props.twoLine;
+	    var threeLine = props.threeLine;
+
+	    var otherProps = _objectWithoutProperties(props, ['className', 'twoLine', 'threeLine']);
+
+	    var classes = (0, _classnames2.default)('mdl-list__item', {
+	        'mdl-list__item--two-line': twoLine && !threeLine,
+	        'mdl-list__item--three-line': !twoLine && threeLine
+	    }, className);
+
+	    var children = _react.Children.map(otherProps.children, function (child) {
+	        if (typeof child === 'string') {
+	            return _react2.default.createElement(
+	                _ListItemContent2.default,
+	                null,
+	                child
+	            );
+	        }
+	        if (child.type === _ListItemContent2.default) {
+	            return (0, _react.cloneElement)(child, {
+	                useBodyClass: !!threeLine
+	            });
+	        }
+	        return child;
+	    });
+
+	    return _react2.default.createElement(
+	        'li',
+	        _extends({ className: classes }, otherProps),
+	        children
+	    );
+	};
+
+	ListItem.propTypes = propTypes;
+
+	exports.default = ListItem;
+
+/***/ },
+/* 324 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _Icon = __webpack_require__(309);
+
+	var _Icon2 = _interopRequireDefault(_Icon);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var propTypes = {
+	    avatar: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
+	    children: _react.PropTypes.node,
+	    className: _react.PropTypes.string,
+	    icon: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
+	    subtitle: _react.PropTypes.node,
+	    useBodyClass: _react.PropTypes.bool
+	};
+
+	function createIcon(type, icon) {
+	    if (typeof icon === 'string') {
+	        return _react2.default.createElement(_Icon2.default, { className: 'mdl-list__item-' + type, name: icon });
+	    }
+	    return _react2.default.cloneElement(icon, { className: 'mdl-list__item-' + type });
+	}
+
+	var ListItemContent = function ListItemContent(props) {
+	    var avatar = props.avatar;
+	    var children = props.children;
+	    var className = props.className;
+	    var icon = props.icon;
+	    var subtitle = props.subtitle;
+	    var useBodyClass = props.useBodyClass;
+
+	    var otherProps = _objectWithoutProperties(props, ['avatar', 'children', 'className', 'icon', 'subtitle', 'useBodyClass']);
+
+	    var classes = (0, _classnames2.default)('mdl-list__item-primary-content', className);
+	    var subtitleClassName = useBodyClass ? 'mdl-list__item-text-body' : 'mdl-list__item-sub-title';
+
+	    var iconElement = null;
+	    if (icon) {
+	        iconElement = createIcon('icon', icon);
+	    } else if (avatar) {
+	        iconElement = createIcon('avatar', avatar);
+	    }
+
+	    return _react2.default.createElement(
+	        'span',
+	        _extends({ className: classes }, otherProps),
+	        iconElement,
+	        _react2.default.createElement(
+	            'span',
+	            null,
+	            children
+	        ),
+	        subtitle && _react2.default.createElement(
+	            'span',
+	            { className: subtitleClassName },
+	            subtitle
+	        )
+	    );
+	};
+
+	ListItemContent.propTypes = propTypes;
+
+	exports.default = ListItemContent;
+
+/***/ },
+/* 325 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var propTypes = {
+	    children: _react.PropTypes.node,
+	    className: _react.PropTypes.string,
+	    info: _react.PropTypes.string
+	};
+
+	var ListItemAction = function ListItemAction(props) {
+	    var children = props.children;
+	    var className = props.className;
+	    var info = props.info;
+
+	    var otherProps = _objectWithoutProperties(props, ['children', 'className', 'info']);
+
+	    var classes = (0, _classnames2.default)('mdl-list__item-secondary-content', className);
+
+	    return _react2.default.createElement(
+	        'span',
+	        _extends({ className: classes }, otherProps),
+	        info && _react2.default.createElement(
+	            'span',
+	            { className: 'mdl-list__item-secondary-info' },
+	            info
+	        ),
+	        _react2.default.createElement(
+	            'span',
+	            { className: 'mdl-list__item-secondary-action' },
+	            children
+	        )
+	    );
+	};
+
+	ListItemAction.propTypes = propTypes;
+
+	exports.default = ListItemAction;
+
+/***/ },
+/* 326 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.MenuItem = undefined;
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _mdlUpgrade = __webpack_require__(275);
+
+	var _mdlUpgrade2 = _interopRequireDefault(_mdlUpgrade);
+
+	var _basicClassCreator = __webpack_require__(287);
+
+	var _basicClassCreator2 = _interopRequireDefault(_basicClassCreator);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var propTypes = {
+	    align: _react.PropTypes.oneOf(['left', 'right']),
+	    className: _react.PropTypes.string,
+	    ripple: _react.PropTypes.bool,
+	    target: _react.PropTypes.string.isRequired,
+	    valign: _react.PropTypes.oneOf(['bottom', 'top'])
+	};
+
+	var defaultProps = {
+	    align: 'left',
+	    valign: 'bottom'
+	};
+
+	// eslint-disable-next-line react/prefer-stateless-function
+
+	var Menu = function (_React$Component) {
+	    _inherits(Menu, _React$Component);
+
+	    function Menu() {
+	        _classCallCheck(this, Menu);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Menu).apply(this, arguments));
+	    }
+
+	    _createClass(Menu, [{
+	        key: 'render',
+	        value: function render() {
+	            var _classNames;
+
+	            var _props = this.props;
+	            var align = _props.align;
+	            var children = _props.children;
+	            var className = _props.className;
+	            var ripple = _props.ripple;
+	            var target = _props.target;
+	            var valign = _props.valign;
+
+	            var otherProps = _objectWithoutProperties(_props, ['align', 'children', 'className', 'ripple', 'target', 'valign']);
+
+	            var classes = (0, _classnames2.default)('mdl-menu mdl-js-menu', (_classNames = {}, _defineProperty(_classNames, 'mdl-menu--' + valign + '-' + align, true), _defineProperty(_classNames, 'mdl-js-ripple-effect', ripple), _classNames), className);
+
+	            return _react2.default.createElement(
+	                'ul',
+	                _extends({ className: classes, 'data-mdl-for': target }, otherProps),
+	                children
+	            );
+	        }
+	    }]);
+
+	    return Menu;
+	}(_react2.default.Component);
+
+	Menu.propTypes = propTypes;
+	Menu.defaultProps = defaultProps;
+
+	exports.default = (0, _mdlUpgrade2.default)(Menu);
+	var MenuItem = exports.MenuItem = (0, _basicClassCreator2.default)('MenuItem', 'mdl-menu__item', 'li');
+
+/***/ },
+/* 327 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(33);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _mdlUpgrade = __webpack_require__(275);
+
+	var _mdlUpgrade2 = _interopRequireDefault(_mdlUpgrade);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var propTypes = {
+	    buffer: _react.PropTypes.number,
+	    className: _react.PropTypes.string,
+	    indeterminate: _react.PropTypes.bool,
+	    progress: _react.PropTypes.number
+	};
+
+	var ProgressBar = function (_React$Component) {
+	    _inherits(ProgressBar, _React$Component);
+
+	    function ProgressBar() {
+	        _classCallCheck(this, ProgressBar);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ProgressBar).apply(this, arguments));
+	    }
+
+	    _createClass(ProgressBar, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            this.setProgress(this.props.progress);
+	            this.setBuffer(this.props.buffer);
+	        }
+	    }, {
+	        key: 'componentDidUpdate',
+	        value: function componentDidUpdate() {
+	            this.setProgress(this.props.progress);
+	            this.setBuffer(this.props.buffer);
+	        }
+	    }, {
+	        key: 'setProgress',
+	        value: function setProgress(progress) {
+	            if (!this.props.indeterminate && progress !== undefined) {
+	                (0, _reactDom.findDOMNode)(this).MaterialProgress.setProgress(progress);
+	            }
+	        }
+	    }, {
+	        key: 'setBuffer',
+	        value: function setBuffer(buffer) {
+	            if (buffer !== undefined) {
+	                (0, _reactDom.findDOMNode)(this).MaterialProgress.setBuffer(buffer);
+	            }
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _props = this.props;
+	            var className = _props.className;
+	            var indeterminate = _props.indeterminate;
+
+	            var otherProps = _objectWithoutProperties(_props, ['className', 'indeterminate']);
+
+	            var classes = (0, _classnames2.default)('mdl-progress mdl-js-progress', {
+	                'mdl-progress__indeterminate': indeterminate
+	            }, className);
+
+	            return _react2.default.createElement('div', _extends({ className: classes }, otherProps));
+	        }
+	    }]);
+
+	    return ProgressBar;
+	}(_react2.default.Component);
+
+	ProgressBar.propTypes = propTypes;
+
+	exports.default = (0, _mdlUpgrade2.default)(ProgressBar);
+
+/***/ },
+/* 328 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(33);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _mdlUpgrade = __webpack_require__(275);
+
+	var _mdlUpgrade2 = _interopRequireDefault(_mdlUpgrade);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var propTypes = {
+	    checked: _react.PropTypes.bool,
+	    className: _react.PropTypes.string,
+	    disabled: _react.PropTypes.bool,
+	    name: _react.PropTypes.string,
+	    onChange: _react.PropTypes.func,
+	    ripple: _react.PropTypes.bool,
+	    value: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.number]).isRequired
+	};
+
+	var Radio = function (_React$Component) {
+	    _inherits(Radio, _React$Component);
+
+	    function Radio() {
+	        _classCallCheck(this, Radio);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Radio).apply(this, arguments));
+	    }
+
+	    _createClass(Radio, [{
+	        key: 'componentDidUpdate',
+	        value: function componentDidUpdate(prevProps) {
+	            if (this.props.disabled !== prevProps.disabled) {
+	                var fnName = this.props.disabled ? 'disable' : 'enable';
+	                (0, _reactDom.findDOMNode)(this).MaterialRadio[fnName]();
+	            }
+	            if (this.props.checked !== prevProps.checked) {
+	                var _fnName = this.props.checked ? 'check' : 'uncheck';
+	                (0, _reactDom.findDOMNode)(this).MaterialRadio[_fnName]();
+	            }
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _props = this.props;
+	            var children = _props.children;
+	            var className = _props.className;
+	            var name = _props.name;
+	            var ripple = _props.ripple;
+	            var value = _props.value;
+
+	            var inputProps = _objectWithoutProperties(_props, ['children', 'className', 'name', 'ripple', 'value']);
+
+	            var classes = (0, _classnames2.default)('mdl-radio mdl-js-radio', {
+	                'mdl-js-ripple-effect': ripple
+	            }, className);
+
+	            return _react2.default.createElement(
+	                'label',
+	                { className: classes },
+	                _react2.default.createElement('input', _extends({
+	                    type: 'radio',
+	                    className: 'mdl-radio__button',
+	                    value: value,
+	                    name: name
+	                }, inputProps)),
+	                _react2.default.createElement(
+	                    'span',
+	                    { className: 'mdl-radio__label' },
+	                    children
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Radio;
+	}(_react2.default.Component);
+
+	Radio.propTypes = propTypes;
+
+	exports.default = (0, _mdlUpgrade2.default)(Radio);
+
+/***/ },
+/* 329 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Radio = __webpack_require__(328);
+
+	var _Radio2 = _interopRequireDefault(_Radio);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var RadioGroup = function RadioGroup(props) {
+	    var name = props.name;
+	    var value = props.value;
+	    var children = props.children;
+	    var container = props.container;
+	    var childContainer = props.childContainer;
+	    var onChange = props.onChange;
+
+	    var otherProps = _objectWithoutProperties(props, ['name', 'value', 'children', 'container', 'childContainer', 'onChange']);
+
+	    var hasOnChange = typeof onChange === 'function';
+	    var checked = hasOnChange ? 'checked' : 'defaultChecked';
+
+	    return _react2.default.createElement(container, otherProps, _react2.default.Children.map(children, function (child) {
+	        var _extends2;
+
+	        var clonedChild = _react2.default.cloneElement(child, _extends((_extends2 = {}, _defineProperty(_extends2, checked, child.props.value === value), _defineProperty(_extends2, 'name', name), _defineProperty(_extends2, 'onChange', onChange), _extends2), otherProps));
+
+	        return childContainer ? _react2.default.createElement(childContainer, {}, clonedChild) : clonedChild;
+	    }));
+	};
+
+	RadioGroup.propTypes = {
+	    childContainer: _react.PropTypes.string,
+	    children: _react.PropTypes.arrayOf(function (props, propName, componentName) {
+	        var prop = props[propName];
+	        return prop.type !== _Radio2.default && new Error('\'' + componentName + '\' only accepts \'Radio\' as children.');
+	    }),
+	    container: _react.PropTypes.string,
+	    name: _react.PropTypes.string.isRequired,
+	    onChange: _react.PropTypes.func,
+	    value: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.number]).isRequired
+	};
+
+	RadioGroup.defaultProps = {
+	    container: 'div'
+	};
+
+	exports.default = RadioGroup;
+
+/***/ },
+/* 330 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(33);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _mdlUpgrade = __webpack_require__(275);
+
+	var _mdlUpgrade2 = _interopRequireDefault(_mdlUpgrade);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var propTypes = {
+	    className: _react.PropTypes.string,
+	    max: _react.PropTypes.number.isRequired,
+	    min: _react.PropTypes.number.isRequired,
+	    onChange: _react.PropTypes.func,
+	    value: _react.PropTypes.number
+	};
+
+	var Slider = function (_React$Component) {
+	    _inherits(Slider, _React$Component);
+
+	    function Slider() {
+	        _classCallCheck(this, Slider);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Slider).apply(this, arguments));
+	    }
+
+	    _createClass(Slider, [{
+	        key: 'componentDidUpdate',
+	        value: function componentDidUpdate() {
+	            if (typeof this.props.value !== 'undefined') {
+	                (0, _reactDom.findDOMNode)(this).MaterialSlider.change(this.props.value);
+	            }
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _props = this.props;
+	            var className = _props.className;
+
+	            var otherProps = _objectWithoutProperties(_props, ['className']);
+
+	            var classes = (0, _classnames2.default)('mdl-slider mdl-js-slider', className);
+
+	            return _react2.default.createElement('input', _extends({
+	                className: classes,
+	                type: 'range'
+	            }, otherProps));
+	        }
+	    }]);
+
+	    return Slider;
+	}(_react2.default.Component);
+
+	Slider.propTypes = propTypes;
+
+	exports.default = (0, _mdlUpgrade2.default)(Slider);
+
+/***/ },
+/* 331 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// This component doesn't use the javascript from MDL.
+	// This is the expected behavior and the reason is because it's not written in
+	// a way to make it easy to use with React.
+	var ANIMATION_LENGTH = 250;
+
+	var propTypes = {
+	    action: _react.PropTypes.string,
+	    active: _react.PropTypes.bool.isRequired,
+	    className: _react.PropTypes.string,
+	    onActionClick: _react.PropTypes.func,
+	    onTimeout: _react.PropTypes.func.isRequired,
+	    timeout: _react.PropTypes.number
+	};
+
+	var defaultProps = {
+	    timeout: 2750
+	};
+
+	var Snackbar = function (_React$Component) {
+	    _inherits(Snackbar, _React$Component);
+
+	    function Snackbar(props) {
+	        _classCallCheck(this, Snackbar);
+
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Snackbar).call(this, props));
+
+	        _this.clearTimer = _this.clearTimer.bind(_this);
+	        _this.timeoutId = null;
+	        _this.clearTimeoutId = null;
+	        _this.state = {
+	            open: false
+	        };
+	        return _this;
+	    }
+
+	    _createClass(Snackbar, [{
+	        key: 'componentWillReceiveProps',
+	        value: function componentWillReceiveProps(nextProps) {
+	            this.setState({
+	                open: nextProps.active
+	            });
+	        }
+	    }, {
+	        key: 'componentDidUpdate',
+	        value: function componentDidUpdate() {
+	            if (this.timeoutId) {
+	                clearTimeout(this.timeoutId);
+	            }
+
+	            if (this.props.active) {
+	                this.timeoutId = setTimeout(this.clearTimer, this.props.timeout);
+	            }
+	        }
+	    }, {
+	        key: 'componentWillUnmount',
+	        value: function componentWillUnmount() {
+	            if (this.timeoutId) {
+	                clearTimeout(this.timeoutId);
+	                this.timeoutId = null;
+	            }
+	            if (this.clearTimeoutId) {
+	                clearTimeout(this.clearTimeoutId);
+	                this.clearTimeoutId = null;
+	            }
+	        }
+	    }, {
+	        key: 'clearTimer',
+	        value: function clearTimer() {
+	            var _this2 = this;
+
+	            this.timeoutId = null;
+	            this.setState({ open: false });
+
+	            this.clearTimeoutId = setTimeout(function () {
+	                _this2.clearTimeoutId = null;
+	                _this2.props.onTimeout();
+	            }, ANIMATION_LENGTH);
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _props = this.props;
+	            var action = _props.action;
+	            var active = _props.active;
+	            var className = _props.className;
+	            var children = _props.children;
+	            var onActionClick = _props.onActionClick;
+
+	            var otherProps = _objectWithoutProperties(_props, ['action', 'active', 'className', 'children', 'onActionClick']);
+
+	            var open = this.state.open;
+
+
+	            var classes = (0, _classnames2.default)('mdl-snackbar', {
+	                'mdl-snackbar--active': open
+	            }, className);
+
+	            delete otherProps.onTimeout;
+	            delete otherProps.timeout;
+
+	            return _react2.default.createElement(
+	                'div',
+	                _extends({ ref: 'snackbar', className: classes, 'aria-hidden': !open }, otherProps),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'mdl-snackbar__text' },
+	                    active && children
+	                ),
+	                active && action && _react2.default.createElement(
+	                    'button',
+	                    { className: 'mdl-snackbar__action', type: 'button', onClick: onActionClick },
+	                    action
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Snackbar;
+	}(_react2.default.Component);
+
+	Snackbar.propTypes = propTypes;
+	Snackbar.defaultProps = defaultProps;
+
+	exports.default = Snackbar;
+
+/***/ },
+/* 332 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _mdlUpgrade = __webpack_require__(275);
+
+	var _mdlUpgrade2 = _interopRequireDefault(_mdlUpgrade);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var propTypes = {
+	    className: _react.PropTypes.string,
+	    singleColor: _react.PropTypes.bool
+	};
+
+	// eslint-disable-next-line react/prefer-stateless-function
+
+	var Spinner = function (_React$Component) {
+	    _inherits(Spinner, _React$Component);
+
+	    function Spinner() {
+	        _classCallCheck(this, Spinner);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Spinner).apply(this, arguments));
+	    }
+
+	    _createClass(Spinner, [{
+	        key: 'render',
+	        value: function render() {
+	            var _props = this.props;
+	            var className = _props.className;
+	            var singleColor = _props.singleColor;
+
+	            var otherProps = _objectWithoutProperties(_props, ['className', 'singleColor']);
+
+	            var classes = (0, _classnames2.default)('mdl-spinner mdl-js-spinner is-active', {
+	                'mdl-spinner--single-color': singleColor
+	            }, className);
+
+	            return _react2.default.createElement('div', _extends({ className: classes }, otherProps));
+	        }
+	    }]);
+
+	    return Spinner;
+	}(_react2.default.Component);
+
+	Spinner.propTypes = propTypes;
+
+	exports.default = (0, _mdlUpgrade2.default)(Spinner);
+
+/***/ },
+/* 333 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(33);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _mdlUpgrade = __webpack_require__(275);
+
+	var _mdlUpgrade2 = _interopRequireDefault(_mdlUpgrade);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var propTypes = {
+	    checked: _react.PropTypes.bool,
+	    className: _react.PropTypes.string,
+	    disabled: _react.PropTypes.bool,
+	    onChange: _react.PropTypes.func,
+	    ripple: _react.PropTypes.bool
+	};
+
+	var Switch = function (_React$Component) {
+	    _inherits(Switch, _React$Component);
+
+	    function Switch() {
+	        _classCallCheck(this, Switch);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Switch).apply(this, arguments));
+	    }
+
+	    _createClass(Switch, [{
+	        key: 'componentDidUpdate',
+	        value: function componentDidUpdate(prevProps) {
+	            if (this.props.disabled !== prevProps.disabled) {
+	                var fnName = this.props.disabled ? 'disable' : 'enable';
+	                (0, _reactDom.findDOMNode)(this).MaterialSwitch[fnName]();
+	            }
+	            if (this.props.checked !== prevProps.checked) {
+	                var _fnName = this.props.checked ? 'on' : 'off';
+	                (0, _reactDom.findDOMNode)(this).MaterialSwitch[_fnName]();
+	            }
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _props = this.props;
+	            var className = _props.className;
+	            var ripple = _props.ripple;
+	            var children = _props.children;
+
+	            var inputProps = _objectWithoutProperties(_props, ['className', 'ripple', 'children']);
+
+	            var classes = (0, _classnames2.default)('mdl-switch mdl-js-switch', {
+	                'mdl-js-ripple-effect': ripple
+	            }, className);
+
+	            return _react2.default.createElement(
+	                'label',
+	                { className: classes },
+	                _react2.default.createElement('input', _extends({
+	                    type: 'checkbox',
+	                    className: 'mdl-switch__input'
+	                }, inputProps)),
+	                _react2.default.createElement(
+	                    'span',
+	                    { className: 'mdl-switch__label' },
+	                    children
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Switch;
+	}(_react2.default.Component);
+
+	Switch.propTypes = propTypes;
+
+	exports.default = (0, _mdlUpgrade2.default)(Switch);
+
+/***/ },
+/* 334 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _Tabs = __webpack_require__(335);
+
+	Object.defineProperty(exports, 'Tabs', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_Tabs).default;
+	  }
+	});
+
+	var _TabBar = __webpack_require__(320);
+
+	Object.defineProperty(exports, 'TabBar', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_TabBar).default;
+	  }
+	});
+
+	var _Tab = __webpack_require__(336);
+
+	Object.defineProperty(exports, 'Tab', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_Tab).default;
+	  }
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 335 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _Tab = __webpack_require__(336);
+
+	var _Tab2 = _interopRequireDefault(_Tab);
+
+	var _TabBar = __webpack_require__(320);
+
+	var _TabBar2 = _interopRequireDefault(_TabBar);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var TabPropType = function TabPropType(props, propName, componentName) {
+	    var prop = props[propName];
+	    return prop.type !== _Tab2.default && new Error('\'' + componentName + '\' only accepts \'Tab\' as children.');
+	};
+
+	var propTypes = {
+	    activeTab: _react.PropTypes.number,
+	    children: _react.PropTypes.oneOfType([TabPropType, _react.PropTypes.arrayOf(TabPropType)]),
+	    className: _react.PropTypes.string,
+	    onChange: _react.PropTypes.func,
+	    tabBarProps: _react.PropTypes.object
+	};
+
+	var Tabs = function Tabs(props) {
+	    var activeTab = props.activeTab;
+	    var className = props.className;
+	    var onChange = props.onChange;
+	    var children = props.children;
+	    var tabBarProps = props.tabBarProps;
+
+	    var otherProps = _objectWithoutProperties(props, ['activeTab', 'className', 'onChange', 'children', 'tabBarProps']);
+
+	    var classes = (0, _classnames2.default)('mdl-tabs is-upgraded', className);
+
+	    return _react2.default.createElement(
+	        'div',
+	        _extends({ className: classes }, otherProps),
+	        _react2.default.createElement(
+	            _TabBar2.default,
+	            _extends({ cssPrefix: 'mdl-tabs', activeTab: activeTab, onChange: onChange }, tabBarProps),
+	            children
+	        )
+	    );
+	};
+
+	Tabs.propTypes = propTypes;
+
+	exports.default = Tabs;
+
+/***/ },
+/* 336 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var propTypes = {
+	    active: _react.PropTypes.bool,
+	    className: _react.PropTypes.string,
+	    component: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element, _react.PropTypes.func]),
+	    cssPrefix: _react.PropTypes.string,
+	    onTabClick: _react.PropTypes.func,
+	    style: _react.PropTypes.object,
+	    tabId: _react.PropTypes.number
+	};
+
+	var defaultProps = {
+	    style: {}
+	};
+
+	var Tab = function Tab(props) {
+	    var _classNames;
+
+	    var active = props.active;
+	    var className = props.className;
+	    var component = props.component;
+	    var children = props.children;
+	    var cssPrefix = props.cssPrefix;
+	    var onTabClick = props.onTabClick;
+	    var style = props.style;
+	    var tabId = props.tabId;
+
+	    var otherProps = _objectWithoutProperties(props, ['active', 'className', 'component', 'children', 'cssPrefix', 'onTabClick', 'style', 'tabId']);
+
+	    var classes = (0, _classnames2.default)((_classNames = {}, _defineProperty(_classNames, cssPrefix + '__tab', true), _defineProperty(_classNames, 'is-active', active), _classNames), className);
+
+	    style.cursor = 'pointer';
+
+	    return _react2.default.createElement(component || 'a', _extends({
+	        className: classes,
+	        onClick: function onClick() {
+	            return onTabClick(tabId);
+	        },
+	        style: style
+	    }, otherProps), children);
+	};
+
+	Tab.propTypes = propTypes;
+	Tab.defaultProps = defaultProps;
+
+	exports.default = Tab;
+
+/***/ },
+/* 337 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(33);
+
+	var _classnames = __webpack_require__(279);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _mdlUpgrade = __webpack_require__(275);
+
+	var _mdlUpgrade2 = _interopRequireDefault(_mdlUpgrade);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var propTypes = {
+	    className: _react.PropTypes.string,
+	    disabled: _react.PropTypes.bool,
+	    error: _react.PropTypes.node,
+	    expandable: _react.PropTypes.bool,
+	    expandableIcon: _react.PropTypes.string,
+	    floatingLabel: _react.PropTypes.bool,
+	    id: _react.PropTypes.string,
+	    inputClassName: _react.PropTypes.string,
+	    label: _react.PropTypes.string.isRequired,
+	    maxRows: _react.PropTypes.number,
+	    onChange: _react.PropTypes.func,
+	    pattern: _react.PropTypes.string,
+	    required: _react.PropTypes.bool,
+	    rows: _react.PropTypes.number,
+	    style: _react.PropTypes.object,
+	    value: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.number])
+	};
+
+	var Textfield = function (_React$Component) {
+	    _inherits(Textfield, _React$Component);
+
+	    function Textfield() {
+	        _classCallCheck(this, Textfield);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Textfield).apply(this, arguments));
+	    }
+
+	    _createClass(Textfield, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            if (this.props.error && !this.props.pattern) {
+	                this.setAsInvalid();
+	            }
+	        }
+	    }, {
+	        key: 'componentDidUpdate',
+	        value: function componentDidUpdate(prevProps) {
+	            if (this.props.required !== prevProps.required || this.props.pattern !== prevProps.pattern || this.props.error !== prevProps.error) {
+	                (0, _reactDom.findDOMNode)(this).MaterialTextfield.checkValidity();
+	            }
+	            if (this.props.disabled !== prevProps.disabled) {
+	                (0, _reactDom.findDOMNode)(this).MaterialTextfield.checkDisabled();
+	            }
+	            if (this.props.value !== prevProps.value && this.refs.input !== document.activeElement) {
+	                (0, _reactDom.findDOMNode)(this).MaterialTextfield.change(this.props.value);
+	            }
+	            if (this.props.error && !this.props.pattern) {
+	                // Every time the input gets updated by MDL (checkValidity() or change())
+	                // its invalid class gets reset. We have to put it again if the input is specifically set as "invalid"
+	                this.setAsInvalid();
+	            }
+	        }
+	    }, {
+	        key: 'setAsInvalid',
+	        value: function setAsInvalid() {
+	            var elt = (0, _reactDom.findDOMNode)(this);
+	            if (elt.className.indexOf('is-invalid') < 0) {
+	                elt.className = (0, _classnames2.default)(elt.className, 'is-invalid');
+	            }
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _props = this.props;
+	            var className = _props.className;
+	            var inputClassName = _props.inputClassName;
+	            var id = _props.id;
+	            var error = _props.error;
+	            var expandable = _props.expandable;
+	            var expandableIcon = _props.expandableIcon;
+	            var floatingLabel = _props.floatingLabel;
+	            var label = _props.label;
+	            var maxRows = _props.maxRows;
+	            var rows = _props.rows;
+	            var style = _props.style;
+	            var children = _props.children;
+
+	            var otherProps = _objectWithoutProperties(_props, ['className', 'inputClassName', 'id', 'error', 'expandable', 'expandableIcon', 'floatingLabel', 'label', 'maxRows', 'rows', 'style', 'children']);
+
+	            var hasRows = !!rows;
+	            var customId = id || 'textfield-' + label.replace(/[^a-z0-9]/gi, '');
+	            var inputTag = hasRows || maxRows > 1 ? 'textarea' : 'input';
+
+	            var inputProps = _extends({
+	                className: (0, _classnames2.default)('mdl-textfield__input', inputClassName),
+	                id: customId,
+	                rows: rows,
+	                ref: 'input'
+	            }, otherProps);
+
+	            var input = _react2.default.createElement(inputTag, inputProps);
+	            var labelContainer = _react2.default.createElement(
+	                'label',
+	                { className: 'mdl-textfield__label', htmlFor: customId },
+	                label
+	            );
+	            var errorContainer = !!error && _react2.default.createElement(
+	                'span',
+	                { className: 'mdl-textfield__error' },
+	                error
+	            );
+
+	            var containerClasses = (0, _classnames2.default)('mdl-textfield mdl-js-textfield', {
+	                'mdl-textfield--floating-label': floatingLabel,
+	                'mdl-textfield--expandable': expandable
+	            }, className);
+
+	            return expandable ? _react2.default.createElement(
+	                'div',
+	                { className: containerClasses, style: style },
+	                _react2.default.createElement(
+	                    'label',
+	                    { className: 'mdl-button mdl-js-button mdl-button--icon', htmlFor: customId },
+	                    _react2.default.createElement(
+	                        'i',
+	                        { className: 'material-icons' },
+	                        expandableIcon
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'mdl-textfield__expandable-holder' },
+	                    input,
+	                    labelContainer,
+	                    errorContainer
+	                ),
+	                children
+	            ) : _react2.default.createElement(
+	                'div',
+	                { className: containerClasses, style: style },
+	                input,
+	                labelContainer,
+	                errorContainer,
+	                children
+	            );
+	        }
+	    }]);
+
+	    return Textfield;
+	}(_react2.default.Component);
+
+	Textfield.propTypes = propTypes;
+
+	exports.default = (0, _mdlUpgrade2.default)(Textfield);
+
+/***/ },
+/* 338 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35496,7 +42191,7 @@
 
 	var _immutable = __webpack_require__(203);
 
-	var _PartFullDetails = __webpack_require__(275);
+	var _PartFullDetails = __webpack_require__(339);
 
 	var _PartFullDetails2 = _interopRequireDefault(_PartFullDetails);
 
@@ -35525,7 +42220,7 @@
 	exports.default = PartFullDetailsContainer;
 
 /***/ },
-/* 275 */
+/* 339 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35605,6 +42300,1502 @@
 			)
 		);
 	};
+
+/***/ },
+/* 340 */
+/***/ function(module, exports) {
+
+	'use strict';var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol?"symbol":typeof obj;};;(function(){"use strict";if(typeof window==='undefined')return;/**
+	 * @license
+	 * Copyright 2015 Google Inc. All Rights Reserved.
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License");
+	 * you may not use this file except in compliance with the License.
+	 * You may obtain a copy of the License at
+	 *
+	 *      http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 *//**
+	 * A component handler interface using the revealing module design pattern.
+	 * More details on this design pattern here:
+	 * https://github.com/jasonmayes/mdl-component-design-pattern
+	 *
+	 * @author Jason Mayes.
+	 *//* exported componentHandler */// Pre-defining the componentHandler interface, for closure documentation and
+	// static verification.
+	var componentHandler={/**
+	   * Searches existing DOM for elements of our component type and upgrades them
+	   * if they have not already been upgraded.
+	   *
+	   * @param {string=} optJsClass the programatic name of the element class we
+	   * need to create a new instance of.
+	   * @param {string=} optCssClass the name of the CSS class elements of this
+	   * type will have.
+	   */upgradeDom:function upgradeDom(optJsClass,optCssClass){},/**
+	   * Upgrades a specific element rather than all in the DOM.
+	   *
+	   * @param {!Element} element The element we wish to upgrade.
+	   * @param {string=} optJsClass Optional name of the class we want to upgrade
+	   * the element to.
+	   */upgradeElement:function upgradeElement(element,optJsClass){},/**
+	   * Upgrades a specific list of elements rather than all in the DOM.
+	   *
+	   * @param {!Element|!Array<!Element>|!NodeList|!HTMLCollection} elements
+	   * The elements we wish to upgrade.
+	   */upgradeElements:function upgradeElements(elements){},/**
+	   * Upgrades all registered components found in the current DOM. This is
+	   * automatically called on window load.
+	   */upgradeAllRegistered:function upgradeAllRegistered(){},/**
+	   * Allows user to be alerted to any upgrades that are performed for a given
+	   * component type
+	   *
+	   * @param {string} jsClass The class name of the MDL component we wish
+	   * to hook into for any upgrades performed.
+	   * @param {function(!HTMLElement)} callback The function to call upon an
+	   * upgrade. This function should expect 1 parameter - the HTMLElement which
+	   * got upgraded.
+	   */registerUpgradedCallback:function registerUpgradedCallback(jsClass,callback){},/**
+	   * Registers a class for future use and attempts to upgrade existing DOM.
+	   *
+	   * @param {componentHandler.ComponentConfigPublic} config the registration configuration
+	   */register:function register(config){},/**
+	   * Downgrade either a given node, an array of nodes, or a NodeList.
+	   *
+	   * @param {!Node|!Array<!Node>|!NodeList} nodes
+	   */downgradeElements:function downgradeElements(nodes){}};componentHandler=function(){'use strict';/** @type {!Array<componentHandler.ComponentConfig>} */var registeredComponents_=[];/** @type {!Array<componentHandler.Component>} */var createdComponents_=[];var componentConfigProperty_='mdlComponentConfigInternal_';/**
+	   * Searches registered components for a class we are interested in using.
+	   * Optionally replaces a match with passed object if specified.
+	   *
+	   * @param {string} name The name of a class we want to use.
+	   * @param {componentHandler.ComponentConfig=} optReplace Optional object to replace match with.
+	   * @return {!Object|boolean}
+	   * @private
+	   */function findRegisteredClass_(name,optReplace){for(var i=0;i<registeredComponents_.length;i++){if(registeredComponents_[i].className===name){if(typeof optReplace!=='undefined'){registeredComponents_[i]=optReplace;}return registeredComponents_[i];}}return false;}/**
+	   * Returns an array of the classNames of the upgraded classes on the element.
+	   *
+	   * @param {!Element} element The element to fetch data from.
+	   * @return {!Array<string>}
+	   * @private
+	   */function getUpgradedListOfElement_(element){var dataUpgraded=element.getAttribute('data-upgraded');// Use `['']` as default value to conform the `,name,name...` style.
+	return dataUpgraded===null?['']:dataUpgraded.split(',');}/**
+	   * Returns true if the given element has already been upgraded for the given
+	   * class.
+	   *
+	   * @param {!Element} element The element we want to check.
+	   * @param {string} jsClass The class to check for.
+	   * @returns {boolean}
+	   * @private
+	   */function isElementUpgraded_(element,jsClass){var upgradedList=getUpgradedListOfElement_(element);return upgradedList.indexOf(jsClass)!==-1;}/**
+	   * Searches existing DOM for elements of our component type and upgrades them
+	   * if they have not already been upgraded.
+	   *
+	   * @param {string=} optJsClass the programatic name of the element class we
+	   * need to create a new instance of.
+	   * @param {string=} optCssClass the name of the CSS class elements of this
+	   * type will have.
+	   */function upgradeDomInternal(optJsClass,optCssClass){if(typeof optJsClass==='undefined'&&typeof optCssClass==='undefined'){for(var i=0;i<registeredComponents_.length;i++){upgradeDomInternal(registeredComponents_[i].className,registeredComponents_[i].cssClass);}}else{var jsClass=/** @type {string} */optJsClass;if(typeof optCssClass==='undefined'){var registeredClass=findRegisteredClass_(jsClass);if(registeredClass){optCssClass=registeredClass.cssClass;}}var elements=document.querySelectorAll('.'+optCssClass);for(var n=0;n<elements.length;n++){upgradeElementInternal(elements[n],jsClass);}}}/**
+	   * Upgrades a specific element rather than all in the DOM.
+	   *
+	   * @param {!Element} element The element we wish to upgrade.
+	   * @param {string=} optJsClass Optional name of the class we want to upgrade
+	   * the element to.
+	   */function upgradeElementInternal(element,optJsClass){// Verify argument type.
+	if(!((typeof element==='undefined'?'undefined':_typeof(element))==='object'&&element instanceof Element)){throw new Error('Invalid argument provided to upgrade MDL element.');}var upgradedList=getUpgradedListOfElement_(element);var classesToUpgrade=[];// If jsClass is not provided scan the registered components to find the
+	// ones matching the element's CSS classList.
+	if(!optJsClass){var classList=element.classList;registeredComponents_.forEach(function(component){// Match CSS & Not to be upgraded & Not upgraded.
+	if(classList.contains(component.cssClass)&&classesToUpgrade.indexOf(component)===-1&&!isElementUpgraded_(element,component.className)){classesToUpgrade.push(component);}});}else if(!isElementUpgraded_(element,optJsClass)){classesToUpgrade.push(findRegisteredClass_(optJsClass));}// Upgrade the element for each classes.
+	for(var i=0,n=classesToUpgrade.length,registeredClass;i<n;i++){registeredClass=classesToUpgrade[i];if(registeredClass){// Mark element as upgraded.
+	upgradedList.push(registeredClass.className);element.setAttribute('data-upgraded',upgradedList.join(','));var instance=new registeredClass.classConstructor(element);instance[componentConfigProperty_]=registeredClass;createdComponents_.push(instance);// Call any callbacks the user has registered with this component type.
+	for(var j=0,m=registeredClass.callbacks.length;j<m;j++){registeredClass.callbacks[j](element);}if(registeredClass.widget){// Assign per element instance for control over API
+	element[registeredClass.className]=instance;}}else{throw new Error('Unable to find a registered component for the given class.');}var ev;if('CustomEvent'in window&&typeof window.CustomEvent==='function'){ev=new Event('mdl-componentupgraded',{'bubbles':true,'cancelable':false});}else{ev=document.createEvent('Events');ev.initEvent('mdl-componentupgraded',true,true);}element.dispatchEvent(ev);}}/**
+	   * Upgrades a specific list of elements rather than all in the DOM.
+	   *
+	   * @param {!Element|!Array<!Element>|!NodeList|!HTMLCollection} elements
+	   * The elements we wish to upgrade.
+	   */function upgradeElementsInternal(elements){if(!Array.isArray(elements)){if(typeof elements.item==='function'){elements=Array.prototype.slice.call(/** @type {Array} */elements);}else{elements=[elements];}}for(var i=0,n=elements.length,element;i<n;i++){element=elements[i];if(element instanceof HTMLElement){upgradeElementInternal(element);if(element.children.length>0){upgradeElementsInternal(element.children);}}}}/**
+	   * Registers a class for future use and attempts to upgrade existing DOM.
+	   *
+	   * @param {componentHandler.ComponentConfigPublic} config
+	   */function registerInternal(config){// In order to support both Closure-compiled and uncompiled code accessing
+	// this method, we need to allow for both the dot and array syntax for
+	// property access. You'll therefore see the `foo.bar || foo['bar']`
+	// pattern repeated across this method.
+	var widgetMissing=typeof config.widget==='undefined'&&typeof config['widget']==='undefined';var widget=true;if(!widgetMissing){widget=config.widget||config['widget'];}var newConfig=/** @type {componentHandler.ComponentConfig} */{classConstructor:config.constructor||config['constructor'],className:config.classAsString||config['classAsString'],cssClass:config.cssClass||config['cssClass'],widget:widget,callbacks:[]};registeredComponents_.forEach(function(item){if(item.cssClass===newConfig.cssClass){throw new Error('The provided cssClass has already been registered: '+item.cssClass);}if(item.className===newConfig.className){throw new Error('The provided className has already been registered');}});if(config.constructor.prototype.hasOwnProperty(componentConfigProperty_)){throw new Error('MDL component classes must not have '+componentConfigProperty_+' defined as a property.');}var found=findRegisteredClass_(config.classAsString,newConfig);if(!found){registeredComponents_.push(newConfig);}}/**
+	   * Allows user to be alerted to any upgrades that are performed for a given
+	   * component type
+	   *
+	   * @param {string} jsClass The class name of the MDL component we wish
+	   * to hook into for any upgrades performed.
+	   * @param {function(!HTMLElement)} callback The function to call upon an
+	   * upgrade. This function should expect 1 parameter - the HTMLElement which
+	   * got upgraded.
+	   */function registerUpgradedCallbackInternal(jsClass,callback){var regClass=findRegisteredClass_(jsClass);if(regClass){regClass.callbacks.push(callback);}}/**
+	   * Upgrades all registered components found in the current DOM. This is
+	   * automatically called on window load.
+	   */function upgradeAllRegisteredInternal(){for(var n=0;n<registeredComponents_.length;n++){upgradeDomInternal(registeredComponents_[n].className);}}/**
+	   * Check the component for the downgrade method.
+	   * Execute if found.
+	   * Remove component from createdComponents list.
+	   *
+	   * @param {?componentHandler.Component} component
+	   */function deconstructComponentInternal(component){if(component){var componentIndex=createdComponents_.indexOf(component);createdComponents_.splice(componentIndex,1);var upgrades=component.element_.getAttribute('data-upgraded').split(',');var componentPlace=upgrades.indexOf(component[componentConfigProperty_].classAsString);upgrades.splice(componentPlace,1);component.element_.setAttribute('data-upgraded',upgrades.join(','));var ev;if('CustomEvent'in window&&typeof window.CustomEvent==='function'){ev=new Event('mdl-componentdowngraded',{'bubbles':true,'cancelable':false});}else{ev=document.createEvent('Events');ev.initEvent('mdl-componentdowngraded',true,true);}}}/**
+	   * Downgrade either a given node, an array of nodes, or a NodeList.
+	   *
+	   * @param {!Node|!Array<!Node>|!NodeList} nodes
+	   */function downgradeNodesInternal(nodes){/**
+	     * Auxiliary function to downgrade a single node.
+	     * @param  {!Node} node the node to be downgraded
+	     */var downgradeNode=function downgradeNode(node){createdComponents_.filter(function(item){return item.element_===node;}).forEach(deconstructComponentInternal);};if(nodes instanceof Array||nodes instanceof NodeList){for(var n=0;n<nodes.length;n++){downgradeNode(nodes[n]);}}else if(nodes instanceof Node){downgradeNode(nodes);}else{throw new Error('Invalid argument provided to downgrade MDL nodes.');}}// Now return the functions that should be made public with their publicly
+	// facing names...
+	return{upgradeDom:upgradeDomInternal,upgradeElement:upgradeElementInternal,upgradeElements:upgradeElementsInternal,upgradeAllRegistered:upgradeAllRegisteredInternal,registerUpgradedCallback:registerUpgradedCallbackInternal,register:registerInternal,downgradeElements:downgradeNodesInternal};}();/**
+	 * Describes the type of a registered component type managed by
+	 * componentHandler. Provided for benefit of the Closure compiler.
+	 *
+	 * @typedef {{
+	 *   constructor: Function,
+	 *   classAsString: string,
+	 *   cssClass: string,
+	 *   widget: (string|boolean|undefined)
+	 * }}
+	 */componentHandler.ComponentConfigPublic;// jshint ignore:line
+	/**
+	 * Describes the type of a registered component type managed by
+	 * componentHandler. Provided for benefit of the Closure compiler.
+	 *
+	 * @typedef {{
+	 *   constructor: !Function,
+	 *   className: string,
+	 *   cssClass: string,
+	 *   widget: (string|boolean),
+	 *   callbacks: !Array<function(!HTMLElement)>
+	 * }}
+	 */componentHandler.ComponentConfig;// jshint ignore:line
+	/**
+	 * Created component (i.e., upgraded element) type as managed by
+	 * componentHandler. Provided for benefit of the Closure compiler.
+	 *
+	 * @typedef {{
+	 *   element_: !HTMLElement,
+	 *   className: string,
+	 *   classAsString: string,
+	 *   cssClass: string,
+	 *   widget: string
+	 * }}
+	 */componentHandler.Component;// jshint ignore:line
+	// Export all symbols, for the benefit of Closure compiler.
+	// No effect on uncompiled code.
+	componentHandler['upgradeDom']=componentHandler.upgradeDom;componentHandler['upgradeElement']=componentHandler.upgradeElement;componentHandler['upgradeElements']=componentHandler.upgradeElements;componentHandler['upgradeAllRegistered']=componentHandler.upgradeAllRegistered;componentHandler['registerUpgradedCallback']=componentHandler.registerUpgradedCallback;componentHandler['register']=componentHandler.register;componentHandler['downgradeElements']=componentHandler.downgradeElements;window.componentHandler=componentHandler;window['componentHandler']=componentHandler;window.addEventListener('load',function(){'use strict';/**
+	   * Performs a "Cutting the mustard" test. If the browser supports the features
+	   * tested, adds a mdl-js class to the <html> element. It then upgrades all MDL
+	   * components requiring JavaScript.
+	   */if('classList'in document.createElement('div')&&'querySelector'in document&&'addEventListener'in window&&Array.prototype.forEach){document.documentElement.classList.add('mdl-js');}else{/**
+	     * Dummy function to avoid JS errors.
+	     */componentHandler.upgradeElement=function(){};/**
+	     * Dummy function to avoid JS errors.
+	     */componentHandler.register=function(){};}});// Source: https://github.com/darius/requestAnimationFrame/blob/master/requestAnimationFrame.js
+	// Adapted from https://gist.github.com/paulirish/1579671 which derived from
+	// http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+	// http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
+	// requestAnimationFrame polyfill by Erik Möller.
+	// Fixes from Paul Irish, Tino Zijdel, Andrew Mao, Klemen Slavič, Darius Bacon
+	// MIT license
+	if(!Date.now){/**
+	   * Date.now polyfill.
+	   * @return {number} the current Date
+	   */Date.now=function(){return new Date().getTime();};Date['now']=Date.now;}var vendors=['webkit','moz'];for(var i=0;i<vendors.length&&!window.requestAnimationFrame;++i){var vp=vendors[i];window.requestAnimationFrame=window[vp+'RequestAnimationFrame'];window.cancelAnimationFrame=window[vp+'CancelAnimationFrame']||window[vp+'CancelRequestAnimationFrame'];window['requestAnimationFrame']=window.requestAnimationFrame;window['cancelAnimationFrame']=window.cancelAnimationFrame;}if(/iP(ad|hone|od).*OS 6/.test(window.navigator.userAgent)||!window.requestAnimationFrame||!window.cancelAnimationFrame){var lastTime=0;/**
+	   * requestAnimationFrame polyfill.
+	   * @param  {!Function} callback the callback function.
+	   */window.requestAnimationFrame=function(callback){var now=Date.now();var nextTime=Math.max(lastTime+16,now);return setTimeout(function(){callback(lastTime=nextTime);},nextTime-now);};window.cancelAnimationFrame=clearTimeout;window['requestAnimationFrame']=window.requestAnimationFrame;window['cancelAnimationFrame']=window.cancelAnimationFrame;}/**
+	 * @license
+	 * Copyright 2015 Google Inc. All Rights Reserved.
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License");
+	 * you may not use this file except in compliance with the License.
+	 * You may obtain a copy of the License at
+	 *
+	 *      http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 *//**
+	   * Class constructor for Button MDL component.
+	   * Implements MDL component design pattern defined at:
+	   * https://github.com/jasonmayes/mdl-component-design-pattern
+	   *
+	   * @param {HTMLElement} element The element that will be upgraded.
+	   */var MaterialButton=function MaterialButton(element){this.element_=element;// Initialize instance.
+	this.init();};window['MaterialButton']=MaterialButton;/**
+	   * Store constants in one place so they can be updated easily.
+	   *
+	   * @enum {string | number}
+	   * @private
+	   */MaterialButton.prototype.Constant_={};/**
+	   * Store strings for class names defined by this component that are used in
+	   * JavaScript. This allows us to simply change it in one place should we
+	   * decide to modify at a later date.
+	   *
+	   * @enum {string}
+	   * @private
+	   */MaterialButton.prototype.CssClasses_={RIPPLE_EFFECT:'mdl-js-ripple-effect',RIPPLE_CONTAINER:'mdl-button__ripple-container',RIPPLE:'mdl-ripple'};/**
+	   * Handle blur of element.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialButton.prototype.blurHandler_=function(event){if(event){this.element_.blur();}};// Public methods.
+	/**
+	   * Disable button.
+	   *
+	   * @public
+	   */MaterialButton.prototype.disable=function(){this.element_.disabled=true;};MaterialButton.prototype['disable']=MaterialButton.prototype.disable;/**
+	   * Enable button.
+	   *
+	   * @public
+	   */MaterialButton.prototype.enable=function(){this.element_.disabled=false;};MaterialButton.prototype['enable']=MaterialButton.prototype.enable;/**
+	   * Initialize element.
+	   */MaterialButton.prototype.init=function(){if(this.element_){if(this.element_.classList.contains(this.CssClasses_.RIPPLE_EFFECT)){var rippleContainer=document.createElement('span');rippleContainer.classList.add(this.CssClasses_.RIPPLE_CONTAINER);this.rippleElement_=document.createElement('span');this.rippleElement_.classList.add(this.CssClasses_.RIPPLE);rippleContainer.appendChild(this.rippleElement_);this.boundRippleBlurHandler=this.blurHandler_.bind(this);this.rippleElement_.addEventListener('mouseup',this.boundRippleBlurHandler);this.element_.appendChild(rippleContainer);}this.boundButtonBlurHandler=this.blurHandler_.bind(this);this.element_.addEventListener('mouseup',this.boundButtonBlurHandler);this.element_.addEventListener('mouseleave',this.boundButtonBlurHandler);}};// The component registers itself. It can assume componentHandler is available
+	// in the global scope.
+	componentHandler.register({constructor:MaterialButton,classAsString:'MaterialButton',cssClass:'mdl-js-button',widget:true});/**
+	 * @license
+	 * Copyright 2015 Google Inc. All Rights Reserved.
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License");
+	 * you may not use this file except in compliance with the License.
+	 * You may obtain a copy of the License at
+	 *
+	 *      http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 *//**
+	   * Class constructor for Checkbox MDL component.
+	   * Implements MDL component design pattern defined at:
+	   * https://github.com/jasonmayes/mdl-component-design-pattern
+	   *
+	   * @constructor
+	   * @param {HTMLElement} element The element that will be upgraded.
+	   */var MaterialCheckbox=function MaterialCheckbox(element){this.element_=element;// Initialize instance.
+	this.init();};window['MaterialCheckbox']=MaterialCheckbox;/**
+	   * Store constants in one place so they can be updated easily.
+	   *
+	   * @enum {string | number}
+	   * @private
+	   */MaterialCheckbox.prototype.Constant_={TINY_TIMEOUT:0.001};/**
+	   * Store strings for class names defined by this component that are used in
+	   * JavaScript. This allows us to simply change it in one place should we
+	   * decide to modify at a later date.
+	   *
+	   * @enum {string}
+	   * @private
+	   */MaterialCheckbox.prototype.CssClasses_={INPUT:'mdl-checkbox__input',BOX_OUTLINE:'mdl-checkbox__box-outline',FOCUS_HELPER:'mdl-checkbox__focus-helper',TICK_OUTLINE:'mdl-checkbox__tick-outline',RIPPLE_EFFECT:'mdl-js-ripple-effect',RIPPLE_IGNORE_EVENTS:'mdl-js-ripple-effect--ignore-events',RIPPLE_CONTAINER:'mdl-checkbox__ripple-container',RIPPLE_CENTER:'mdl-ripple--center',RIPPLE:'mdl-ripple',IS_FOCUSED:'is-focused',IS_DISABLED:'is-disabled',IS_CHECKED:'is-checked',IS_UPGRADED:'is-upgraded'};/**
+	   * Handle change of state.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialCheckbox.prototype.onChange_=function(event){this.updateClasses_();};/**
+	   * Handle focus of element.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialCheckbox.prototype.onFocus_=function(event){this.element_.classList.add(this.CssClasses_.IS_FOCUSED);};/**
+	   * Handle lost focus of element.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialCheckbox.prototype.onBlur_=function(event){this.element_.classList.remove(this.CssClasses_.IS_FOCUSED);};/**
+	   * Handle mouseup.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialCheckbox.prototype.onMouseUp_=function(event){this.blur_();};/**
+	   * Handle class updates.
+	   *
+	   * @private
+	   */MaterialCheckbox.prototype.updateClasses_=function(){this.checkDisabled();this.checkToggleState();};/**
+	   * Add blur.
+	   *
+	   * @private
+	   */MaterialCheckbox.prototype.blur_=function(){// TODO: figure out why there's a focus event being fired after our blur,
+	// so that we can avoid this hack.
+	window.setTimeout(function(){this.inputElement_.blur();}.bind(this),this.Constant_.TINY_TIMEOUT);};// Public methods.
+	/**
+	   * Check the inputs toggle state and update display.
+	   *
+	   * @public
+	   */MaterialCheckbox.prototype.checkToggleState=function(){if(this.inputElement_.checked){this.element_.classList.add(this.CssClasses_.IS_CHECKED);}else{this.element_.classList.remove(this.CssClasses_.IS_CHECKED);}};MaterialCheckbox.prototype['checkToggleState']=MaterialCheckbox.prototype.checkToggleState;/**
+	   * Check the inputs disabled state and update display.
+	   *
+	   * @public
+	   */MaterialCheckbox.prototype.checkDisabled=function(){if(this.inputElement_.disabled){this.element_.classList.add(this.CssClasses_.IS_DISABLED);}else{this.element_.classList.remove(this.CssClasses_.IS_DISABLED);}};MaterialCheckbox.prototype['checkDisabled']=MaterialCheckbox.prototype.checkDisabled;/**
+	   * Disable checkbox.
+	   *
+	   * @public
+	   */MaterialCheckbox.prototype.disable=function(){this.inputElement_.disabled=true;this.updateClasses_();};MaterialCheckbox.prototype['disable']=MaterialCheckbox.prototype.disable;/**
+	   * Enable checkbox.
+	   *
+	   * @public
+	   */MaterialCheckbox.prototype.enable=function(){this.inputElement_.disabled=false;this.updateClasses_();};MaterialCheckbox.prototype['enable']=MaterialCheckbox.prototype.enable;/**
+	   * Check checkbox.
+	   *
+	   * @public
+	   */MaterialCheckbox.prototype.check=function(){this.inputElement_.checked=true;this.updateClasses_();};MaterialCheckbox.prototype['check']=MaterialCheckbox.prototype.check;/**
+	   * Uncheck checkbox.
+	   *
+	   * @public
+	   */MaterialCheckbox.prototype.uncheck=function(){this.inputElement_.checked=false;this.updateClasses_();};MaterialCheckbox.prototype['uncheck']=MaterialCheckbox.prototype.uncheck;/**
+	   * Initialize element.
+	   */MaterialCheckbox.prototype.init=function(){if(this.element_){this.inputElement_=this.element_.querySelector('.'+this.CssClasses_.INPUT);var boxOutline=document.createElement('span');boxOutline.classList.add(this.CssClasses_.BOX_OUTLINE);var tickContainer=document.createElement('span');tickContainer.classList.add(this.CssClasses_.FOCUS_HELPER);var tickOutline=document.createElement('span');tickOutline.classList.add(this.CssClasses_.TICK_OUTLINE);boxOutline.appendChild(tickOutline);this.element_.appendChild(tickContainer);this.element_.appendChild(boxOutline);if(this.element_.classList.contains(this.CssClasses_.RIPPLE_EFFECT)){this.element_.classList.add(this.CssClasses_.RIPPLE_IGNORE_EVENTS);this.rippleContainerElement_=document.createElement('span');this.rippleContainerElement_.classList.add(this.CssClasses_.RIPPLE_CONTAINER);this.rippleContainerElement_.classList.add(this.CssClasses_.RIPPLE_EFFECT);this.rippleContainerElement_.classList.add(this.CssClasses_.RIPPLE_CENTER);this.boundRippleMouseUp=this.onMouseUp_.bind(this);this.rippleContainerElement_.addEventListener('mouseup',this.boundRippleMouseUp);var ripple=document.createElement('span');ripple.classList.add(this.CssClasses_.RIPPLE);this.rippleContainerElement_.appendChild(ripple);this.element_.appendChild(this.rippleContainerElement_);}this.boundInputOnChange=this.onChange_.bind(this);this.boundInputOnFocus=this.onFocus_.bind(this);this.boundInputOnBlur=this.onBlur_.bind(this);this.boundElementMouseUp=this.onMouseUp_.bind(this);this.inputElement_.addEventListener('change',this.boundInputOnChange);this.inputElement_.addEventListener('focus',this.boundInputOnFocus);this.inputElement_.addEventListener('blur',this.boundInputOnBlur);this.element_.addEventListener('mouseup',this.boundElementMouseUp);this.updateClasses_();this.element_.classList.add(this.CssClasses_.IS_UPGRADED);}};// The component registers itself. It can assume componentHandler is available
+	// in the global scope.
+	componentHandler.register({constructor:MaterialCheckbox,classAsString:'MaterialCheckbox',cssClass:'mdl-js-checkbox',widget:true});/**
+	 * @license
+	 * Copyright 2015 Google Inc. All Rights Reserved.
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License");
+	 * you may not use this file except in compliance with the License.
+	 * You may obtain a copy of the License at
+	 *
+	 *      http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 *//**
+	   * Class constructor for icon toggle MDL component.
+	   * Implements MDL component design pattern defined at:
+	   * https://github.com/jasonmayes/mdl-component-design-pattern
+	   *
+	   * @constructor
+	   * @param {HTMLElement} element The element that will be upgraded.
+	   */var MaterialIconToggle=function MaterialIconToggle(element){this.element_=element;// Initialize instance.
+	this.init();};window['MaterialIconToggle']=MaterialIconToggle;/**
+	   * Store constants in one place so they can be updated easily.
+	   *
+	   * @enum {string | number}
+	   * @private
+	   */MaterialIconToggle.prototype.Constant_={TINY_TIMEOUT:0.001};/**
+	   * Store strings for class names defined by this component that are used in
+	   * JavaScript. This allows us to simply change it in one place should we
+	   * decide to modify at a later date.
+	   *
+	   * @enum {string}
+	   * @private
+	   */MaterialIconToggle.prototype.CssClasses_={INPUT:'mdl-icon-toggle__input',JS_RIPPLE_EFFECT:'mdl-js-ripple-effect',RIPPLE_IGNORE_EVENTS:'mdl-js-ripple-effect--ignore-events',RIPPLE_CONTAINER:'mdl-icon-toggle__ripple-container',RIPPLE_CENTER:'mdl-ripple--center',RIPPLE:'mdl-ripple',IS_FOCUSED:'is-focused',IS_DISABLED:'is-disabled',IS_CHECKED:'is-checked'};/**
+	   * Handle change of state.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialIconToggle.prototype.onChange_=function(event){this.updateClasses_();};/**
+	   * Handle focus of element.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialIconToggle.prototype.onFocus_=function(event){this.element_.classList.add(this.CssClasses_.IS_FOCUSED);};/**
+	   * Handle lost focus of element.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialIconToggle.prototype.onBlur_=function(event){this.element_.classList.remove(this.CssClasses_.IS_FOCUSED);};/**
+	   * Handle mouseup.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialIconToggle.prototype.onMouseUp_=function(event){this.blur_();};/**
+	   * Handle class updates.
+	   *
+	   * @private
+	   */MaterialIconToggle.prototype.updateClasses_=function(){this.checkDisabled();this.checkToggleState();};/**
+	   * Add blur.
+	   *
+	   * @private
+	   */MaterialIconToggle.prototype.blur_=function(){// TODO: figure out why there's a focus event being fired after our blur,
+	// so that we can avoid this hack.
+	window.setTimeout(function(){this.inputElement_.blur();}.bind(this),this.Constant_.TINY_TIMEOUT);};// Public methods.
+	/**
+	   * Check the inputs toggle state and update display.
+	   *
+	   * @public
+	   */MaterialIconToggle.prototype.checkToggleState=function(){if(this.inputElement_.checked){this.element_.classList.add(this.CssClasses_.IS_CHECKED);}else{this.element_.classList.remove(this.CssClasses_.IS_CHECKED);}};MaterialIconToggle.prototype['checkToggleState']=MaterialIconToggle.prototype.checkToggleState;/**
+	   * Check the inputs disabled state and update display.
+	   *
+	   * @public
+	   */MaterialIconToggle.prototype.checkDisabled=function(){if(this.inputElement_.disabled){this.element_.classList.add(this.CssClasses_.IS_DISABLED);}else{this.element_.classList.remove(this.CssClasses_.IS_DISABLED);}};MaterialIconToggle.prototype['checkDisabled']=MaterialIconToggle.prototype.checkDisabled;/**
+	   * Disable icon toggle.
+	   *
+	   * @public
+	   */MaterialIconToggle.prototype.disable=function(){this.inputElement_.disabled=true;this.updateClasses_();};MaterialIconToggle.prototype['disable']=MaterialIconToggle.prototype.disable;/**
+	   * Enable icon toggle.
+	   *
+	   * @public
+	   */MaterialIconToggle.prototype.enable=function(){this.inputElement_.disabled=false;this.updateClasses_();};MaterialIconToggle.prototype['enable']=MaterialIconToggle.prototype.enable;/**
+	   * Check icon toggle.
+	   *
+	   * @public
+	   */MaterialIconToggle.prototype.check=function(){this.inputElement_.checked=true;this.updateClasses_();};MaterialIconToggle.prototype['check']=MaterialIconToggle.prototype.check;/**
+	   * Uncheck icon toggle.
+	   *
+	   * @public
+	   */MaterialIconToggle.prototype.uncheck=function(){this.inputElement_.checked=false;this.updateClasses_();};MaterialIconToggle.prototype['uncheck']=MaterialIconToggle.prototype.uncheck;/**
+	   * Initialize element.
+	   */MaterialIconToggle.prototype.init=function(){if(this.element_){this.inputElement_=this.element_.querySelector('.'+this.CssClasses_.INPUT);if(this.element_.classList.contains(this.CssClasses_.JS_RIPPLE_EFFECT)){this.element_.classList.add(this.CssClasses_.RIPPLE_IGNORE_EVENTS);this.rippleContainerElement_=document.createElement('span');this.rippleContainerElement_.classList.add(this.CssClasses_.RIPPLE_CONTAINER);this.rippleContainerElement_.classList.add(this.CssClasses_.JS_RIPPLE_EFFECT);this.rippleContainerElement_.classList.add(this.CssClasses_.RIPPLE_CENTER);this.boundRippleMouseUp=this.onMouseUp_.bind(this);this.rippleContainerElement_.addEventListener('mouseup',this.boundRippleMouseUp);var ripple=document.createElement('span');ripple.classList.add(this.CssClasses_.RIPPLE);this.rippleContainerElement_.appendChild(ripple);this.element_.appendChild(this.rippleContainerElement_);}this.boundInputOnChange=this.onChange_.bind(this);this.boundInputOnFocus=this.onFocus_.bind(this);this.boundInputOnBlur=this.onBlur_.bind(this);this.boundElementOnMouseUp=this.onMouseUp_.bind(this);this.inputElement_.addEventListener('change',this.boundInputOnChange);this.inputElement_.addEventListener('focus',this.boundInputOnFocus);this.inputElement_.addEventListener('blur',this.boundInputOnBlur);this.element_.addEventListener('mouseup',this.boundElementOnMouseUp);this.updateClasses_();this.element_.classList.add('is-upgraded');}};// The component registers itself. It can assume componentHandler is available
+	// in the global scope.
+	componentHandler.register({constructor:MaterialIconToggle,classAsString:'MaterialIconToggle',cssClass:'mdl-js-icon-toggle',widget:true});/**
+	 * @license
+	 * Copyright 2015 Google Inc. All Rights Reserved.
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License");
+	 * you may not use this file except in compliance with the License.
+	 * You may obtain a copy of the License at
+	 *
+	 *      http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 *//**
+	   * Class constructor for dropdown MDL component.
+	   * Implements MDL component design pattern defined at:
+	   * https://github.com/jasonmayes/mdl-component-design-pattern
+	   *
+	   * @constructor
+	   * @param {HTMLElement} element The element that will be upgraded.
+	   */var MaterialMenu=function MaterialMenu(element){this.element_=element;// Initialize instance.
+	this.init();};window['MaterialMenu']=MaterialMenu;/**
+	   * Store constants in one place so they can be updated easily.
+	   *
+	   * @enum {string | number}
+	   * @private
+	   */MaterialMenu.prototype.Constant_={// Total duration of the menu animation.
+	TRANSITION_DURATION_SECONDS:0.3,// The fraction of the total duration we want to use for menu item animations.
+	TRANSITION_DURATION_FRACTION:0.8,// How long the menu stays open after choosing an option (so the user can see
+	// the ripple).
+	CLOSE_TIMEOUT:150};/**
+	   * Keycodes, for code readability.
+	   *
+	   * @enum {number}
+	   * @private
+	   */MaterialMenu.prototype.Keycodes_={ENTER:13,ESCAPE:27,SPACE:32,UP_ARROW:38,DOWN_ARROW:40};/**
+	   * Store strings for class names defined by this component that are used in
+	   * JavaScript. This allows us to simply change it in one place should we
+	   * decide to modify at a later date.
+	   *
+	   * @enum {string}
+	   * @private
+	   */MaterialMenu.prototype.CssClasses_={CONTAINER:'mdl-menu__container',OUTLINE:'mdl-menu__outline',ITEM:'mdl-menu__item',ITEM_RIPPLE_CONTAINER:'mdl-menu__item-ripple-container',RIPPLE_EFFECT:'mdl-js-ripple-effect',RIPPLE_IGNORE_EVENTS:'mdl-js-ripple-effect--ignore-events',RIPPLE:'mdl-ripple',// Statuses
+	IS_UPGRADED:'is-upgraded',IS_VISIBLE:'is-visible',IS_ANIMATING:'is-animating',// Alignment options
+	BOTTOM_LEFT:'mdl-menu--bottom-left',// This is the default.
+	BOTTOM_RIGHT:'mdl-menu--bottom-right',TOP_LEFT:'mdl-menu--top-left',TOP_RIGHT:'mdl-menu--top-right',UNALIGNED:'mdl-menu--unaligned'};/**
+	   * Initialize element.
+	   */MaterialMenu.prototype.init=function(){if(this.element_){// Create container for the menu.
+	var container=document.createElement('div');container.classList.add(this.CssClasses_.CONTAINER);this.element_.parentElement.insertBefore(container,this.element_);this.element_.parentElement.removeChild(this.element_);container.appendChild(this.element_);this.container_=container;// Create outline for the menu (shadow and background).
+	var outline=document.createElement('div');outline.classList.add(this.CssClasses_.OUTLINE);this.outline_=outline;container.insertBefore(outline,this.element_);// Find the "for" element and bind events to it.
+	var forElId=this.element_.getAttribute('for')||this.element_.getAttribute('data-mdl-for');var forEl=null;if(forElId){forEl=document.getElementById(forElId);if(forEl){this.forElement_=forEl;forEl.addEventListener('click',this.handleForClick_.bind(this));forEl.addEventListener('keydown',this.handleForKeyboardEvent_.bind(this));}}var items=this.element_.querySelectorAll('.'+this.CssClasses_.ITEM);this.boundItemKeydown_=this.handleItemKeyboardEvent_.bind(this);this.boundItemClick_=this.handleItemClick_.bind(this);for(var i=0;i<items.length;i++){// Add a listener to each menu item.
+	items[i].addEventListener('click',this.boundItemClick_);// Add a tab index to each menu item.
+	items[i].tabIndex='-1';// Add a keyboard listener to each menu item.
+	items[i].addEventListener('keydown',this.boundItemKeydown_);}// Add ripple classes to each item, if the user has enabled ripples.
+	if(this.element_.classList.contains(this.CssClasses_.RIPPLE_EFFECT)){this.element_.classList.add(this.CssClasses_.RIPPLE_IGNORE_EVENTS);for(i=0;i<items.length;i++){var item=items[i];var rippleContainer=document.createElement('span');rippleContainer.classList.add(this.CssClasses_.ITEM_RIPPLE_CONTAINER);var ripple=document.createElement('span');ripple.classList.add(this.CssClasses_.RIPPLE);rippleContainer.appendChild(ripple);item.appendChild(rippleContainer);item.classList.add(this.CssClasses_.RIPPLE_EFFECT);}}// Copy alignment classes to the container, so the outline can use them.
+	if(this.element_.classList.contains(this.CssClasses_.BOTTOM_LEFT)){this.outline_.classList.add(this.CssClasses_.BOTTOM_LEFT);}if(this.element_.classList.contains(this.CssClasses_.BOTTOM_RIGHT)){this.outline_.classList.add(this.CssClasses_.BOTTOM_RIGHT);}if(this.element_.classList.contains(this.CssClasses_.TOP_LEFT)){this.outline_.classList.add(this.CssClasses_.TOP_LEFT);}if(this.element_.classList.contains(this.CssClasses_.TOP_RIGHT)){this.outline_.classList.add(this.CssClasses_.TOP_RIGHT);}if(this.element_.classList.contains(this.CssClasses_.UNALIGNED)){this.outline_.classList.add(this.CssClasses_.UNALIGNED);}container.classList.add(this.CssClasses_.IS_UPGRADED);}};/**
+	   * Handles a click on the "for" element, by positioning the menu and then
+	   * toggling it.
+	   *
+	   * @param {Event} evt The event that fired.
+	   * @private
+	   */MaterialMenu.prototype.handleForClick_=function(evt){if(this.element_&&this.forElement_){var rect=this.forElement_.getBoundingClientRect();var forRect=this.forElement_.parentElement.getBoundingClientRect();if(this.element_.classList.contains(this.CssClasses_.UNALIGNED)){}else if(this.element_.classList.contains(this.CssClasses_.BOTTOM_RIGHT)){// Position below the "for" element, aligned to its right.
+	this.container_.style.right=forRect.right-rect.right+'px';this.container_.style.top=this.forElement_.offsetTop+this.forElement_.offsetHeight+'px';}else if(this.element_.classList.contains(this.CssClasses_.TOP_LEFT)){// Position above the "for" element, aligned to its left.
+	this.container_.style.left=this.forElement_.offsetLeft+'px';this.container_.style.bottom=forRect.bottom-rect.top+'px';}else if(this.element_.classList.contains(this.CssClasses_.TOP_RIGHT)){// Position above the "for" element, aligned to its right.
+	this.container_.style.right=forRect.right-rect.right+'px';this.container_.style.bottom=forRect.bottom-rect.top+'px';}else{// Default: position below the "for" element, aligned to its left.
+	this.container_.style.left=this.forElement_.offsetLeft+'px';this.container_.style.top=this.forElement_.offsetTop+this.forElement_.offsetHeight+'px';}}this.toggle(evt);};/**
+	   * Handles a keyboard event on the "for" element.
+	   *
+	   * @param {Event} evt The event that fired.
+	   * @private
+	   */MaterialMenu.prototype.handleForKeyboardEvent_=function(evt){if(this.element_&&this.container_&&this.forElement_){var items=this.element_.querySelectorAll('.'+this.CssClasses_.ITEM+':not([disabled])');if(items&&items.length>0&&this.container_.classList.contains(this.CssClasses_.IS_VISIBLE)){if(evt.keyCode===this.Keycodes_.UP_ARROW){evt.preventDefault();items[items.length-1].focus();}else if(evt.keyCode===this.Keycodes_.DOWN_ARROW){evt.preventDefault();items[0].focus();}}}};/**
+	   * Handles a keyboard event on an item.
+	   *
+	   * @param {Event} evt The event that fired.
+	   * @private
+	   */MaterialMenu.prototype.handleItemKeyboardEvent_=function(evt){if(this.element_&&this.container_){var items=this.element_.querySelectorAll('.'+this.CssClasses_.ITEM+':not([disabled])');if(items&&items.length>0&&this.container_.classList.contains(this.CssClasses_.IS_VISIBLE)){var currentIndex=Array.prototype.slice.call(items).indexOf(evt.target);if(evt.keyCode===this.Keycodes_.UP_ARROW){evt.preventDefault();if(currentIndex>0){items[currentIndex-1].focus();}else{items[items.length-1].focus();}}else if(evt.keyCode===this.Keycodes_.DOWN_ARROW){evt.preventDefault();if(items.length>currentIndex+1){items[currentIndex+1].focus();}else{items[0].focus();}}else if(evt.keyCode===this.Keycodes_.SPACE||evt.keyCode===this.Keycodes_.ENTER){evt.preventDefault();// Send mousedown and mouseup to trigger ripple.
+	var e=new MouseEvent('mousedown');evt.target.dispatchEvent(e);e=new MouseEvent('mouseup');evt.target.dispatchEvent(e);// Send click.
+	evt.target.click();}else if(evt.keyCode===this.Keycodes_.ESCAPE){evt.preventDefault();this.hide();}}}};/**
+	   * Handles a click event on an item.
+	   *
+	   * @param {Event} evt The event that fired.
+	   * @private
+	   */MaterialMenu.prototype.handleItemClick_=function(evt){if(evt.target.hasAttribute('disabled')){evt.stopPropagation();}else{// Wait some time before closing menu, so the user can see the ripple.
+	this.closing_=true;window.setTimeout(function(evt){this.hide();this.closing_=false;}.bind(this),this.Constant_.CLOSE_TIMEOUT);}};/**
+	   * Calculates the initial clip (for opening the menu) or final clip (for closing
+	   * it), and applies it. This allows us to animate from or to the correct point,
+	   * that is, the point it's aligned to in the "for" element.
+	   *
+	   * @param {number} height Height of the clip rectangle
+	   * @param {number} width Width of the clip rectangle
+	   * @private
+	   */MaterialMenu.prototype.applyClip_=function(height,width){if(this.element_.classList.contains(this.CssClasses_.UNALIGNED)){// Do not clip.
+	this.element_.style.clip='';}else if(this.element_.classList.contains(this.CssClasses_.BOTTOM_RIGHT)){// Clip to the top right corner of the menu.
+	this.element_.style.clip='rect(0 '+width+'px '+'0 '+width+'px)';}else if(this.element_.classList.contains(this.CssClasses_.TOP_LEFT)){// Clip to the bottom left corner of the menu.
+	this.element_.style.clip='rect('+height+'px 0 '+height+'px 0)';}else if(this.element_.classList.contains(this.CssClasses_.TOP_RIGHT)){// Clip to the bottom right corner of the menu.
+	this.element_.style.clip='rect('+height+'px '+width+'px '+height+'px '+width+'px)';}else{// Default: do not clip (same as clipping to the top left corner).
+	this.element_.style.clip='';}};/**
+	   * Cleanup function to remove animation listeners.
+	   *
+	   * @param {Event} evt
+	   * @private
+	   */MaterialMenu.prototype.removeAnimationEndListener_=function(evt){evt.target.classList.remove(MaterialMenu.prototype.CssClasses_.IS_ANIMATING);};/**
+	   * Adds an event listener to clean up after the animation ends.
+	   *
+	   * @private
+	   */MaterialMenu.prototype.addAnimationEndListener_=function(){this.element_.addEventListener('transitionend',this.removeAnimationEndListener_);this.element_.addEventListener('webkitTransitionEnd',this.removeAnimationEndListener_);};/**
+	   * Displays the menu.
+	   *
+	   * @public
+	   */MaterialMenu.prototype.show=function(evt){if(this.element_&&this.container_&&this.outline_){// Measure the inner element.
+	var height=this.element_.getBoundingClientRect().height;var width=this.element_.getBoundingClientRect().width;// Apply the inner element's size to the container and outline.
+	this.container_.style.width=width+'px';this.container_.style.height=height+'px';this.outline_.style.width=width+'px';this.outline_.style.height=height+'px';var transitionDuration=this.Constant_.TRANSITION_DURATION_SECONDS*this.Constant_.TRANSITION_DURATION_FRACTION;// Calculate transition delays for individual menu items, so that they fade
+	// in one at a time.
+	var items=this.element_.querySelectorAll('.'+this.CssClasses_.ITEM);for(var i=0;i<items.length;i++){var itemDelay=null;if(this.element_.classList.contains(this.CssClasses_.TOP_LEFT)||this.element_.classList.contains(this.CssClasses_.TOP_RIGHT)){itemDelay=(height-items[i].offsetTop-items[i].offsetHeight)/height*transitionDuration+'s';}else{itemDelay=items[i].offsetTop/height*transitionDuration+'s';}items[i].style.transitionDelay=itemDelay;}// Apply the initial clip to the text before we start animating.
+	this.applyClip_(height,width);// Wait for the next frame, turn on animation, and apply the final clip.
+	// Also make it visible. This triggers the transitions.
+	window.requestAnimationFrame(function(){this.element_.classList.add(this.CssClasses_.IS_ANIMATING);this.element_.style.clip='rect(0 '+width+'px '+height+'px 0)';this.container_.classList.add(this.CssClasses_.IS_VISIBLE);}.bind(this));// Clean up after the animation is complete.
+	this.addAnimationEndListener_();// Add a click listener to the document, to close the menu.
+	var callback=function(e){// Check to see if the document is processing the same event that
+	// displayed the menu in the first place. If so, do nothing.
+	// Also check to see if the menu is in the process of closing itself, and
+	// do nothing in that case.
+	// Also check if the clicked element is a menu item
+	// if so, do nothing.
+	if(e!==evt&&!this.closing_&&e.target.parentNode!==this.element_){document.removeEventListener('click',callback);this.hide();}}.bind(this);document.addEventListener('click',callback);}};MaterialMenu.prototype['show']=MaterialMenu.prototype.show;/**
+	   * Hides the menu.
+	   *
+	   * @public
+	   */MaterialMenu.prototype.hide=function(){if(this.element_&&this.container_&&this.outline_){var items=this.element_.querySelectorAll('.'+this.CssClasses_.ITEM);// Remove all transition delays; menu items fade out concurrently.
+	for(var i=0;i<items.length;i++){items[i].style.removeProperty('transition-delay');}// Measure the inner element.
+	var rect=this.element_.getBoundingClientRect();var height=rect.height;var width=rect.width;// Turn on animation, and apply the final clip. Also make invisible.
+	// This triggers the transitions.
+	this.element_.classList.add(this.CssClasses_.IS_ANIMATING);this.applyClip_(height,width);this.container_.classList.remove(this.CssClasses_.IS_VISIBLE);// Clean up after the animation is complete.
+	this.addAnimationEndListener_();}};MaterialMenu.prototype['hide']=MaterialMenu.prototype.hide;/**
+	   * Displays or hides the menu, depending on current state.
+	   *
+	   * @public
+	   */MaterialMenu.prototype.toggle=function(evt){if(this.container_.classList.contains(this.CssClasses_.IS_VISIBLE)){this.hide();}else{this.show(evt);}};MaterialMenu.prototype['toggle']=MaterialMenu.prototype.toggle;// The component registers itself. It can assume componentHandler is available
+	// in the global scope.
+	componentHandler.register({constructor:MaterialMenu,classAsString:'MaterialMenu',cssClass:'mdl-js-menu',widget:true});/**
+	 * @license
+	 * Copyright 2015 Google Inc. All Rights Reserved.
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License");
+	 * you may not use this file except in compliance with the License.
+	 * You may obtain a copy of the License at
+	 *
+	 *      http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 *//**
+	   * Class constructor for Progress MDL component.
+	   * Implements MDL component design pattern defined at:
+	   * https://github.com/jasonmayes/mdl-component-design-pattern
+	   *
+	   * @constructor
+	   * @param {HTMLElement} element The element that will be upgraded.
+	   */var MaterialProgress=function MaterialProgress(element){this.element_=element;// Initialize instance.
+	this.init();};window['MaterialProgress']=MaterialProgress;/**
+	   * Store constants in one place so they can be updated easily.
+	   *
+	   * @enum {string | number}
+	   * @private
+	   */MaterialProgress.prototype.Constant_={};/**
+	   * Store strings for class names defined by this component that are used in
+	   * JavaScript. This allows us to simply change it in one place should we
+	   * decide to modify at a later date.
+	   *
+	   * @enum {string}
+	   * @private
+	   */MaterialProgress.prototype.CssClasses_={INDETERMINATE_CLASS:'mdl-progress__indeterminate'};/**
+	   * Set the current progress of the progressbar.
+	   *
+	   * @param {number} p Percentage of the progress (0-100)
+	   * @public
+	   */MaterialProgress.prototype.setProgress=function(p){if(this.element_.classList.contains(this.CssClasses_.INDETERMINATE_CLASS)){return;}this.progressbar_.style.width=p+'%';};MaterialProgress.prototype['setProgress']=MaterialProgress.prototype.setProgress;/**
+	   * Set the current progress of the buffer.
+	   *
+	   * @param {number} p Percentage of the buffer (0-100)
+	   * @public
+	   */MaterialProgress.prototype.setBuffer=function(p){this.bufferbar_.style.width=p+'%';this.auxbar_.style.width=100-p+'%';};MaterialProgress.prototype['setBuffer']=MaterialProgress.prototype.setBuffer;/**
+	   * Initialize element.
+	   */MaterialProgress.prototype.init=function(){if(this.element_){var el=document.createElement('div');el.className='progressbar bar bar1';this.element_.appendChild(el);this.progressbar_=el;el=document.createElement('div');el.className='bufferbar bar bar2';this.element_.appendChild(el);this.bufferbar_=el;el=document.createElement('div');el.className='auxbar bar bar3';this.element_.appendChild(el);this.auxbar_=el;this.progressbar_.style.width='0%';this.bufferbar_.style.width='100%';this.auxbar_.style.width='0%';this.element_.classList.add('is-upgraded');}};// The component registers itself. It can assume componentHandler is available
+	// in the global scope.
+	componentHandler.register({constructor:MaterialProgress,classAsString:'MaterialProgress',cssClass:'mdl-js-progress',widget:true});/**
+	 * @license
+	 * Copyright 2015 Google Inc. All Rights Reserved.
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License");
+	 * you may not use this file except in compliance with the License.
+	 * You may obtain a copy of the License at
+	 *
+	 *      http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 *//**
+	   * Class constructor for Radio MDL component.
+	   * Implements MDL component design pattern defined at:
+	   * https://github.com/jasonmayes/mdl-component-design-pattern
+	   *
+	   * @constructor
+	   * @param {HTMLElement} element The element that will be upgraded.
+	   */var MaterialRadio=function MaterialRadio(element){this.element_=element;// Initialize instance.
+	this.init();};window['MaterialRadio']=MaterialRadio;/**
+	   * Store constants in one place so they can be updated easily.
+	   *
+	   * @enum {string | number}
+	   * @private
+	   */MaterialRadio.prototype.Constant_={TINY_TIMEOUT:0.001};/**
+	   * Store strings for class names defined by this component that are used in
+	   * JavaScript. This allows us to simply change it in one place should we
+	   * decide to modify at a later date.
+	   *
+	   * @enum {string}
+	   * @private
+	   */MaterialRadio.prototype.CssClasses_={IS_FOCUSED:'is-focused',IS_DISABLED:'is-disabled',IS_CHECKED:'is-checked',IS_UPGRADED:'is-upgraded',JS_RADIO:'mdl-js-radio',RADIO_BTN:'mdl-radio__button',RADIO_OUTER_CIRCLE:'mdl-radio__outer-circle',RADIO_INNER_CIRCLE:'mdl-radio__inner-circle',RIPPLE_EFFECT:'mdl-js-ripple-effect',RIPPLE_IGNORE_EVENTS:'mdl-js-ripple-effect--ignore-events',RIPPLE_CONTAINER:'mdl-radio__ripple-container',RIPPLE_CENTER:'mdl-ripple--center',RIPPLE:'mdl-ripple'};/**
+	   * Handle change of state.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialRadio.prototype.onChange_=function(event){// Since other radio buttons don't get change events, we need to look for
+	// them to update their classes.
+	var radios=document.getElementsByClassName(this.CssClasses_.JS_RADIO);for(var i=0;i<radios.length;i++){var button=radios[i].querySelector('.'+this.CssClasses_.RADIO_BTN);// Different name == different group, so no point updating those.
+	if(button.getAttribute('name')===this.btnElement_.getAttribute('name')){radios[i]['MaterialRadio'].updateClasses_();}}};/**
+	   * Handle focus.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialRadio.prototype.onFocus_=function(event){this.element_.classList.add(this.CssClasses_.IS_FOCUSED);};/**
+	   * Handle lost focus.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialRadio.prototype.onBlur_=function(event){this.element_.classList.remove(this.CssClasses_.IS_FOCUSED);};/**
+	   * Handle mouseup.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialRadio.prototype.onMouseup_=function(event){this.blur_();};/**
+	   * Update classes.
+	   *
+	   * @private
+	   */MaterialRadio.prototype.updateClasses_=function(){this.checkDisabled();this.checkToggleState();};/**
+	   * Add blur.
+	   *
+	   * @private
+	   */MaterialRadio.prototype.blur_=function(){// TODO: figure out why there's a focus event being fired after our blur,
+	// so that we can avoid this hack.
+	window.setTimeout(function(){this.btnElement_.blur();}.bind(this),this.Constant_.TINY_TIMEOUT);};// Public methods.
+	/**
+	   * Check the components disabled state.
+	   *
+	   * @public
+	   */MaterialRadio.prototype.checkDisabled=function(){if(this.btnElement_.disabled){this.element_.classList.add(this.CssClasses_.IS_DISABLED);}else{this.element_.classList.remove(this.CssClasses_.IS_DISABLED);}};MaterialRadio.prototype['checkDisabled']=MaterialRadio.prototype.checkDisabled;/**
+	   * Check the components toggled state.
+	   *
+	   * @public
+	   */MaterialRadio.prototype.checkToggleState=function(){if(this.btnElement_.checked){this.element_.classList.add(this.CssClasses_.IS_CHECKED);}else{this.element_.classList.remove(this.CssClasses_.IS_CHECKED);}};MaterialRadio.prototype['checkToggleState']=MaterialRadio.prototype.checkToggleState;/**
+	   * Disable radio.
+	   *
+	   * @public
+	   */MaterialRadio.prototype.disable=function(){this.btnElement_.disabled=true;this.updateClasses_();};MaterialRadio.prototype['disable']=MaterialRadio.prototype.disable;/**
+	   * Enable radio.
+	   *
+	   * @public
+	   */MaterialRadio.prototype.enable=function(){this.btnElement_.disabled=false;this.updateClasses_();};MaterialRadio.prototype['enable']=MaterialRadio.prototype.enable;/**
+	   * Check radio.
+	   *
+	   * @public
+	   */MaterialRadio.prototype.check=function(){this.btnElement_.checked=true;this.updateClasses_();};MaterialRadio.prototype['check']=MaterialRadio.prototype.check;/**
+	   * Uncheck radio.
+	   *
+	   * @public
+	   */MaterialRadio.prototype.uncheck=function(){this.btnElement_.checked=false;this.updateClasses_();};MaterialRadio.prototype['uncheck']=MaterialRadio.prototype.uncheck;/**
+	   * Initialize element.
+	   */MaterialRadio.prototype.init=function(){if(this.element_){this.btnElement_=this.element_.querySelector('.'+this.CssClasses_.RADIO_BTN);this.boundChangeHandler_=this.onChange_.bind(this);this.boundFocusHandler_=this.onChange_.bind(this);this.boundBlurHandler_=this.onBlur_.bind(this);this.boundMouseUpHandler_=this.onMouseup_.bind(this);var outerCircle=document.createElement('span');outerCircle.classList.add(this.CssClasses_.RADIO_OUTER_CIRCLE);var innerCircle=document.createElement('span');innerCircle.classList.add(this.CssClasses_.RADIO_INNER_CIRCLE);this.element_.appendChild(outerCircle);this.element_.appendChild(innerCircle);var rippleContainer;if(this.element_.classList.contains(this.CssClasses_.RIPPLE_EFFECT)){this.element_.classList.add(this.CssClasses_.RIPPLE_IGNORE_EVENTS);rippleContainer=document.createElement('span');rippleContainer.classList.add(this.CssClasses_.RIPPLE_CONTAINER);rippleContainer.classList.add(this.CssClasses_.RIPPLE_EFFECT);rippleContainer.classList.add(this.CssClasses_.RIPPLE_CENTER);rippleContainer.addEventListener('mouseup',this.boundMouseUpHandler_);var ripple=document.createElement('span');ripple.classList.add(this.CssClasses_.RIPPLE);rippleContainer.appendChild(ripple);this.element_.appendChild(rippleContainer);}this.btnElement_.addEventListener('change',this.boundChangeHandler_);this.btnElement_.addEventListener('focus',this.boundFocusHandler_);this.btnElement_.addEventListener('blur',this.boundBlurHandler_);this.element_.addEventListener('mouseup',this.boundMouseUpHandler_);this.updateClasses_();this.element_.classList.add(this.CssClasses_.IS_UPGRADED);}};// The component registers itself. It can assume componentHandler is available
+	// in the global scope.
+	componentHandler.register({constructor:MaterialRadio,classAsString:'MaterialRadio',cssClass:'mdl-js-radio',widget:true});/**
+	 * @license
+	 * Copyright 2015 Google Inc. All Rights Reserved.
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License");
+	 * you may not use this file except in compliance with the License.
+	 * You may obtain a copy of the License at
+	 *
+	 *      http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 *//**
+	   * Class constructor for Slider MDL component.
+	   * Implements MDL component design pattern defined at:
+	   * https://github.com/jasonmayes/mdl-component-design-pattern
+	   *
+	   * @constructor
+	   * @param {HTMLElement} element The element that will be upgraded.
+	   */var MaterialSlider=function MaterialSlider(element){this.element_=element;// Browser feature detection.
+	this.isIE_=window.navigator.msPointerEnabled;// Initialize instance.
+	this.init();};window['MaterialSlider']=MaterialSlider;/**
+	   * Store constants in one place so they can be updated easily.
+	   *
+	   * @enum {string | number}
+	   * @private
+	   */MaterialSlider.prototype.Constant_={};/**
+	   * Store strings for class names defined by this component that are used in
+	   * JavaScript. This allows us to simply change it in one place should we
+	   * decide to modify at a later date.
+	   *
+	   * @enum {string}
+	   * @private
+	   */MaterialSlider.prototype.CssClasses_={IE_CONTAINER:'mdl-slider__ie-container',SLIDER_CONTAINER:'mdl-slider__container',BACKGROUND_FLEX:'mdl-slider__background-flex',BACKGROUND_LOWER:'mdl-slider__background-lower',BACKGROUND_UPPER:'mdl-slider__background-upper',IS_LOWEST_VALUE:'is-lowest-value',IS_UPGRADED:'is-upgraded'};/**
+	   * Handle input on element.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialSlider.prototype.onInput_=function(event){this.updateValueStyles_();};/**
+	   * Handle change on element.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialSlider.prototype.onChange_=function(event){this.updateValueStyles_();};/**
+	   * Handle mouseup on element.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialSlider.prototype.onMouseUp_=function(event){event.target.blur();};/**
+	   * Handle mousedown on container element.
+	   * This handler is purpose is to not require the use to click
+	   * exactly on the 2px slider element, as FireFox seems to be very
+	   * strict about this.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   * @suppress {missingProperties}
+	   */MaterialSlider.prototype.onContainerMouseDown_=function(event){// If this click is not on the parent element (but rather some child)
+	// ignore. It may still bubble up.
+	if(event.target!==this.element_.parentElement){return;}// Discard the original event and create a new event that
+	// is on the slider element.
+	event.preventDefault();var newEvent=new MouseEvent('mousedown',{target:event.target,buttons:event.buttons,clientX:event.clientX,clientY:this.element_.getBoundingClientRect().y});this.element_.dispatchEvent(newEvent);};/**
+	   * Handle updating of values.
+	   *
+	   * @private
+	   */MaterialSlider.prototype.updateValueStyles_=function(){// Calculate and apply percentages to div structure behind slider.
+	var fraction=(this.element_.value-this.element_.min)/(this.element_.max-this.element_.min);if(fraction===0){this.element_.classList.add(this.CssClasses_.IS_LOWEST_VALUE);}else{this.element_.classList.remove(this.CssClasses_.IS_LOWEST_VALUE);}if(!this.isIE_){this.backgroundLower_.style.flex=fraction;this.backgroundLower_.style.webkitFlex=fraction;this.backgroundUpper_.style.flex=1-fraction;this.backgroundUpper_.style.webkitFlex=1-fraction;}};// Public methods.
+	/**
+	   * Disable slider.
+	   *
+	   * @public
+	   */MaterialSlider.prototype.disable=function(){this.element_.disabled=true;};MaterialSlider.prototype['disable']=MaterialSlider.prototype.disable;/**
+	   * Enable slider.
+	   *
+	   * @public
+	   */MaterialSlider.prototype.enable=function(){this.element_.disabled=false;};MaterialSlider.prototype['enable']=MaterialSlider.prototype.enable;/**
+	   * Update slider value.
+	   *
+	   * @param {number} value The value to which to set the control (optional).
+	   * @public
+	   */MaterialSlider.prototype.change=function(value){if(typeof value!=='undefined'){this.element_.value=value;}this.updateValueStyles_();};MaterialSlider.prototype['change']=MaterialSlider.prototype.change;/**
+	   * Initialize element.
+	   */MaterialSlider.prototype.init=function(){if(this.element_){if(this.isIE_){// Since we need to specify a very large height in IE due to
+	// implementation limitations, we add a parent here that trims it down to
+	// a reasonable size.
+	var containerIE=document.createElement('div');containerIE.classList.add(this.CssClasses_.IE_CONTAINER);this.element_.parentElement.insertBefore(containerIE,this.element_);this.element_.parentElement.removeChild(this.element_);containerIE.appendChild(this.element_);}else{// For non-IE browsers, we need a div structure that sits behind the
+	// slider and allows us to style the left and right sides of it with
+	// different colors.
+	var container=document.createElement('div');container.classList.add(this.CssClasses_.SLIDER_CONTAINER);this.element_.parentElement.insertBefore(container,this.element_);this.element_.parentElement.removeChild(this.element_);container.appendChild(this.element_);var backgroundFlex=document.createElement('div');backgroundFlex.classList.add(this.CssClasses_.BACKGROUND_FLEX);container.appendChild(backgroundFlex);this.backgroundLower_=document.createElement('div');this.backgroundLower_.classList.add(this.CssClasses_.BACKGROUND_LOWER);backgroundFlex.appendChild(this.backgroundLower_);this.backgroundUpper_=document.createElement('div');this.backgroundUpper_.classList.add(this.CssClasses_.BACKGROUND_UPPER);backgroundFlex.appendChild(this.backgroundUpper_);}this.boundInputHandler=this.onInput_.bind(this);this.boundChangeHandler=this.onChange_.bind(this);this.boundMouseUpHandler=this.onMouseUp_.bind(this);this.boundContainerMouseDownHandler=this.onContainerMouseDown_.bind(this);this.element_.addEventListener('input',this.boundInputHandler);this.element_.addEventListener('change',this.boundChangeHandler);this.element_.addEventListener('mouseup',this.boundMouseUpHandler);this.element_.parentElement.addEventListener('mousedown',this.boundContainerMouseDownHandler);this.updateValueStyles_();this.element_.classList.add(this.CssClasses_.IS_UPGRADED);}};// The component registers itself. It can assume componentHandler is available
+	// in the global scope.
+	componentHandler.register({constructor:MaterialSlider,classAsString:'MaterialSlider',cssClass:'mdl-js-slider',widget:true});/**
+	 * Copyright 2015 Google Inc. All Rights Reserved.
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License");
+	 * you may not use this file except in compliance with the License.
+	 * You may obtain a copy of the License at
+	 *
+	 *      http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 *//**
+	   * Class constructor for Snackbar MDL component.
+	   * Implements MDL component design pattern defined at:
+	   * https://github.com/jasonmayes/mdl-component-design-pattern
+	   *
+	   * @constructor
+	   * @param {HTMLElement} element The element that will be upgraded.
+	   */var MaterialSnackbar=function MaterialSnackbar(element){this.element_=element;this.textElement_=this.element_.querySelector('.'+this.cssClasses_.MESSAGE);this.actionElement_=this.element_.querySelector('.'+this.cssClasses_.ACTION);if(!this.textElement_){throw new Error('There must be a message element for a snackbar.');}if(!this.actionElement_){throw new Error('There must be an action element for a snackbar.');}this.active=false;this.actionHandler_=undefined;this.message_=undefined;this.actionText_=undefined;this.queuedNotifications_=[];this.setActionHidden_(true);};window['MaterialSnackbar']=MaterialSnackbar;/**
+	   * Store constants in one place so they can be updated easily.
+	   *
+	   * @enum {string | number}
+	   * @private
+	   */MaterialSnackbar.prototype.Constant_={// The duration of the snackbar show/hide animation, in ms.
+	ANIMATION_LENGTH:250};/**
+	   * Store strings for class names defined by this component that are used in
+	   * JavaScript. This allows us to simply change it in one place should we
+	   * decide to modify at a later date.
+	   *
+	   * @enum {string}
+	   * @private
+	   */MaterialSnackbar.prototype.cssClasses_={SNACKBAR:'mdl-snackbar',MESSAGE:'mdl-snackbar__text',ACTION:'mdl-snackbar__action',ACTIVE:'mdl-snackbar--active'};/**
+	   * Display the snackbar.
+	   *
+	   * @private
+	   */MaterialSnackbar.prototype.displaySnackbar_=function(){this.element_.setAttribute('aria-hidden','true');if(this.actionHandler_){this.actionElement_.textContent=this.actionText_;this.actionElement_.addEventListener('click',this.actionHandler_);this.setActionHidden_(false);}this.textElement_.textContent=this.message_;this.element_.classList.add(this.cssClasses_.ACTIVE);this.element_.setAttribute('aria-hidden','false');setTimeout(this.cleanup_.bind(this),this.timeout_);};/**
+	   * Show the snackbar.
+	   *
+	   * @param {Object} data The data for the notification.
+	   * @public
+	   */MaterialSnackbar.prototype.showSnackbar=function(data){if(data===undefined){throw new Error('Please provide a data object with at least a message to display.');}if(data['message']===undefined){throw new Error('Please provide a message to be displayed.');}if(data['actionHandler']&&!data['actionText']){throw new Error('Please provide action text with the handler.');}if(this.active){this.queuedNotifications_.push(data);}else{this.active=true;this.message_=data['message'];if(data['timeout']){this.timeout_=data['timeout'];}else{this.timeout_=2750;}if(data['actionHandler']){this.actionHandler_=data['actionHandler'];}if(data['actionText']){this.actionText_=data['actionText'];}this.displaySnackbar_();}};MaterialSnackbar.prototype['showSnackbar']=MaterialSnackbar.prototype.showSnackbar;/**
+	   * Check if the queue has items within it.
+	   * If it does, display the next entry.
+	   *
+	   * @private
+	   */MaterialSnackbar.prototype.checkQueue_=function(){if(this.queuedNotifications_.length>0){this.showSnackbar(this.queuedNotifications_.shift());}};/**
+	   * Cleanup the snackbar event listeners and accessiblity attributes.
+	   *
+	   * @private
+	   */MaterialSnackbar.prototype.cleanup_=function(){this.element_.classList.remove(this.cssClasses_.ACTIVE);setTimeout(function(){this.element_.setAttribute('aria-hidden','true');this.textElement_.textContent='';if(!Boolean(this.actionElement_.getAttribute('aria-hidden'))){this.setActionHidden_(true);this.actionElement_.textContent='';this.actionElement_.removeEventListener('click',this.actionHandler_);}this.actionHandler_=undefined;this.message_=undefined;this.actionText_=undefined;this.active=false;this.checkQueue_();}.bind(this),this.Constant_.ANIMATION_LENGTH);};/**
+	   * Set the action handler hidden state.
+	   *
+	   * @param {boolean} value
+	   * @private
+	   */MaterialSnackbar.prototype.setActionHidden_=function(value){if(value){this.actionElement_.setAttribute('aria-hidden','true');}else{this.actionElement_.removeAttribute('aria-hidden');}};// The component registers itself. It can assume componentHandler is available
+	// in the global scope.
+	componentHandler.register({constructor:MaterialSnackbar,classAsString:'MaterialSnackbar',cssClass:'mdl-js-snackbar',widget:true});/**
+	 * @license
+	 * Copyright 2015 Google Inc. All Rights Reserved.
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License");
+	 * you may not use this file except in compliance with the License.
+	 * You may obtain a copy of the License at
+	 *
+	 *      http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 *//**
+	   * Class constructor for Spinner MDL component.
+	   * Implements MDL component design pattern defined at:
+	   * https://github.com/jasonmayes/mdl-component-design-pattern
+	   *
+	   * @param {HTMLElement} element The element that will be upgraded.
+	   * @constructor
+	   */var MaterialSpinner=function MaterialSpinner(element){this.element_=element;// Initialize instance.
+	this.init();};window['MaterialSpinner']=MaterialSpinner;/**
+	   * Store constants in one place so they can be updated easily.
+	   *
+	   * @enum {string | number}
+	   * @private
+	   */MaterialSpinner.prototype.Constant_={MDL_SPINNER_LAYER_COUNT:4};/**
+	   * Store strings for class names defined by this component that are used in
+	   * JavaScript. This allows us to simply change it in one place should we
+	   * decide to modify at a later date.
+	   *
+	   * @enum {string}
+	   * @private
+	   */MaterialSpinner.prototype.CssClasses_={MDL_SPINNER_LAYER:'mdl-spinner__layer',MDL_SPINNER_CIRCLE_CLIPPER:'mdl-spinner__circle-clipper',MDL_SPINNER_CIRCLE:'mdl-spinner__circle',MDL_SPINNER_GAP_PATCH:'mdl-spinner__gap-patch',MDL_SPINNER_LEFT:'mdl-spinner__left',MDL_SPINNER_RIGHT:'mdl-spinner__right'};/**
+	   * Auxiliary method to create a spinner layer.
+	   *
+	   * @param {number} index Index of the layer to be created.
+	   * @public
+	   */MaterialSpinner.prototype.createLayer=function(index){var layer=document.createElement('div');layer.classList.add(this.CssClasses_.MDL_SPINNER_LAYER);layer.classList.add(this.CssClasses_.MDL_SPINNER_LAYER+'-'+index);var leftClipper=document.createElement('div');leftClipper.classList.add(this.CssClasses_.MDL_SPINNER_CIRCLE_CLIPPER);leftClipper.classList.add(this.CssClasses_.MDL_SPINNER_LEFT);var gapPatch=document.createElement('div');gapPatch.classList.add(this.CssClasses_.MDL_SPINNER_GAP_PATCH);var rightClipper=document.createElement('div');rightClipper.classList.add(this.CssClasses_.MDL_SPINNER_CIRCLE_CLIPPER);rightClipper.classList.add(this.CssClasses_.MDL_SPINNER_RIGHT);var circleOwners=[leftClipper,gapPatch,rightClipper];for(var i=0;i<circleOwners.length;i++){var circle=document.createElement('div');circle.classList.add(this.CssClasses_.MDL_SPINNER_CIRCLE);circleOwners[i].appendChild(circle);}layer.appendChild(leftClipper);layer.appendChild(gapPatch);layer.appendChild(rightClipper);this.element_.appendChild(layer);};MaterialSpinner.prototype['createLayer']=MaterialSpinner.prototype.createLayer;/**
+	   * Stops the spinner animation.
+	   * Public method for users who need to stop the spinner for any reason.
+	   *
+	   * @public
+	   */MaterialSpinner.prototype.stop=function(){this.element_.classList.remove('is-active');};MaterialSpinner.prototype['stop']=MaterialSpinner.prototype.stop;/**
+	   * Starts the spinner animation.
+	   * Public method for users who need to manually start the spinner for any reason
+	   * (instead of just adding the 'is-active' class to their markup).
+	   *
+	   * @public
+	   */MaterialSpinner.prototype.start=function(){this.element_.classList.add('is-active');};MaterialSpinner.prototype['start']=MaterialSpinner.prototype.start;/**
+	   * Initialize element.
+	   */MaterialSpinner.prototype.init=function(){if(this.element_){for(var i=1;i<=this.Constant_.MDL_SPINNER_LAYER_COUNT;i++){this.createLayer(i);}this.element_.classList.add('is-upgraded');}};// The component registers itself. It can assume componentHandler is available
+	// in the global scope.
+	componentHandler.register({constructor:MaterialSpinner,classAsString:'MaterialSpinner',cssClass:'mdl-js-spinner',widget:true});/**
+	 * @license
+	 * Copyright 2015 Google Inc. All Rights Reserved.
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License");
+	 * you may not use this file except in compliance with the License.
+	 * You may obtain a copy of the License at
+	 *
+	 *      http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 *//**
+	   * Class constructor for Checkbox MDL component.
+	   * Implements MDL component design pattern defined at:
+	   * https://github.com/jasonmayes/mdl-component-design-pattern
+	   *
+	   * @constructor
+	   * @param {HTMLElement} element The element that will be upgraded.
+	   */var MaterialSwitch=function MaterialSwitch(element){this.element_=element;// Initialize instance.
+	this.init();};window['MaterialSwitch']=MaterialSwitch;/**
+	   * Store constants in one place so they can be updated easily.
+	   *
+	   * @enum {string | number}
+	   * @private
+	   */MaterialSwitch.prototype.Constant_={TINY_TIMEOUT:0.001};/**
+	   * Store strings for class names defined by this component that are used in
+	   * JavaScript. This allows us to simply change it in one place should we
+	   * decide to modify at a later date.
+	   *
+	   * @enum {string}
+	   * @private
+	   */MaterialSwitch.prototype.CssClasses_={INPUT:'mdl-switch__input',TRACK:'mdl-switch__track',THUMB:'mdl-switch__thumb',FOCUS_HELPER:'mdl-switch__focus-helper',RIPPLE_EFFECT:'mdl-js-ripple-effect',RIPPLE_IGNORE_EVENTS:'mdl-js-ripple-effect--ignore-events',RIPPLE_CONTAINER:'mdl-switch__ripple-container',RIPPLE_CENTER:'mdl-ripple--center',RIPPLE:'mdl-ripple',IS_FOCUSED:'is-focused',IS_DISABLED:'is-disabled',IS_CHECKED:'is-checked'};/**
+	   * Handle change of state.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialSwitch.prototype.onChange_=function(event){this.updateClasses_();};/**
+	   * Handle focus of element.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialSwitch.prototype.onFocus_=function(event){this.element_.classList.add(this.CssClasses_.IS_FOCUSED);};/**
+	   * Handle lost focus of element.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialSwitch.prototype.onBlur_=function(event){this.element_.classList.remove(this.CssClasses_.IS_FOCUSED);};/**
+	   * Handle mouseup.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialSwitch.prototype.onMouseUp_=function(event){this.blur_();};/**
+	   * Handle class updates.
+	   *
+	   * @private
+	   */MaterialSwitch.prototype.updateClasses_=function(){this.checkDisabled();this.checkToggleState();};/**
+	   * Add blur.
+	   *
+	   * @private
+	   */MaterialSwitch.prototype.blur_=function(){// TODO: figure out why there's a focus event being fired after our blur,
+	// so that we can avoid this hack.
+	window.setTimeout(function(){this.inputElement_.blur();}.bind(this),this.Constant_.TINY_TIMEOUT);};// Public methods.
+	/**
+	   * Check the components disabled state.
+	   *
+	   * @public
+	   */MaterialSwitch.prototype.checkDisabled=function(){if(this.inputElement_.disabled){this.element_.classList.add(this.CssClasses_.IS_DISABLED);}else{this.element_.classList.remove(this.CssClasses_.IS_DISABLED);}};MaterialSwitch.prototype['checkDisabled']=MaterialSwitch.prototype.checkDisabled;/**
+	   * Check the components toggled state.
+	   *
+	   * @public
+	   */MaterialSwitch.prototype.checkToggleState=function(){if(this.inputElement_.checked){this.element_.classList.add(this.CssClasses_.IS_CHECKED);}else{this.element_.classList.remove(this.CssClasses_.IS_CHECKED);}};MaterialSwitch.prototype['checkToggleState']=MaterialSwitch.prototype.checkToggleState;/**
+	   * Disable switch.
+	   *
+	   * @public
+	   */MaterialSwitch.prototype.disable=function(){this.inputElement_.disabled=true;this.updateClasses_();};MaterialSwitch.prototype['disable']=MaterialSwitch.prototype.disable;/**
+	   * Enable switch.
+	   *
+	   * @public
+	   */MaterialSwitch.prototype.enable=function(){this.inputElement_.disabled=false;this.updateClasses_();};MaterialSwitch.prototype['enable']=MaterialSwitch.prototype.enable;/**
+	   * Activate switch.
+	   *
+	   * @public
+	   */MaterialSwitch.prototype.on=function(){this.inputElement_.checked=true;this.updateClasses_();};MaterialSwitch.prototype['on']=MaterialSwitch.prototype.on;/**
+	   * Deactivate switch.
+	   *
+	   * @public
+	   */MaterialSwitch.prototype.off=function(){this.inputElement_.checked=false;this.updateClasses_();};MaterialSwitch.prototype['off']=MaterialSwitch.prototype.off;/**
+	   * Initialize element.
+	   */MaterialSwitch.prototype.init=function(){if(this.element_){this.inputElement_=this.element_.querySelector('.'+this.CssClasses_.INPUT);var track=document.createElement('div');track.classList.add(this.CssClasses_.TRACK);var thumb=document.createElement('div');thumb.classList.add(this.CssClasses_.THUMB);var focusHelper=document.createElement('span');focusHelper.classList.add(this.CssClasses_.FOCUS_HELPER);thumb.appendChild(focusHelper);this.element_.appendChild(track);this.element_.appendChild(thumb);this.boundMouseUpHandler=this.onMouseUp_.bind(this);if(this.element_.classList.contains(this.CssClasses_.RIPPLE_EFFECT)){this.element_.classList.add(this.CssClasses_.RIPPLE_IGNORE_EVENTS);this.rippleContainerElement_=document.createElement('span');this.rippleContainerElement_.classList.add(this.CssClasses_.RIPPLE_CONTAINER);this.rippleContainerElement_.classList.add(this.CssClasses_.RIPPLE_EFFECT);this.rippleContainerElement_.classList.add(this.CssClasses_.RIPPLE_CENTER);this.rippleContainerElement_.addEventListener('mouseup',this.boundMouseUpHandler);var ripple=document.createElement('span');ripple.classList.add(this.CssClasses_.RIPPLE);this.rippleContainerElement_.appendChild(ripple);this.element_.appendChild(this.rippleContainerElement_);}this.boundChangeHandler=this.onChange_.bind(this);this.boundFocusHandler=this.onFocus_.bind(this);this.boundBlurHandler=this.onBlur_.bind(this);this.inputElement_.addEventListener('change',this.boundChangeHandler);this.inputElement_.addEventListener('focus',this.boundFocusHandler);this.inputElement_.addEventListener('blur',this.boundBlurHandler);this.element_.addEventListener('mouseup',this.boundMouseUpHandler);this.updateClasses_();this.element_.classList.add('is-upgraded');}};// The component registers itself. It can assume componentHandler is available
+	// in the global scope.
+	componentHandler.register({constructor:MaterialSwitch,classAsString:'MaterialSwitch',cssClass:'mdl-js-switch',widget:true});/**
+	 * @license
+	 * Copyright 2015 Google Inc. All Rights Reserved.
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License");
+	 * you may not use this file except in compliance with the License.
+	 * You may obtain a copy of the License at
+	 *
+	 *      http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 *//**
+	   * Class constructor for Tabs MDL component.
+	   * Implements MDL component design pattern defined at:
+	   * https://github.com/jasonmayes/mdl-component-design-pattern
+	   *
+	   * @constructor
+	   * @param {Element} element The element that will be upgraded.
+	   */var MaterialTabs=function MaterialTabs(element){// Stores the HTML element.
+	this.element_=element;// Initialize instance.
+	this.init();};window['MaterialTabs']=MaterialTabs;/**
+	   * Store constants in one place so they can be updated easily.
+	   *
+	   * @enum {string}
+	   * @private
+	   */MaterialTabs.prototype.Constant_={};/**
+	   * Store strings for class names defined by this component that are used in
+	   * JavaScript. This allows us to simply change it in one place should we
+	   * decide to modify at a later date.
+	   *
+	   * @enum {string}
+	   * @private
+	   */MaterialTabs.prototype.CssClasses_={TAB_CLASS:'mdl-tabs__tab',PANEL_CLASS:'mdl-tabs__panel',ACTIVE_CLASS:'is-active',UPGRADED_CLASS:'is-upgraded',MDL_JS_RIPPLE_EFFECT:'mdl-js-ripple-effect',MDL_RIPPLE_CONTAINER:'mdl-tabs__ripple-container',MDL_RIPPLE:'mdl-ripple',MDL_JS_RIPPLE_EFFECT_IGNORE_EVENTS:'mdl-js-ripple-effect--ignore-events'};/**
+	   * Handle clicks to a tabs component
+	   *
+	   * @private
+	   */MaterialTabs.prototype.initTabs_=function(){if(this.element_.classList.contains(this.CssClasses_.MDL_JS_RIPPLE_EFFECT)){this.element_.classList.add(this.CssClasses_.MDL_JS_RIPPLE_EFFECT_IGNORE_EVENTS);}// Select element tabs, document panels
+	this.tabs_=this.element_.querySelectorAll('.'+this.CssClasses_.TAB_CLASS);this.panels_=this.element_.querySelectorAll('.'+this.CssClasses_.PANEL_CLASS);// Create new tabs for each tab element
+	for(var i=0;i<this.tabs_.length;i++){new MaterialTab(this.tabs_[i],this);}this.element_.classList.add(this.CssClasses_.UPGRADED_CLASS);};/**
+	   * Reset tab state, dropping active classes
+	   *
+	   * @private
+	   */MaterialTabs.prototype.resetTabState_=function(){for(var k=0;k<this.tabs_.length;k++){this.tabs_[k].classList.remove(this.CssClasses_.ACTIVE_CLASS);}};/**
+	   * Reset panel state, droping active classes
+	   *
+	   * @private
+	   */MaterialTabs.prototype.resetPanelState_=function(){for(var j=0;j<this.panels_.length;j++){this.panels_[j].classList.remove(this.CssClasses_.ACTIVE_CLASS);}};/**
+	   * Initialize element.
+	   */MaterialTabs.prototype.init=function(){if(this.element_){this.initTabs_();}};/**
+	   * Constructor for an individual tab.
+	   *
+	   * @constructor
+	   * @param {Element} tab The HTML element for the tab.
+	   * @param {MaterialTabs} ctx The MaterialTabs object that owns the tab.
+	   */function MaterialTab(tab,ctx){if(tab){if(ctx.element_.classList.contains(ctx.CssClasses_.MDL_JS_RIPPLE_EFFECT)){var rippleContainer=document.createElement('span');rippleContainer.classList.add(ctx.CssClasses_.MDL_RIPPLE_CONTAINER);rippleContainer.classList.add(ctx.CssClasses_.MDL_JS_RIPPLE_EFFECT);var ripple=document.createElement('span');ripple.classList.add(ctx.CssClasses_.MDL_RIPPLE);rippleContainer.appendChild(ripple);tab.appendChild(rippleContainer);}tab.addEventListener('click',function(e){e.preventDefault();var href=tab.href.split('#')[1];var panel=ctx.element_.querySelector('#'+href);ctx.resetTabState_();ctx.resetPanelState_();tab.classList.add(ctx.CssClasses_.ACTIVE_CLASS);panel.classList.add(ctx.CssClasses_.ACTIVE_CLASS);});}}// The component registers itself. It can assume componentHandler is available
+	// in the global scope.
+	componentHandler.register({constructor:MaterialTabs,classAsString:'MaterialTabs',cssClass:'mdl-js-tabs'});/**
+	 * @license
+	 * Copyright 2015 Google Inc. All Rights Reserved.
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License");
+	 * you may not use this file except in compliance with the License.
+	 * You may obtain a copy of the License at
+	 *
+	 *      http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 *//**
+	   * Class constructor for Textfield MDL component.
+	   * Implements MDL component design pattern defined at:
+	   * https://github.com/jasonmayes/mdl-component-design-pattern
+	   *
+	   * @constructor
+	   * @param {HTMLElement} element The element that will be upgraded.
+	   */var MaterialTextfield=function MaterialTextfield(element){this.element_=element;this.maxRows=this.Constant_.NO_MAX_ROWS;// Initialize instance.
+	this.init();};window['MaterialTextfield']=MaterialTextfield;/**
+	   * Store constants in one place so they can be updated easily.
+	   *
+	   * @enum {string | number}
+	   * @private
+	   */MaterialTextfield.prototype.Constant_={NO_MAX_ROWS:-1,MAX_ROWS_ATTRIBUTE:'maxrows'};/**
+	   * Store strings for class names defined by this component that are used in
+	   * JavaScript. This allows us to simply change it in one place should we
+	   * decide to modify at a later date.
+	   *
+	   * @enum {string}
+	   * @private
+	   */MaterialTextfield.prototype.CssClasses_={LABEL:'mdl-textfield__label',INPUT:'mdl-textfield__input',IS_DIRTY:'is-dirty',IS_FOCUSED:'is-focused',IS_DISABLED:'is-disabled',IS_INVALID:'is-invalid',IS_UPGRADED:'is-upgraded',HAS_PLACEHOLDER:'has-placeholder'};/**
+	   * Handle input being entered.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialTextfield.prototype.onKeyDown_=function(event){var currentRowCount=event.target.value.split('\n').length;if(event.keyCode===13){if(currentRowCount>=this.maxRows){event.preventDefault();}}};/**
+	   * Handle focus.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialTextfield.prototype.onFocus_=function(event){this.element_.classList.add(this.CssClasses_.IS_FOCUSED);};/**
+	   * Handle lost focus.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialTextfield.prototype.onBlur_=function(event){this.element_.classList.remove(this.CssClasses_.IS_FOCUSED);};/**
+	   * Handle reset event from out side.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialTextfield.prototype.onReset_=function(event){this.updateClasses_();};/**
+	   * Handle class updates.
+	   *
+	   * @private
+	   */MaterialTextfield.prototype.updateClasses_=function(){this.checkDisabled();this.checkValidity();this.checkDirty();this.checkFocus();};// Public methods.
+	/**
+	   * Check the disabled state and update field accordingly.
+	   *
+	   * @public
+	   */MaterialTextfield.prototype.checkDisabled=function(){if(this.input_.disabled){this.element_.classList.add(this.CssClasses_.IS_DISABLED);}else{this.element_.classList.remove(this.CssClasses_.IS_DISABLED);}};MaterialTextfield.prototype['checkDisabled']=MaterialTextfield.prototype.checkDisabled;/**
+	  * Check the focus state and update field accordingly.
+	  *
+	  * @public
+	  */MaterialTextfield.prototype.checkFocus=function(){if(Boolean(this.element_.querySelector(':focus'))){this.element_.classList.add(this.CssClasses_.IS_FOCUSED);}else{this.element_.classList.remove(this.CssClasses_.IS_FOCUSED);}};MaterialTextfield.prototype['checkFocus']=MaterialTextfield.prototype.checkFocus;/**
+	   * Check the validity state and update field accordingly.
+	   *
+	   * @public
+	   */MaterialTextfield.prototype.checkValidity=function(){if(this.input_.validity){if(this.input_.validity.valid){this.element_.classList.remove(this.CssClasses_.IS_INVALID);}else{this.element_.classList.add(this.CssClasses_.IS_INVALID);}}};MaterialTextfield.prototype['checkValidity']=MaterialTextfield.prototype.checkValidity;/**
+	   * Check the dirty state and update field accordingly.
+	   *
+	   * @public
+	   */MaterialTextfield.prototype.checkDirty=function(){if(this.input_.value&&this.input_.value.length>0){this.element_.classList.add(this.CssClasses_.IS_DIRTY);}else{this.element_.classList.remove(this.CssClasses_.IS_DIRTY);}};MaterialTextfield.prototype['checkDirty']=MaterialTextfield.prototype.checkDirty;/**
+	   * Disable text field.
+	   *
+	   * @public
+	   */MaterialTextfield.prototype.disable=function(){this.input_.disabled=true;this.updateClasses_();};MaterialTextfield.prototype['disable']=MaterialTextfield.prototype.disable;/**
+	   * Enable text field.
+	   *
+	   * @public
+	   */MaterialTextfield.prototype.enable=function(){this.input_.disabled=false;this.updateClasses_();};MaterialTextfield.prototype['enable']=MaterialTextfield.prototype.enable;/**
+	   * Update text field value.
+	   *
+	   * @param {string} value The value to which to set the control (optional).
+	   * @public
+	   */MaterialTextfield.prototype.change=function(value){this.input_.value=value||'';this.updateClasses_();};MaterialTextfield.prototype['change']=MaterialTextfield.prototype.change;/**
+	   * Initialize element.
+	   */MaterialTextfield.prototype.init=function(){if(this.element_){this.label_=this.element_.querySelector('.'+this.CssClasses_.LABEL);this.input_=this.element_.querySelector('.'+this.CssClasses_.INPUT);if(this.input_){if(this.input_.hasAttribute(this.Constant_.MAX_ROWS_ATTRIBUTE)){this.maxRows=parseInt(this.input_.getAttribute(this.Constant_.MAX_ROWS_ATTRIBUTE),10);if(isNaN(this.maxRows)){this.maxRows=this.Constant_.NO_MAX_ROWS;}}if(this.input_.hasAttribute('placeholder')){this.element_.classList.add(this.CssClasses_.HAS_PLACEHOLDER);}this.boundUpdateClassesHandler=this.updateClasses_.bind(this);this.boundFocusHandler=this.onFocus_.bind(this);this.boundBlurHandler=this.onBlur_.bind(this);this.boundResetHandler=this.onReset_.bind(this);this.input_.addEventListener('input',this.boundUpdateClassesHandler);this.input_.addEventListener('focus',this.boundFocusHandler);this.input_.addEventListener('blur',this.boundBlurHandler);this.input_.addEventListener('reset',this.boundResetHandler);if(this.maxRows!==this.Constant_.NO_MAX_ROWS){// TODO: This should handle pasting multi line text.
+	// Currently doesn't.
+	this.boundKeyDownHandler=this.onKeyDown_.bind(this);this.input_.addEventListener('keydown',this.boundKeyDownHandler);}var invalid=this.element_.classList.contains(this.CssClasses_.IS_INVALID);this.updateClasses_();this.element_.classList.add(this.CssClasses_.IS_UPGRADED);if(invalid){this.element_.classList.add(this.CssClasses_.IS_INVALID);}if(this.input_.hasAttribute('autofocus')){this.element_.focus();this.checkFocus();}}}};// The component registers itself. It can assume componentHandler is available
+	// in the global scope.
+	componentHandler.register({constructor:MaterialTextfield,classAsString:'MaterialTextfield',cssClass:'mdl-js-textfield',widget:true});/**
+	 * @license
+	 * Copyright 2015 Google Inc. All Rights Reserved.
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License");
+	 * you may not use this file except in compliance with the License.
+	 * You may obtain a copy of the License at
+	 *
+	 *      http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 *//**
+	   * Class constructor for Tooltip MDL component.
+	   * Implements MDL component design pattern defined at:
+	   * https://github.com/jasonmayes/mdl-component-design-pattern
+	   *
+	   * @constructor
+	   * @param {HTMLElement} element The element that will be upgraded.
+	   */var MaterialTooltip=function MaterialTooltip(element){this.element_=element;// Initialize instance.
+	this.init();};window['MaterialTooltip']=MaterialTooltip;/**
+	   * Store constants in one place so they can be updated easily.
+	   *
+	   * @enum {string | number}
+	   * @private
+	   */MaterialTooltip.prototype.Constant_={};/**
+	   * Store strings for class names defined by this component that are used in
+	   * JavaScript. This allows us to simply change it in one place should we
+	   * decide to modify at a later date.
+	   *
+	   * @enum {string}
+	   * @private
+	   */MaterialTooltip.prototype.CssClasses_={IS_ACTIVE:'is-active',BOTTOM:'mdl-tooltip--bottom',LEFT:'mdl-tooltip--left',RIGHT:'mdl-tooltip--right',TOP:'mdl-tooltip--top'};/**
+	   * Handle mouseenter for tooltip.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialTooltip.prototype.handleMouseEnter_=function(event){var props=event.target.getBoundingClientRect();var left=props.left+props.width/2;var top=props.top+props.height/2;var marginLeft=-1*(this.element_.offsetWidth/2);var marginTop=-1*(this.element_.offsetHeight/2);if(this.element_.classList.contains(this.CssClasses_.LEFT)||this.element_.classList.contains(this.CssClasses_.RIGHT)){left=props.width/2;if(top+marginTop<0){this.element_.style.top=0;this.element_.style.marginTop=0;}else{this.element_.style.top=top+'px';this.element_.style.marginTop=marginTop+'px';}}else{if(left+marginLeft<0){this.element_.style.left=0;this.element_.style.marginLeft=0;}else{this.element_.style.left=left+'px';this.element_.style.marginLeft=marginLeft+'px';}}if(this.element_.classList.contains(this.CssClasses_.TOP)){this.element_.style.top=props.top-this.element_.offsetHeight-10+'px';}else if(this.element_.classList.contains(this.CssClasses_.RIGHT)){this.element_.style.left=props.left+props.width+10+'px';}else if(this.element_.classList.contains(this.CssClasses_.LEFT)){this.element_.style.left=props.left-this.element_.offsetWidth-10+'px';}else{this.element_.style.top=props.top+props.height+10+'px';}this.element_.classList.add(this.CssClasses_.IS_ACTIVE);};/**
+	   * Handle mouseleave for tooltip.
+	   *
+	   * @private
+	   */MaterialTooltip.prototype.handleMouseLeave_=function(){this.element_.classList.remove(this.CssClasses_.IS_ACTIVE);};/**
+	   * Initialize element.
+	   */MaterialTooltip.prototype.init=function(){if(this.element_){var forElId=this.element_.getAttribute('for');if(forElId){this.forElement_=document.getElementById(forElId);}if(this.forElement_){// It's left here because it prevents accidental text selection on Android
+	if(!this.forElement_.hasAttribute('tabindex')){this.forElement_.setAttribute('tabindex','0');}this.boundMouseEnterHandler=this.handleMouseEnter_.bind(this);this.boundMouseLeaveHandler=this.handleMouseLeave_.bind(this);this.forElement_.addEventListener('mouseenter',this.boundMouseEnterHandler,false);this.forElement_.addEventListener('touchend',this.boundMouseEnterHandler,false);this.forElement_.addEventListener('mouseleave',this.boundMouseLeaveHandler,false);window.addEventListener('touchstart',this.boundMouseLeaveHandler);}}};// The component registers itself. It can assume componentHandler is available
+	// in the global scope.
+	componentHandler.register({constructor:MaterialTooltip,classAsString:'MaterialTooltip',cssClass:'mdl-tooltip'});/**
+	 * @license
+	 * Copyright 2015 Google Inc. All Rights Reserved.
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License");
+	 * you may not use this file except in compliance with the License.
+	 * You may obtain a copy of the License at
+	 *
+	 *      http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 *//**
+	   * Class constructor for Layout MDL component.
+	   * Implements MDL component design pattern defined at:
+	   * https://github.com/jasonmayes/mdl-component-design-pattern
+	   *
+	   * @constructor
+	   * @param {HTMLElement} element The element that will be upgraded.
+	   */var MaterialLayout=function MaterialLayout(element){this.element_=element;this.innerContainer_=element.querySelector('.'+this.CssClasses_.INNER_CONTAINER);// Initialize instance.
+	this.init();};window['MaterialLayout']=MaterialLayout;/**
+	   * Store constants in one place so they can be updated easily.
+	   *
+	   * @enum {string | number}
+	   * @private
+	   */MaterialLayout.prototype.Constant_={MAX_WIDTH:'(max-width: 1024px)',TAB_SCROLL_PIXELS:100,RESIZE_TIMEOUT:100,MENU_ICON:'&#xE5D2;',CHEVRON_LEFT:'chevron_left',CHEVRON_RIGHT:'chevron_right'};/**
+	   * Keycodes, for code readability.
+	   *
+	   * @enum {number}
+	   * @private
+	   */MaterialLayout.prototype.Keycodes_={ENTER:13,ESCAPE:27,SPACE:32};/**
+	   * Modes.
+	   *
+	   * @enum {number}
+	   * @private
+	   */MaterialLayout.prototype.Mode_={STANDARD:0,SEAMED:1,WATERFALL:2,SCROLL:3};/**
+	   * Store strings for class names defined by this component that are used in
+	   * JavaScript. This allows us to simply change it in one place should we
+	   * decide to modify at a later date.
+	   *
+	   * @enum {string}
+	   * @private
+	   */MaterialLayout.prototype.CssClasses_={INNER_CONTAINER:'mdl-layout__inner-container',HEADER:'mdl-layout__header',DRAWER:'mdl-layout__drawer',CONTENT:'mdl-layout__content',DRAWER_BTN:'mdl-layout__drawer-button',ICON:'material-icons',JS_RIPPLE_EFFECT:'mdl-js-ripple-effect',RIPPLE_CONTAINER:'mdl-layout__tab-ripple-container',RIPPLE:'mdl-ripple',RIPPLE_IGNORE_EVENTS:'mdl-js-ripple-effect--ignore-events',HEADER_SEAMED:'mdl-layout__header--seamed',HEADER_WATERFALL:'mdl-layout__header--waterfall',HEADER_SCROLL:'mdl-layout__header--scroll',FIXED_HEADER:'mdl-layout--fixed-header',OBFUSCATOR:'mdl-layout__obfuscator',TAB_BAR:'mdl-layout__tab-bar',TAB_CONTAINER:'mdl-layout__tab-bar-container',TAB:'mdl-layout__tab',TAB_BAR_BUTTON:'mdl-layout__tab-bar-button',TAB_BAR_LEFT_BUTTON:'mdl-layout__tab-bar-left-button',TAB_BAR_RIGHT_BUTTON:'mdl-layout__tab-bar-right-button',PANEL:'mdl-layout__tab-panel',HAS_DRAWER:'has-drawer',HAS_TABS:'has-tabs',HAS_SCROLLING_HEADER:'has-scrolling-header',CASTING_SHADOW:'is-casting-shadow',IS_COMPACT:'is-compact',IS_SMALL_SCREEN:'is-small-screen',IS_DRAWER_OPEN:'is-visible',IS_ACTIVE:'is-active',IS_UPGRADED:'is-upgraded',IS_ANIMATING:'is-animating',ON_LARGE_SCREEN:'mdl-layout--large-screen-only',ON_SMALL_SCREEN:'mdl-layout--small-screen-only'};/**
+	   * Handles scrolling on the content.
+	   *
+	   * @private
+	   */MaterialLayout.prototype.contentScrollHandler_=function(){if(this.header_.classList.contains(this.CssClasses_.IS_ANIMATING)){return;}var headerVisible=!this.element_.classList.contains(this.CssClasses_.IS_SMALL_SCREEN)||this.element_.classList.contains(this.CssClasses_.FIXED_HEADER);if(this.content_.scrollTop>0&&!this.header_.classList.contains(this.CssClasses_.IS_COMPACT)){this.header_.classList.add(this.CssClasses_.CASTING_SHADOW);this.header_.classList.add(this.CssClasses_.IS_COMPACT);if(headerVisible){this.header_.classList.add(this.CssClasses_.IS_ANIMATING);}}else if(this.content_.scrollTop<=0&&this.header_.classList.contains(this.CssClasses_.IS_COMPACT)){this.header_.classList.remove(this.CssClasses_.CASTING_SHADOW);this.header_.classList.remove(this.CssClasses_.IS_COMPACT);if(headerVisible){this.header_.classList.add(this.CssClasses_.IS_ANIMATING);}}};/**
+	   * Handles a keyboard event on the drawer.
+	   *
+	   * @param {Event} evt The event that fired.
+	   * @private
+	   */MaterialLayout.prototype.keyboardEventHandler_=function(evt){// Only react when the drawer is open.
+	if(evt.keyCode===this.Keycodes_.ESCAPE&&this.drawer_.classList.contains(this.CssClasses_.IS_DRAWER_OPEN)){this.toggleDrawer();}};/**
+	   * Handles changes in screen size.
+	   *
+	   * @private
+	   */MaterialLayout.prototype.screenSizeHandler_=function(){if(this.screenSizeMediaQuery_.matches){this.element_.classList.add(this.CssClasses_.IS_SMALL_SCREEN);}else{this.element_.classList.remove(this.CssClasses_.IS_SMALL_SCREEN);// Collapse drawer (if any) when moving to a large screen size.
+	if(this.drawer_){this.drawer_.classList.remove(this.CssClasses_.IS_DRAWER_OPEN);this.obfuscator_.classList.remove(this.CssClasses_.IS_DRAWER_OPEN);}}};/**
+	   * Handles events of drawer button.
+	   *
+	   * @param {Event} evt The event that fired.
+	   * @private
+	   */MaterialLayout.prototype.drawerToggleHandler_=function(evt){if(evt&&evt.type==='keydown'){if(evt.keyCode===this.Keycodes_.SPACE||evt.keyCode===this.Keycodes_.ENTER){// prevent scrolling in drawer nav
+	evt.preventDefault();}else{// prevent other keys
+	return;}}this.toggleDrawer();};/**
+	   * Handles (un)setting the `is-animating` class
+	   *
+	   * @private
+	   */MaterialLayout.prototype.headerTransitionEndHandler_=function(){this.header_.classList.remove(this.CssClasses_.IS_ANIMATING);};/**
+	   * Handles expanding the header on click
+	   *
+	   * @private
+	   */MaterialLayout.prototype.headerClickHandler_=function(){if(this.header_.classList.contains(this.CssClasses_.IS_COMPACT)){this.header_.classList.remove(this.CssClasses_.IS_COMPACT);this.header_.classList.add(this.CssClasses_.IS_ANIMATING);}};/**
+	   * Reset tab state, dropping active classes
+	   *
+	   * @private
+	   */MaterialLayout.prototype.resetTabState_=function(tabBar){for(var k=0;k<tabBar.length;k++){tabBar[k].classList.remove(this.CssClasses_.IS_ACTIVE);}};/**
+	   * Reset panel state, droping active classes
+	   *
+	   * @private
+	   */MaterialLayout.prototype.resetPanelState_=function(panels){for(var j=0;j<panels.length;j++){panels[j].classList.remove(this.CssClasses_.IS_ACTIVE);}};/**
+	  * Toggle drawer state
+	  *
+	  * @public
+	  */MaterialLayout.prototype.toggleDrawer=function(){var drawerButton=this.innerContainer_.querySelector('.'+this.CssClasses_.DRAWER_BTN);this.drawer_.classList.toggle(this.CssClasses_.IS_DRAWER_OPEN);this.obfuscator_.classList.toggle(this.CssClasses_.IS_DRAWER_OPEN);// Set accessibility properties.
+	if(this.drawer_.classList.contains(this.CssClasses_.IS_DRAWER_OPEN)){this.drawer_.setAttribute('aria-hidden','false');drawerButton.setAttribute('aria-expanded','true');}else{this.drawer_.setAttribute('aria-hidden','true');drawerButton.setAttribute('aria-expanded','false');}};MaterialLayout.prototype['toggleDrawer']=MaterialLayout.prototype.toggleDrawer;/**
+	   * Initialize element.
+	   */MaterialLayout.prototype.init=function(){if(this.element_){var focusedElement=this.element_.querySelector(':focus');if(focusedElement){focusedElement.focus();}var directChildren=this.innerContainer_.childNodes;var numChildren=directChildren.length;for(var c=0;c<numChildren;c++){var child=directChildren[c];if(child.classList&&child.classList.contains(this.CssClasses_.HEADER)){this.header_=child;}if(child.classList&&child.classList.contains(this.CssClasses_.DRAWER)){this.drawer_=child;}if(child.classList&&child.classList.contains(this.CssClasses_.CONTENT)){this.content_=child;}}window.addEventListener('pageshow',function(e){if(e.persisted){// when page is loaded from back/forward cache
+	// trigger repaint to let layout scroll in safari
+	this.innerContainer_.style.overflowY='hidden';requestAnimationFrame(function(){this.innerContainer_.style.overflowY='';}.bind(this));}}.bind(this),false);if(this.header_){this.tabBar_=this.header_.querySelector('.'+this.CssClasses_.TAB_BAR);}var mode=this.Mode_.STANDARD;if(this.header_){if(this.header_.classList.contains(this.CssClasses_.HEADER_SEAMED)){mode=this.Mode_.SEAMED;}else if(this.header_.classList.contains(this.CssClasses_.HEADER_WATERFALL)){mode=this.Mode_.WATERFALL;this.header_.addEventListener('transitionend',this.headerTransitionEndHandler_.bind(this));this.header_.addEventListener('click',this.headerClickHandler_.bind(this));}else if(this.header_.classList.contains(this.CssClasses_.HEADER_SCROLL)){mode=this.Mode_.SCROLL;this.element_.classList.add(this.CssClasses_.HAS_SCROLLING_HEADER);}if(mode===this.Mode_.STANDARD){this.header_.classList.add(this.CssClasses_.CASTING_SHADOW);if(this.tabBar_){this.tabBar_.classList.add(this.CssClasses_.CASTING_SHADOW);}}else if(mode===this.Mode_.SEAMED||mode===this.Mode_.SCROLL){this.header_.classList.remove(this.CssClasses_.CASTING_SHADOW);if(this.tabBar_){this.tabBar_.classList.remove(this.CssClasses_.CASTING_SHADOW);}}else if(mode===this.Mode_.WATERFALL){// Add and remove shadows depending on scroll position.
+	// Also add/remove auxiliary class for styling of the compact version of
+	// the header.
+	this.content_.addEventListener('scroll',this.contentScrollHandler_.bind(this));this.contentScrollHandler_();}}// Add drawer toggling button to our layout, if we have an openable drawer.
+	if(this.drawer_){var drawerButton=document.createElement('div');drawerButton.setAttribute('aria-expanded','false');drawerButton.setAttribute('role','button');drawerButton.setAttribute('tabindex','0');drawerButton.classList.add(this.CssClasses_.DRAWER_BTN);var drawerButtonIcon=document.createElement('i');drawerButtonIcon.classList.add(this.CssClasses_.ICON);drawerButtonIcon.innerHTML=this.Constant_.MENU_ICON;drawerButton.appendChild(drawerButtonIcon);if(this.drawer_.classList.contains(this.CssClasses_.ON_LARGE_SCREEN)){//If drawer has ON_LARGE_SCREEN class then add it to the drawer toggle button as well.
+	drawerButton.classList.add(this.CssClasses_.ON_LARGE_SCREEN);}else if(this.drawer_.classList.contains(this.CssClasses_.ON_SMALL_SCREEN)){//If drawer has ON_SMALL_SCREEN class then add it to the drawer toggle button as well.
+	drawerButton.classList.add(this.CssClasses_.ON_SMALL_SCREEN);}drawerButton.addEventListener('click',this.drawerToggleHandler_.bind(this));drawerButton.addEventListener('keydown',this.drawerToggleHandler_.bind(this));// Add a class if the layout has a drawer, for altering the left padding.
+	// Adds the HAS_DRAWER to the elements since this.header_ may or may
+	// not be present.
+	this.element_.classList.add(this.CssClasses_.HAS_DRAWER);// If we have a fixed header, add the button to the header rather than
+	// the layout.
+	if(this.element_.classList.contains(this.CssClasses_.FIXED_HEADER)){this.header_.insertBefore(drawerButton,this.header_.firstChild);}else{this.innerContainer_.insertBefore(drawerButton,this.content_);}var obfuscator=document.createElement('div');obfuscator.classList.add(this.CssClasses_.OBFUSCATOR);this.innerContainer_.appendChild(obfuscator);obfuscator.addEventListener('click',this.drawerToggleHandler_.bind(this));this.obfuscator_=obfuscator;this.drawer_.addEventListener('keydown',this.keyboardEventHandler_.bind(this));this.drawer_.setAttribute('aria-hidden','true');}// Keep an eye on screen size, and add/remove auxiliary class for styling
+	// of small screens.
+	this.screenSizeMediaQuery_=window.matchMedia(this.Constant_.MAX_WIDTH);this.screenSizeMediaQuery_.addListener(this.screenSizeHandler_.bind(this));this.screenSizeHandler_();// Initialize tabs, if any.
+	if(this.header_&&this.tabBar_){this.element_.classList.add(this.CssClasses_.HAS_TABS);var tabContainer=document.createElement('div');tabContainer.classList.add(this.CssClasses_.TAB_CONTAINER);this.header_.insertBefore(tabContainer,this.tabBar_);this.header_.removeChild(this.tabBar_);var leftButton=document.createElement('div');leftButton.classList.add(this.CssClasses_.TAB_BAR_BUTTON);leftButton.classList.add(this.CssClasses_.TAB_BAR_LEFT_BUTTON);var leftButtonIcon=document.createElement('i');leftButtonIcon.classList.add(this.CssClasses_.ICON);leftButtonIcon.textContent=this.Constant_.CHEVRON_LEFT;leftButton.appendChild(leftButtonIcon);leftButton.addEventListener('click',function(){this.tabBar_.scrollLeft-=this.Constant_.TAB_SCROLL_PIXELS;}.bind(this));var rightButton=document.createElement('div');rightButton.classList.add(this.CssClasses_.TAB_BAR_BUTTON);rightButton.classList.add(this.CssClasses_.TAB_BAR_RIGHT_BUTTON);var rightButtonIcon=document.createElement('i');rightButtonIcon.classList.add(this.CssClasses_.ICON);rightButtonIcon.textContent=this.Constant_.CHEVRON_RIGHT;rightButton.appendChild(rightButtonIcon);rightButton.addEventListener('click',function(){this.tabBar_.scrollLeft+=this.Constant_.TAB_SCROLL_PIXELS;}.bind(this));tabContainer.appendChild(leftButton);tabContainer.appendChild(this.tabBar_);tabContainer.appendChild(rightButton);// Add and remove tab buttons depending on scroll position and total
+	// window size.
+	var tabUpdateHandler=function(){if(this.tabBar_.scrollLeft>0){leftButton.classList.add(this.CssClasses_.IS_ACTIVE);}else{leftButton.classList.remove(this.CssClasses_.IS_ACTIVE);}if(this.tabBar_.scrollLeft<this.tabBar_.scrollWidth-this.tabBar_.offsetWidth){rightButton.classList.add(this.CssClasses_.IS_ACTIVE);}else{rightButton.classList.remove(this.CssClasses_.IS_ACTIVE);}}.bind(this);this.tabBar_.addEventListener('scroll',tabUpdateHandler);tabUpdateHandler();// Update tabs when the window resizes.
+	var windowResizeHandler=function(){// Use timeouts to make sure it doesn't happen too often.
+	if(this.resizeTimeoutId_){clearTimeout(this.resizeTimeoutId_);}this.resizeTimeoutId_=setTimeout(function(){tabUpdateHandler();this.resizeTimeoutId_=null;}.bind(this),this.Constant_.RESIZE_TIMEOUT);}.bind(this);window.addEventListener('resize',windowResizeHandler);if(this.tabBar_.classList.contains(this.CssClasses_.JS_RIPPLE_EFFECT)){this.tabBar_.classList.add(this.CssClasses_.RIPPLE_IGNORE_EVENTS);}// Select element tabs, document panels
+	var tabs=this.tabBar_.querySelectorAll('.'+this.CssClasses_.TAB);var panels=this.content_.querySelectorAll('.'+this.CssClasses_.PANEL);// Create new tabs for each tab element
+	for(var i=0;i<tabs.length;i++){new MaterialLayoutTab(tabs[i],tabs,panels,this);}}this.element_.classList.add(this.CssClasses_.IS_UPGRADED);}};/**
+	   * Constructor for an individual tab.
+	   *
+	   * @constructor
+	   * @param {HTMLElement} tab The HTML element for the tab.
+	   * @param {!Array<HTMLElement>} tabs Array with HTML elements for all tabs.
+	   * @param {!Array<HTMLElement>} panels Array with HTML elements for all panels.
+	   * @param {MaterialLayout} layout The MaterialLayout object that owns the tab.
+	   */function MaterialLayoutTab(tab,tabs,panels,layout){/**
+	     * Auxiliary method to programmatically select a tab in the UI.
+	     */function selectTab(){var href=tab.href.split('#')[1];var panel=layout.content_.querySelector('#'+href);layout.resetTabState_(tabs);layout.resetPanelState_(panels);tab.classList.add(layout.CssClasses_.IS_ACTIVE);panel.classList.add(layout.CssClasses_.IS_ACTIVE);}if(layout.tabBar_.classList.contains(layout.CssClasses_.JS_RIPPLE_EFFECT)){var rippleContainer=document.createElement('span');rippleContainer.classList.add(layout.CssClasses_.RIPPLE_CONTAINER);rippleContainer.classList.add(layout.CssClasses_.JS_RIPPLE_EFFECT);var ripple=document.createElement('span');ripple.classList.add(layout.CssClasses_.RIPPLE);rippleContainer.appendChild(ripple);tab.appendChild(rippleContainer);}tab.addEventListener('click',function(e){if(tab.getAttribute('href').charAt(0)==='#'){e.preventDefault();selectTab();}});tab.show=selectTab;}window['MaterialLayoutTab']=MaterialLayoutTab;// The component registers itself. It can assume componentHandler is available
+	// in the global scope.
+	componentHandler.register({constructor:MaterialLayout,classAsString:'MaterialLayout',cssClass:'mdl-js-layout'});/**
+	 * @license
+	 * Copyright 2015 Google Inc. All Rights Reserved.
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License");
+	 * you may not use this file except in compliance with the License.
+	 * You may obtain a copy of the License at
+	 *
+	 *      http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 *//**
+	   * Class constructor for Data Table Card MDL component.
+	   * Implements MDL component design pattern defined at:
+	   * https://github.com/jasonmayes/mdl-component-design-pattern
+	   *
+	   * @constructor
+	   * @param {Element} element The element that will be upgraded.
+	   */var MaterialDataTable=function MaterialDataTable(element){this.element_=element;// Initialize instance.
+	this.init();};window['MaterialDataTable']=MaterialDataTable;/**
+	   * Store constants in one place so they can be updated easily.
+	   *
+	   * @enum {string | number}
+	   * @private
+	   */MaterialDataTable.prototype.Constant_={};/**
+	   * Store strings for class names defined by this component that are used in
+	   * JavaScript. This allows us to simply change it in one place should we
+	   * decide to modify at a later date.
+	   *
+	   * @enum {string}
+	   * @private
+	   */MaterialDataTable.prototype.CssClasses_={DATA_TABLE:'mdl-data-table',SELECTABLE:'mdl-data-table--selectable',SELECT_ELEMENT:'mdl-data-table__select',IS_SELECTED:'is-selected',IS_UPGRADED:'is-upgraded'};/**
+	   * Generates and returns a function that toggles the selection state of a
+	   * single row (or multiple rows).
+	   *
+	   * @param {Element} checkbox Checkbox that toggles the selection state.
+	   * @param {Element} row Row to toggle when checkbox changes.
+	   * @param {(Array<Object>|NodeList)=} opt_rows Rows to toggle when checkbox changes.
+	   * @private
+	   */MaterialDataTable.prototype.selectRow_=function(checkbox,row,opt_rows){if(row){return function(){if(checkbox.checked){row.classList.add(this.CssClasses_.IS_SELECTED);}else{row.classList.remove(this.CssClasses_.IS_SELECTED);}}.bind(this);}if(opt_rows){return function(){var i;var el;if(checkbox.checked){for(i=0;i<opt_rows.length;i++){el=opt_rows[i].querySelector('td').querySelector('.mdl-checkbox');el['MaterialCheckbox'].check();opt_rows[i].classList.add(this.CssClasses_.IS_SELECTED);}}else{for(i=0;i<opt_rows.length;i++){el=opt_rows[i].querySelector('td').querySelector('.mdl-checkbox');el['MaterialCheckbox'].uncheck();opt_rows[i].classList.remove(this.CssClasses_.IS_SELECTED);}}}.bind(this);}};/**
+	   * Creates a checkbox for a single or or multiple rows and hooks up the
+	   * event handling.
+	   *
+	   * @param {Element} row Row to toggle when checkbox changes.
+	   * @param {(Array<Object>|NodeList)=} opt_rows Rows to toggle when checkbox changes.
+	   * @private
+	   */MaterialDataTable.prototype.createCheckbox_=function(row,opt_rows){var label=document.createElement('label');var labelClasses=['mdl-checkbox','mdl-js-checkbox','mdl-js-ripple-effect',this.CssClasses_.SELECT_ELEMENT];label.className=labelClasses.join(' ');var checkbox=document.createElement('input');checkbox.type='checkbox';checkbox.classList.add('mdl-checkbox__input');if(row){checkbox.checked=row.classList.contains(this.CssClasses_.IS_SELECTED);checkbox.addEventListener('change',this.selectRow_(checkbox,row));}else if(opt_rows){checkbox.addEventListener('change',this.selectRow_(checkbox,null,opt_rows));}label.appendChild(checkbox);componentHandler.upgradeElement(label,'MaterialCheckbox');return label;};/**
+	   * Initialize element.
+	   */MaterialDataTable.prototype.init=function(){if(this.element_){var firstHeader=this.element_.querySelector('th');var bodyRows=Array.prototype.slice.call(this.element_.querySelectorAll('tbody tr'));var footRows=Array.prototype.slice.call(this.element_.querySelectorAll('tfoot tr'));var rows=bodyRows.concat(footRows);if(this.element_.classList.contains(this.CssClasses_.SELECTABLE)){var th=document.createElement('th');var headerCheckbox=this.createCheckbox_(null,rows);th.appendChild(headerCheckbox);firstHeader.parentElement.insertBefore(th,firstHeader);for(var i=0;i<rows.length;i++){var firstCell=rows[i].querySelector('td');if(firstCell){var td=document.createElement('td');if(rows[i].parentNode.nodeName.toUpperCase()==='TBODY'){var rowCheckbox=this.createCheckbox_(rows[i]);td.appendChild(rowCheckbox);}rows[i].insertBefore(td,firstCell);}}this.element_.classList.add(this.CssClasses_.IS_UPGRADED);}}};// The component registers itself. It can assume componentHandler is available
+	// in the global scope.
+	componentHandler.register({constructor:MaterialDataTable,classAsString:'MaterialDataTable',cssClass:'mdl-js-data-table'});/**
+	 * @license
+	 * Copyright 2015 Google Inc. All Rights Reserved.
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License");
+	 * you may not use this file except in compliance with the License.
+	 * You may obtain a copy of the License at
+	 *
+	 *      http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 *//**
+	   * Class constructor for Ripple MDL component.
+	   * Implements MDL component design pattern defined at:
+	   * https://github.com/jasonmayes/mdl-component-design-pattern
+	   *
+	   * @constructor
+	   * @param {HTMLElement} element The element that will be upgraded.
+	   */var MaterialRipple=function MaterialRipple(element){this.element_=element;// Initialize instance.
+	this.init();};window['MaterialRipple']=MaterialRipple;/**
+	   * Store constants in one place so they can be updated easily.
+	   *
+	   * @enum {string | number}
+	   * @private
+	   */MaterialRipple.prototype.Constant_={INITIAL_SCALE:'scale(0.0001, 0.0001)',INITIAL_SIZE:'1px',INITIAL_OPACITY:'0.4',FINAL_OPACITY:'0',FINAL_SCALE:''};/**
+	   * Store strings for class names defined by this component that are used in
+	   * JavaScript. This allows us to simply change it in one place should we
+	   * decide to modify at a later date.
+	   *
+	   * @enum {string}
+	   * @private
+	   */MaterialRipple.prototype.CssClasses_={RIPPLE_CENTER:'mdl-ripple--center',RIPPLE_EFFECT_IGNORE_EVENTS:'mdl-js-ripple-effect--ignore-events',RIPPLE:'mdl-ripple',IS_ANIMATING:'is-animating',IS_VISIBLE:'is-visible'};/**
+	   * Handle mouse / finger down on element.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialRipple.prototype.downHandler_=function(event){if(!this.rippleElement_.style.width&&!this.rippleElement_.style.height){var rect=this.element_.getBoundingClientRect();this.boundHeight=rect.height;this.boundWidth=rect.width;this.rippleSize_=Math.sqrt(rect.width*rect.width+rect.height*rect.height)*2+2;this.rippleElement_.style.width=this.rippleSize_+'px';this.rippleElement_.style.height=this.rippleSize_+'px';}this.rippleElement_.classList.add(this.CssClasses_.IS_VISIBLE);if(event.type==='mousedown'&&this.ignoringMouseDown_){this.ignoringMouseDown_=false;}else{if(event.type==='touchstart'){this.ignoringMouseDown_=true;}var frameCount=this.getFrameCount();if(frameCount>0){return;}this.setFrameCount(1);var bound=event.currentTarget.getBoundingClientRect();var x;var y;// Check if we are handling a keyboard click.
+	if(event.clientX===0&&event.clientY===0){x=Math.round(bound.width/2);y=Math.round(bound.height/2);}else{var clientX=event.clientX?event.clientX:event.touches[0].clientX;var clientY=event.clientY?event.clientY:event.touches[0].clientY;x=Math.round(clientX-bound.left);y=Math.round(clientY-bound.top);}this.setRippleXY(x,y);this.setRippleStyles(true);window.requestAnimationFrame(this.animFrameHandler.bind(this));}};/**
+	   * Handle mouse / finger up on element.
+	   *
+	   * @param {Event} event The event that fired.
+	   * @private
+	   */MaterialRipple.prototype.upHandler_=function(event){// Don't fire for the artificial "mouseup" generated by a double-click.
+	if(event&&event.detail!==2){// Allow a repaint to occur before removing this class, so the animation
+	// shows for tap events, which seem to trigger a mouseup too soon after
+	// mousedown.
+	window.setTimeout(function(){this.rippleElement_.classList.remove(this.CssClasses_.IS_VISIBLE);}.bind(this),0);}};/**
+	   * Initialize element.
+	   */MaterialRipple.prototype.init=function(){if(this.element_){var recentering=this.element_.classList.contains(this.CssClasses_.RIPPLE_CENTER);if(!this.element_.classList.contains(this.CssClasses_.RIPPLE_EFFECT_IGNORE_EVENTS)){this.rippleElement_=this.element_.querySelector('.'+this.CssClasses_.RIPPLE);this.frameCount_=0;this.rippleSize_=0;this.x_=0;this.y_=0;// Touch start produces a compat mouse down event, which would cause a
+	// second ripples. To avoid that, we use this property to ignore the first
+	// mouse down after a touch start.
+	this.ignoringMouseDown_=false;this.boundDownHandler=this.downHandler_.bind(this);this.element_.addEventListener('mousedown',this.boundDownHandler);this.element_.addEventListener('touchstart',this.boundDownHandler);this.boundUpHandler=this.upHandler_.bind(this);this.element_.addEventListener('mouseup',this.boundUpHandler);this.element_.addEventListener('mouseleave',this.boundUpHandler);this.element_.addEventListener('touchend',this.boundUpHandler);this.element_.addEventListener('blur',this.boundUpHandler);/**
+	         * Getter for frameCount_.
+	         * @return {number} the frame count.
+	         */this.getFrameCount=function(){return this.frameCount_;};/**
+	         * Setter for frameCount_.
+	         * @param {number} fC the frame count.
+	         */this.setFrameCount=function(fC){this.frameCount_=fC;};/**
+	         * Getter for rippleElement_.
+	         * @return {Element} the ripple element.
+	         */this.getRippleElement=function(){return this.rippleElement_;};/**
+	         * Sets the ripple X and Y coordinates.
+	         * @param  {number} newX the new X coordinate
+	         * @param  {number} newY the new Y coordinate
+	         */this.setRippleXY=function(newX,newY){this.x_=newX;this.y_=newY;};/**
+	         * Sets the ripple styles.
+	         * @param  {boolean} start whether or not this is the start frame.
+	         */this.setRippleStyles=function(start){if(this.rippleElement_!==null){var transformString;var scale;var size;var offset='translate('+this.x_+'px, '+this.y_+'px)';if(start){scale=this.Constant_.INITIAL_SCALE;size=this.Constant_.INITIAL_SIZE;}else{scale=this.Constant_.FINAL_SCALE;size=this.rippleSize_+'px';if(recentering){offset='translate('+this.boundWidth/2+'px, '+this.boundHeight/2+'px)';}}transformString='translate(-50%, -50%) '+offset+scale;this.rippleElement_.style.webkitTransform=transformString;this.rippleElement_.style.msTransform=transformString;this.rippleElement_.style.transform=transformString;if(start){this.rippleElement_.classList.remove(this.CssClasses_.IS_ANIMATING);}else{this.rippleElement_.classList.add(this.CssClasses_.IS_ANIMATING);}}};/**
+	         * Handles an animation frame.
+	         */this.animFrameHandler=function(){if(this.frameCount_-->0){window.requestAnimationFrame(this.animFrameHandler.bind(this));}else{this.setRippleStyles(false);}};}}};// The component registers itself. It can assume componentHandler is available
+	// in the global scope.
+	componentHandler.register({constructor:MaterialRipple,classAsString:'MaterialRipple',cssClass:'mdl-js-ripple-effect',widget:false});})();
 
 /***/ }
 /******/ ]);
