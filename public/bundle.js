@@ -29656,7 +29656,7 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _PartFullDetailsContainer = __webpack_require__(338);
+	var _PartFullDetailsContainer = __webpack_require__(339);
 
 	var _PartFullDetailsContainer2 = _interopRequireDefault(_PartFullDetailsContainer);
 
@@ -35217,8 +35217,6 @@
 		value: true
 	});
 
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -35227,30 +35225,46 @@
 
 	var _PartDetail2 = _interopRequireDefault(_PartDetail);
 
+	var _reactMdl = __webpack_require__(274);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = function (props) {
 		return _react2.default.createElement(
 			'div',
-			{ className: 'container' },
+			{ className: 'content-grid mdl-grid' },
 			_react2.default.createElement(
 				'h2',
 				null,
 				'Components'
 			),
 			_react2.default.createElement(
-				'ul',
-				null,
-				props.parts ? props.parts.map(function (part, key) {
-					return _react2.default.createElement(_PartDetail2.default, _extends({}, part, { key: key }));
-				}) : _react2.default.createElement(
-					'h4',
-					null,
-					'No Parts Found'
+				_reactMdl.DataTable,
+				{ shadow: 0, rows: props.parts, style: { margin: 'auto' } },
+				_react2.default.createElement(
+					_reactMdl.TableHeader,
+					{ name: 'partNumber' },
+					'Part Number'
+				),
+				_react2.default.createElement(
+					_reactMdl.TableHeader,
+					{ name: 'description' },
+					'Description'
+				),
+				_react2.default.createElement(
+					_reactMdl.TableHeader,
+					{ name: 'revision' },
+					'Revision'
 				)
 			)
 		);
 	};
+
+	// 	<ul>
+	// 	{props.parts ? 
+	// 		props.parts.map( (part, key) => {return <PartDetail {...part} key={key}/>}) :
+	// 		<h4>No Parts Found</h4>}
+	// 	</ul>
 
 /***/ },
 /* 268 */
@@ -35381,7 +35395,7 @@
 
 	var _reactRouter = __webpack_require__(205);
 
-	__webpack_require__(340);
+	__webpack_require__(338);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -42179,130 +42193,6 @@
 
 /***/ },
 /* 338 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _reactRedux = __webpack_require__(185);
-
-	var _immutable = __webpack_require__(203);
-
-	var _PartFullDetails = __webpack_require__(339);
-
-	var _PartFullDetails2 = _interopRequireDefault(_PartFullDetails);
-
-	var _actions = __webpack_require__(196);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var mapStateToProps = function mapStateToProps(state) {
-		console.log('State.currentPart', state.get('currentPart').toJS());
-		return {
-			currentPart: state.get('currentPart').toJS(),
-			isFetching: state.get('isFetching')
-		};
-	};
-
-	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-		return {
-			fetchPartInfo: function fetchPartInfo(id) {
-				dispatch((0, _actions.fetchPartInfo)(id));
-			}
-		};
-	};
-
-	var PartFullDetailsContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_PartFullDetails2.default);
-
-	exports.default = PartFullDetailsContainer;
-
-/***/ },
-/* 339 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _PartDetail = __webpack_require__(268);
-
-	var _PartDetail2 = _interopRequireDefault(_PartDetail);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = function (props) {
-		console.log('id', props.params.id);
-		!props.isFetching && props.currentPart.part.id != props.params.id ? props.fetchPartInfo(props.params.id) : null;
-		return _react2.default.createElement(
-			'div',
-			{ className: 'container' },
-			!props.isFetching && _react2.default.createElement(
-				'div',
-				null,
-				_react2.default.createElement(
-					'h2',
-					null,
-					'Description: ',
-					props.currentPart.part.description
-				),
-				_react2.default.createElement(
-					'h2',
-					null,
-					'Part Number: ',
-					props.currentPart.part.partNumber,
-					' Rev: ',
-					props.currentPart.part.revision,
-					' '
-				),
-				_react2.default.createElement(
-					'h4',
-					null,
-					'Bill Of Materials:'
-				),
-				_react2.default.createElement(
-					'ul',
-					null,
-					props.currentPart.subParts ? props.currentPart.subParts.map(function (part, key) {
-						return _react2.default.createElement(_PartDetail2.default, _extends({}, part, { key: key }));
-					}) : _react2.default.createElement(
-						'h4',
-						null,
-						'No Parts Found'
-					)
-				),
-				_react2.default.createElement(
-					'h4',
-					null,
-					'Used In'
-				),
-				_react2.default.createElement(
-					'ul',
-					null,
-					props.currentPart.parentParts ? props.currentPart.parentParts.map(function (part, key) {
-						return _react2.default.createElement(_PartDetail2.default, _extends({}, part, { key: key }));
-					}) : _react2.default.createElement(
-						'h4',
-						null,
-						'No Parts Found'
-					)
-				)
-			)
-		);
-	};
-
-/***/ },
-/* 340 */
 /***/ function(module, exports) {
 
 	'use strict';var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol?"symbol":typeof obj;};;(function(){"use strict";if(typeof window==='undefined')return;/**
@@ -43796,6 +43686,130 @@
 	         */this.animFrameHandler=function(){if(this.frameCount_-->0){window.requestAnimationFrame(this.animFrameHandler.bind(this));}else{this.setRippleStyles(false);}};}}};// The component registers itself. It can assume componentHandler is available
 	// in the global scope.
 	componentHandler.register({constructor:MaterialRipple,classAsString:'MaterialRipple',cssClass:'mdl-js-ripple-effect',widget:false});})();
+
+/***/ },
+/* 339 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _reactRedux = __webpack_require__(185);
+
+	var _immutable = __webpack_require__(203);
+
+	var _PartFullDetails = __webpack_require__(340);
+
+	var _PartFullDetails2 = _interopRequireDefault(_PartFullDetails);
+
+	var _actions = __webpack_require__(196);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var mapStateToProps = function mapStateToProps(state) {
+		console.log('State.currentPart', state.get('currentPart').toJS());
+		return {
+			currentPart: state.get('currentPart').toJS(),
+			isFetching: state.get('isFetching')
+		};
+	};
+
+	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+		return {
+			fetchPartInfo: function fetchPartInfo(id) {
+				dispatch((0, _actions.fetchPartInfo)(id));
+			}
+		};
+	};
+
+	var PartFullDetailsContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_PartFullDetails2.default);
+
+	exports.default = PartFullDetailsContainer;
+
+/***/ },
+/* 340 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _PartDetail = __webpack_require__(268);
+
+	var _PartDetail2 = _interopRequireDefault(_PartDetail);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function (props) {
+		console.log('id', props.params.id);
+		!props.isFetching && props.currentPart.part.id != props.params.id ? props.fetchPartInfo(props.params.id) : null;
+		return _react2.default.createElement(
+			'div',
+			{ className: 'container' },
+			!props.isFetching && _react2.default.createElement(
+				'div',
+				null,
+				_react2.default.createElement(
+					'h2',
+					null,
+					'Description: ',
+					props.currentPart.part.description
+				),
+				_react2.default.createElement(
+					'h2',
+					null,
+					'Part Number: ',
+					props.currentPart.part.partNumber,
+					' Rev: ',
+					props.currentPart.part.revision,
+					' '
+				),
+				_react2.default.createElement(
+					'h4',
+					null,
+					'Bill Of Materials:'
+				),
+				_react2.default.createElement(
+					'ul',
+					null,
+					props.currentPart.subParts ? props.currentPart.subParts.map(function (part, key) {
+						return _react2.default.createElement(_PartDetail2.default, _extends({}, part, { key: key }));
+					}) : _react2.default.createElement(
+						'h4',
+						null,
+						'No Parts Found'
+					)
+				),
+				_react2.default.createElement(
+					'h4',
+					null,
+					'Used In'
+				),
+				_react2.default.createElement(
+					'ul',
+					null,
+					props.currentPart.parentParts ? props.currentPart.parentParts.map(function (part, key) {
+						return _react2.default.createElement(_PartDetail2.default, _extends({}, part, { key: key }));
+					}) : _react2.default.createElement(
+						'h4',
+						null,
+						'No Parts Found'
+					)
+				)
+			)
+		);
+	};
 
 /***/ }
 /******/ ]);
