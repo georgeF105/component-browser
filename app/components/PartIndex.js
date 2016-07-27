@@ -1,17 +1,13 @@
 import React from 'react'
-import PartDetail from './PartDetail'
 import { DataTable, TableHeader } from 'react-mdl'
 
+import PartDetail from './PartDetail'
+import PartTable from './PartTable'
 
 export default (props) => {
 	return (
 		<div className="content-grid mdl-grid">
-			<h2>Components</h2>
-			<DataTable shadow={0} rows={props.parts} style={{margin:'auto'}}>
-				<TableHeader name="partNumber">Part Number</TableHeader>
-				<TableHeader name="description">Description</TableHeader>
-				<TableHeader name="revision">Revision</TableHeader>
-			</DataTable>
+			<PartTable {...props} />
 		</div>
 	)
 }

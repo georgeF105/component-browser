@@ -35221,11 +35221,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactMdl = __webpack_require__(274);
+
 	var _PartDetail = __webpack_require__(268);
 
 	var _PartDetail2 = _interopRequireDefault(_PartDetail);
 
-	var _reactMdl = __webpack_require__(274);
+	var _PartTable = __webpack_require__(341);
+
+	var _PartTable2 = _interopRequireDefault(_PartTable);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -35233,30 +35237,7 @@
 		return _react2.default.createElement(
 			'div',
 			{ className: 'content-grid mdl-grid' },
-			_react2.default.createElement(
-				'h2',
-				null,
-				'Components'
-			),
-			_react2.default.createElement(
-				_reactMdl.DataTable,
-				{ shadow: 0, rows: props.parts, style: { margin: 'auto' } },
-				_react2.default.createElement(
-					_reactMdl.TableHeader,
-					{ name: 'partNumber' },
-					'Part Number'
-				),
-				_react2.default.createElement(
-					_reactMdl.TableHeader,
-					{ name: 'description' },
-					'Description'
-				),
-				_react2.default.createElement(
-					_reactMdl.TableHeader,
-					{ name: 'revision' },
-					'Revision'
-				)
-			)
+			_react2.default.createElement(_PartTable2.default, props)
 		);
 	};
 
@@ -43807,6 +43788,48 @@
 						'No Parts Found'
 					)
 				)
+			)
+		);
+	};
+
+/***/ },
+/* 341 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(205);
+
+	var _reactMdl = __webpack_require__(274);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function (props) {
+		return _react2.default.createElement(
+			_reactMdl.DataTable,
+			{ shadow: 0, rows: props.parts },
+			_react2.default.createElement(
+				_reactMdl.TableHeader,
+				{ name: 'partNumber' },
+				'Part Number'
+			),
+			_react2.default.createElement(
+				_reactMdl.TableHeader,
+				{ name: 'description' },
+				'Description'
+			),
+			_react2.default.createElement(
+				_reactMdl.TableHeader,
+				{ name: 'revision' },
+				'Revision'
 			)
 		);
 	};
