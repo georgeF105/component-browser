@@ -29648,15 +29648,15 @@
 
 	var _PartIndexContainer2 = _interopRequireDefault(_PartIndexContainer);
 
-	var _HomeContainer = __webpack_require__(269);
+	var _HomeContainer = __webpack_require__(335);
 
 	var _HomeContainer2 = _interopRequireDefault(_HomeContainer);
 
-	var _App = __webpack_require__(271);
+	var _App = __webpack_require__(337);
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _PartFullDetailsContainer = __webpack_require__(339);
+	var _PartFullDetailsContainer = __webpack_require__(341);
 
 	var _PartFullDetailsContainer2 = _interopRequireDefault(_PartFullDetailsContainer);
 
@@ -35221,15 +35221,19 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactMdl = __webpack_require__(274);
+	var _reactMdl = __webpack_require__(268);
 
-	var _PartDetail = __webpack_require__(268);
+	var _PartDetail = __webpack_require__(332);
 
 	var _PartDetail2 = _interopRequireDefault(_PartDetail);
 
-	var _PartTable = __webpack_require__(341);
+	var _PartTable = __webpack_require__(333);
 
 	var _PartTable2 = _interopRequireDefault(_PartTable);
+
+	var _PartPreview = __webpack_require__(334);
+
+	var _PartPreview2 = _interopRequireDefault(_PartPreview);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -35237,15 +35241,10 @@
 		return _react2.default.createElement(
 			'div',
 			{ className: 'content-grid mdl-grid' },
-			_react2.default.createElement(_PartTable2.default, props)
+			_react2.default.createElement(_PartTable2.default, props),
+			_react2.default.createElement(_PartPreview2.default, null)
 		);
 	};
-
-	// 	<ul>
-	// 	{props.parts ? 
-	// 		props.parts.map( (part, key) => {return <PartDetail {...part} key={key}/>}) :
-	// 		<h4>No Parts Found</h4>}
-	// 	</ul>
 
 /***/ },
 /* 268 */
@@ -35254,261 +35253,10 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRouter = __webpack_require__(205);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = function (props) {
-		return _react2.default.createElement(
-			'span',
-			null,
-			_react2.default.createElement(
-				'li',
-				null,
-				_react2.default.createElement(
-					_reactRouter.Link,
-					{ to: '/parts/' + props.id },
-					'Part Number: ',
-					props.partNumber,
-					' Description:',
-					props.description,
-					' '
-				)
-			)
-		);
-	};
-
-/***/ },
-/* 269 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _reactRedux = __webpack_require__(185);
-
-	var _immutable = __webpack_require__(203);
-
-	var _Home = __webpack_require__(270);
-
-	var _Home2 = _interopRequireDefault(_Home);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var mapStateToProps = function mapStateToProps(state) {
-		return {
-			parts: state.get('parts').toJS()
-		};
-	};
-
-	var HomeContainer = (0, _reactRedux.connect)(mapStateToProps)(_Home2.default);
-
-	exports.default = HomeContainer;
-
-/***/ },
-/* 270 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRouter = __webpack_require__(205);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = function (props) {
-		return _react2.default.createElement(
-			'div',
-			{ className: 'container' },
-			_react2.default.createElement(
-				'h1',
-				null,
-				'Home'
-			),
-			_react2.default.createElement(
-				_reactRouter.Link,
-				{ to: '/parts' },
-				'All Parts'
-			)
-		);
-	};
-
-/***/ },
-/* 271 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _NavBarContainer = __webpack_require__(272);
-
-	var _NavBarContainer2 = _interopRequireDefault(_NavBarContainer);
-
-	var _routes = __webpack_require__(204);
-
-	var _routes2 = _interopRequireDefault(_routes);
-
-	var _reactMdl = __webpack_require__(274);
-
-	var _reactRouter = __webpack_require__(205);
-
-	__webpack_require__(338);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _react2.default.createClass({
-	  displayName: 'App',
-	  render: function render() {
-	    return _react2.default.createElement(
-	      _reactMdl.Layout,
-	      null,
-	      _react2.default.createElement(_NavBarContainer2.default, null),
-	      _react2.default.createElement(
-	        _reactMdl.Content,
-	        null,
-	        this.props.children
-	      )
-	    );
-	  }
-	});
-
-/***/ },
-/* 272 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _reactRedux = __webpack_require__(185);
-
-	var _immutable = __webpack_require__(203);
-
-	var _NavBar = __webpack_require__(273);
-
-	var _NavBar2 = _interopRequireDefault(_NavBar);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var mapStateToProps = function mapStateToProps(state) {
-		return {
-			NavBarInfo: state.get('user').toJS()
-		};
-	};
-
-	var NavBarContainer = (0, _reactRedux.connect)(mapStateToProps)(_NavBar2.default);
-
-	exports.default = NavBarContainer;
-
-/***/ },
-/* 273 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRouter = __webpack_require__(205);
-
-	var _reactMdl = __webpack_require__(274);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = function (props) {
-	  var login = function login(event) {
-	    event.preventDefault();
-	    console.log('trying to login', document.getElementById("login-form"));
-	    props.logIn(document.getElementById('email-input').value, document.getElementById('password-input').value);
-	  };
-	  var logOut = function logOut(event) {
-	    console.log('trying to logout', event);
-	    event.preventDefault();
-	    props.logOut();
-	  };
-	  return(
-	    // <div>
-	    _react2.default.createElement(
-	      _reactMdl.Header,
-	      { waterfall: true },
-	      _react2.default.createElement(
-	        _reactMdl.HeaderRow,
-	        { title: 'Parts' },
-	        _react2.default.createElement(_reactMdl.Textfield, {
-	          value: '',
-	          onChange: function onChange() {},
-	          label: 'Search',
-	          expandable: true,
-	          expandableIcon: 'search'
-	        })
-	      ),
-	      _react2.default.createElement(
-	        _reactMdl.HeaderRow,
-	        null,
-	        _react2.default.createElement(
-	          _reactMdl.Navigation,
-	          null,
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '/parts' },
-	            'Part Index'
-	          ),
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '' },
-	            'Something Else'
-	          )
-	        )
-	      )
-	    )
-
-	    // </div>
-
-	  );
-	};
-
-/***/ },
-/* 274 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
 
-	var _mdlUpgrade = __webpack_require__(275);
+	var _mdlUpgrade = __webpack_require__(269);
 
 	Object.defineProperty(exports, 'mdlUpgrade', {
 	    enumerable: true,
@@ -35517,7 +35265,7 @@
 	    }
 	});
 
-	var _MDLComponent = __webpack_require__(276);
+	var _MDLComponent = __webpack_require__(270);
 
 	Object.defineProperty(exports, 'MDLComponent', {
 	    enumerable: true,
@@ -35526,7 +35274,7 @@
 	    }
 	});
 
-	var _Badge = __webpack_require__(277);
+	var _Badge = __webpack_require__(271);
 
 	Object.defineProperty(exports, 'Badge', {
 	    enumerable: true,
@@ -35535,7 +35283,7 @@
 	    }
 	});
 
-	var _Button = __webpack_require__(280);
+	var _Button = __webpack_require__(274);
 
 	Object.defineProperty(exports, 'Button', {
 	    enumerable: true,
@@ -35544,7 +35292,7 @@
 	    }
 	});
 
-	var _Card = __webpack_require__(281);
+	var _Card = __webpack_require__(275);
 
 	Object.defineProperty(exports, 'Card', {
 	    enumerable: true,
@@ -35583,7 +35331,7 @@
 	    }
 	});
 
-	var _Checkbox = __webpack_require__(288);
+	var _Checkbox = __webpack_require__(282);
 
 	Object.defineProperty(exports, 'Checkbox', {
 	    enumerable: true,
@@ -35592,7 +35340,7 @@
 	    }
 	});
 
-	var _DataTable = __webpack_require__(289);
+	var _DataTable = __webpack_require__(283);
 
 	Object.defineProperty(exports, 'DataTable', {
 	    enumerable: true,
@@ -35613,7 +35361,7 @@
 	    }
 	});
 
-	var _Dialog = __webpack_require__(297);
+	var _Dialog = __webpack_require__(291);
 
 	Object.defineProperty(exports, 'Dialog', {
 	    enumerable: true,
@@ -35640,7 +35388,7 @@
 	    }
 	});
 
-	var _FABButton = __webpack_require__(301);
+	var _FABButton = __webpack_require__(295);
 
 	Object.defineProperty(exports, 'FABButton', {
 	    enumerable: true,
@@ -35649,7 +35397,7 @@
 	    }
 	});
 
-	var _Footer = __webpack_require__(302);
+	var _Footer = __webpack_require__(296);
 
 	Object.defineProperty(exports, 'Footer', {
 	    enumerable: true,
@@ -35676,7 +35424,7 @@
 	    }
 	});
 
-	var _Grid = __webpack_require__(308);
+	var _Grid = __webpack_require__(302);
 
 	Object.defineProperty(exports, 'Grid', {
 	    enumerable: true,
@@ -35691,7 +35439,7 @@
 	    }
 	});
 
-	var _Icon = __webpack_require__(309);
+	var _Icon = __webpack_require__(303);
 
 	Object.defineProperty(exports, 'Icon', {
 	    enumerable: true,
@@ -35700,7 +35448,7 @@
 	    }
 	});
 
-	var _IconButton = __webpack_require__(310);
+	var _IconButton = __webpack_require__(304);
 
 	Object.defineProperty(exports, 'IconButton', {
 	    enumerable: true,
@@ -35709,7 +35457,7 @@
 	    }
 	});
 
-	var _IconToggle = __webpack_require__(311);
+	var _IconToggle = __webpack_require__(305);
 
 	Object.defineProperty(exports, 'IconToggle', {
 	    enumerable: true,
@@ -35718,7 +35466,7 @@
 	    }
 	});
 
-	var _Layout = __webpack_require__(312);
+	var _Layout = __webpack_require__(306);
 
 	Object.defineProperty(exports, 'Layout', {
 	    enumerable: true,
@@ -35769,7 +35517,7 @@
 	    }
 	});
 
-	var _List = __webpack_require__(322);
+	var _List = __webpack_require__(316);
 
 	Object.defineProperty(exports, 'List', {
 	    enumerable: true,
@@ -35796,7 +35544,7 @@
 	    }
 	});
 
-	var _Menu = __webpack_require__(326);
+	var _Menu = __webpack_require__(320);
 
 	Object.defineProperty(exports, 'Menu', {
 	    enumerable: true,
@@ -35811,7 +35559,7 @@
 	    }
 	});
 
-	var _ProgressBar = __webpack_require__(327);
+	var _ProgressBar = __webpack_require__(321);
 
 	Object.defineProperty(exports, 'ProgressBar', {
 	    enumerable: true,
@@ -35820,7 +35568,7 @@
 	    }
 	});
 
-	var _Radio = __webpack_require__(328);
+	var _Radio = __webpack_require__(322);
 
 	Object.defineProperty(exports, 'Radio', {
 	    enumerable: true,
@@ -35829,7 +35577,7 @@
 	    }
 	});
 
-	var _RadioGroup = __webpack_require__(329);
+	var _RadioGroup = __webpack_require__(323);
 
 	Object.defineProperty(exports, 'RadioGroup', {
 	    enumerable: true,
@@ -35838,7 +35586,7 @@
 	    }
 	});
 
-	var _Slider = __webpack_require__(330);
+	var _Slider = __webpack_require__(324);
 
 	Object.defineProperty(exports, 'Slider', {
 	    enumerable: true,
@@ -35847,7 +35595,7 @@
 	    }
 	});
 
-	var _Snackbar = __webpack_require__(331);
+	var _Snackbar = __webpack_require__(325);
 
 	Object.defineProperty(exports, 'Snackbar', {
 	    enumerable: true,
@@ -35856,7 +35604,7 @@
 	    }
 	});
 
-	var _Spinner = __webpack_require__(332);
+	var _Spinner = __webpack_require__(326);
 
 	Object.defineProperty(exports, 'Spinner', {
 	    enumerable: true,
@@ -35865,7 +35613,7 @@
 	    }
 	});
 
-	var _Switch = __webpack_require__(333);
+	var _Switch = __webpack_require__(327);
 
 	Object.defineProperty(exports, 'Switch', {
 	    enumerable: true,
@@ -35874,7 +35622,7 @@
 	    }
 	});
 
-	var _Tabs = __webpack_require__(334);
+	var _Tabs = __webpack_require__(328);
 
 	Object.defineProperty(exports, 'Tabs', {
 	    enumerable: true,
@@ -35895,7 +35643,7 @@
 	    }
 	});
 
-	var _Textfield = __webpack_require__(337);
+	var _Textfield = __webpack_require__(331);
 
 	Object.defineProperty(exports, 'Textfield', {
 	    enumerable: true,
@@ -35904,7 +35652,7 @@
 	    }
 	});
 
-	var _Tooltip = __webpack_require__(291);
+	var _Tooltip = __webpack_require__(285);
 
 	Object.defineProperty(exports, 'Tooltip', {
 	    enumerable: true,
@@ -35916,7 +35664,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 275 */
+/* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35929,7 +35677,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _MDLComponent = __webpack_require__(276);
+	var _MDLComponent = __webpack_require__(270);
 
 	var _MDLComponent2 = _interopRequireDefault(_MDLComponent);
 
@@ -35952,7 +35700,7 @@
 	};
 
 /***/ },
-/* 276 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36005,7 +35753,7 @@
 	exports.default = MDLComponent;
 
 /***/ },
-/* 277 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36014,7 +35762,7 @@
 	  value: true
 	});
 
-	var _Badge = __webpack_require__(278);
+	var _Badge = __webpack_require__(272);
 
 	Object.defineProperty(exports, 'default', {
 	  enumerable: true,
@@ -36026,7 +35774,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 278 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36039,7 +35787,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -36088,7 +35836,7 @@
 	exports.default = Badge;
 
 /***/ },
-/* 279 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -36142,7 +35890,7 @@
 
 
 /***/ },
-/* 280 */
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36159,11 +35907,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _mdlUpgrade = __webpack_require__(275);
+	var _mdlUpgrade = __webpack_require__(269);
 
 	var _mdlUpgrade2 = _interopRequireDefault(_mdlUpgrade);
 
@@ -36238,7 +35986,7 @@
 	exports.default = (0, _mdlUpgrade2.default)(Button);
 
 /***/ },
-/* 281 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36248,7 +35996,7 @@
 	});
 	exports.CardMedia = exports.CardActions = exports.CardTitle = exports.CardMenu = exports.CardText = exports.Card = undefined;
 
-	var _Card = __webpack_require__(282);
+	var _Card = __webpack_require__(276);
 
 	Object.defineProperty(exports, 'Card', {
 	  enumerable: true,
@@ -36257,7 +36005,7 @@
 	  }
 	});
 
-	var _CardTitle = __webpack_require__(285);
+	var _CardTitle = __webpack_require__(279);
 
 	Object.defineProperty(exports, 'CardTitle', {
 	  enumerable: true,
@@ -36266,7 +36014,7 @@
 	  }
 	});
 
-	var _CardActions = __webpack_require__(286);
+	var _CardActions = __webpack_require__(280);
 
 	Object.defineProperty(exports, 'CardActions', {
 	  enumerable: true,
@@ -36275,7 +36023,7 @@
 	  }
 	});
 
-	var _basicClassCreator = __webpack_require__(287);
+	var _basicClassCreator = __webpack_require__(281);
 
 	var _basicClassCreator2 = _interopRequireDefault(_basicClassCreator);
 
@@ -36286,7 +36034,7 @@
 	var CardMedia = exports.CardMedia = (0, _basicClassCreator2.default)('CardMedia', 'mdl-card__media');
 
 /***/ },
-/* 282 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36301,15 +36049,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _clamp = __webpack_require__(283);
+	var _clamp = __webpack_require__(277);
 
 	var _clamp2 = _interopRequireDefault(_clamp);
 
-	var _shadows = __webpack_require__(284);
+	var _shadows = __webpack_require__(278);
 
 	var _shadows2 = _interopRequireDefault(_shadows);
 
@@ -36345,7 +36093,7 @@
 	exports.default = Card;
 
 /***/ },
-/* 283 */
+/* 277 */
 /***/ function(module, exports) {
 
 	module.exports = clamp
@@ -36358,7 +36106,7 @@
 
 
 /***/ },
-/* 284 */
+/* 278 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -36372,7 +36120,7 @@
 	});
 
 /***/ },
-/* 285 */
+/* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36387,7 +36135,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -36425,7 +36173,7 @@
 	exports.default = CardTitle;
 
 /***/ },
-/* 286 */
+/* 280 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36440,7 +36188,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -36474,7 +36222,7 @@
 	exports.default = CardActions;
 
 /***/ },
-/* 287 */
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36489,7 +36237,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -36520,7 +36268,7 @@
 	};
 
 /***/ },
-/* 288 */
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36539,11 +36287,11 @@
 
 	var _reactDom = __webpack_require__(33);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _mdlUpgrade = __webpack_require__(275);
+	var _mdlUpgrade = __webpack_require__(269);
 
 	var _mdlUpgrade2 = _interopRequireDefault(_mdlUpgrade);
 
@@ -36625,7 +36373,7 @@
 	exports.default = (0, _mdlUpgrade2.default)(Checkbox);
 
 /***/ },
-/* 289 */
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36634,7 +36382,7 @@
 	  value: true
 	});
 
-	var _TableHeader = __webpack_require__(290);
+	var _TableHeader = __webpack_require__(284);
 
 	Object.defineProperty(exports, 'TableHeader', {
 	  enumerable: true,
@@ -36643,7 +36391,7 @@
 	  }
 	});
 
-	var _Table = __webpack_require__(292);
+	var _Table = __webpack_require__(286);
 
 	Object.defineProperty(exports, 'Table', {
 	  enumerable: true,
@@ -36661,7 +36409,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 290 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36676,11 +36424,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _Tooltip = __webpack_require__(291);
+	var _Tooltip = __webpack_require__(285);
 
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 
@@ -36741,7 +36489,7 @@
 	exports.default = TableHeader;
 
 /***/ },
-/* 291 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36756,11 +36504,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _MDLComponent = __webpack_require__(276);
+	var _MDLComponent = __webpack_require__(270);
 
 	var _MDLComponent2 = _interopRequireDefault(_MDLComponent);
 
@@ -36824,7 +36572,7 @@
 	exports.default = Tooltip;
 
 /***/ },
-/* 292 */
+/* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36842,27 +36590,27 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _clamp = __webpack_require__(283);
+	var _clamp = __webpack_require__(277);
 
 	var _clamp2 = _interopRequireDefault(_clamp);
 
-	var _shadows = __webpack_require__(284);
+	var _shadows = __webpack_require__(278);
 
 	var _shadows2 = _interopRequireDefault(_shadows);
 
-	var _TableHeader = __webpack_require__(290);
+	var _TableHeader = __webpack_require__(284);
 
 	var _TableHeader2 = _interopRequireDefault(_TableHeader);
 
-	var _Selectable = __webpack_require__(293);
+	var _Selectable = __webpack_require__(287);
 
 	var _Selectable2 = _interopRequireDefault(_Selectable);
 
-	var _Sortable = __webpack_require__(296);
+	var _Sortable = __webpack_require__(290);
 
 	var _Sortable2 = _interopRequireDefault(_Sortable);
 
@@ -36984,7 +36732,7 @@
 	var UndecoratedTable = exports.UndecoratedTable = Table;
 
 /***/ },
-/* 293 */
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37001,19 +36749,19 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _lodash = __webpack_require__(294);
+	var _lodash = __webpack_require__(288);
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
-	var _TableHeader = __webpack_require__(290);
+	var _TableHeader = __webpack_require__(284);
 
 	var _TableHeader2 = _interopRequireDefault(_TableHeader);
 
-	var _Checkbox = __webpack_require__(288);
+	var _Checkbox = __webpack_require__(282);
 
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 
@@ -37211,7 +36959,7 @@
 	};
 
 /***/ },
-/* 294 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global, module) {/**
@@ -38935,10 +38683,10 @@
 
 	module.exports = isEqual;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(295)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(289)(module)))
 
 /***/ },
-/* 295 */
+/* 289 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -38954,7 +38702,7 @@
 
 
 /***/ },
-/* 296 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38971,11 +38719,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _TableHeader = __webpack_require__(290);
+	var _TableHeader = __webpack_require__(284);
 
 	var _TableHeader2 = _interopRequireDefault(_TableHeader);
 
@@ -39149,7 +38897,7 @@
 	};
 
 /***/ },
-/* 297 */
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39159,7 +38907,7 @@
 	});
 	exports.DialogActions = exports.DialogContent = exports.DialogTitle = exports.Dialog = undefined;
 
-	var _Dialog = __webpack_require__(298);
+	var _Dialog = __webpack_require__(292);
 
 	Object.defineProperty(exports, 'Dialog', {
 	  enumerable: true,
@@ -39168,7 +38916,7 @@
 	  }
 	});
 
-	var _DialogTitle = __webpack_require__(299);
+	var _DialogTitle = __webpack_require__(293);
 
 	Object.defineProperty(exports, 'DialogTitle', {
 	  enumerable: true,
@@ -39177,7 +38925,7 @@
 	  }
 	});
 
-	var _DialogActions = __webpack_require__(300);
+	var _DialogActions = __webpack_require__(294);
 
 	Object.defineProperty(exports, 'DialogActions', {
 	  enumerable: true,
@@ -39186,7 +38934,7 @@
 	  }
 	});
 
-	var _basicClassCreator = __webpack_require__(287);
+	var _basicClassCreator = __webpack_require__(281);
 
 	var _basicClassCreator2 = _interopRequireDefault(_basicClassCreator);
 
@@ -39195,7 +38943,7 @@
 	var DialogContent = exports.DialogContent = (0, _basicClassCreator2.default)('DialogContent', 'mdl-dialog__content');
 
 /***/ },
-/* 298 */
+/* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39214,7 +38962,7 @@
 
 	var _reactDom = __webpack_require__(33);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -39313,7 +39061,7 @@
 	exports.default = Dialog;
 
 /***/ },
-/* 299 */
+/* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39328,7 +39076,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -39356,7 +39104,7 @@
 	exports.default = DialogTitle;
 
 /***/ },
-/* 300 */
+/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39371,7 +39119,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -39405,7 +39153,7 @@
 	exports.default = DialogActions;
 
 /***/ },
-/* 301 */
+/* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39420,11 +39168,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _Button = __webpack_require__(280);
+	var _Button = __webpack_require__(274);
 
 	var _Button2 = _interopRequireDefault(_Button);
 
@@ -39458,7 +39206,7 @@
 	exports.default = FABButton;
 
 /***/ },
-/* 302 */
+/* 296 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39467,7 +39215,7 @@
 	  value: true
 	});
 
-	var _Footer = __webpack_require__(303);
+	var _Footer = __webpack_require__(297);
 
 	Object.defineProperty(exports, 'Footer', {
 	  enumerable: true,
@@ -39476,7 +39224,7 @@
 	  }
 	});
 
-	var _Section = __webpack_require__(305);
+	var _Section = __webpack_require__(299);
 
 	Object.defineProperty(exports, 'FooterSection', {
 	  enumerable: true,
@@ -39485,7 +39233,7 @@
 	  }
 	});
 
-	var _DropDownSection = __webpack_require__(306);
+	var _DropDownSection = __webpack_require__(300);
 
 	Object.defineProperty(exports, 'FooterDropDownSection', {
 	  enumerable: true,
@@ -39494,7 +39242,7 @@
 	  }
 	});
 
-	var _LinkList = __webpack_require__(307);
+	var _LinkList = __webpack_require__(301);
 
 	Object.defineProperty(exports, 'FooterLinkList', {
 	  enumerable: true,
@@ -39506,7 +39254,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 303 */
+/* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39521,11 +39269,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _cloneChildren = __webpack_require__(304);
+	var _cloneChildren = __webpack_require__(298);
 
 	var _cloneChildren2 = _interopRequireDefault(_cloneChildren);
 
@@ -39562,7 +39310,7 @@
 	exports.default = Footer;
 
 /***/ },
-/* 304 */
+/* 298 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39586,7 +39334,7 @@
 	};
 
 /***/ },
-/* 305 */
+/* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39601,11 +39349,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _cloneChildren = __webpack_require__(304);
+	var _cloneChildren = __webpack_require__(298);
 
 	var _cloneChildren2 = _interopRequireDefault(_cloneChildren);
 
@@ -39652,7 +39400,7 @@
 	exports.default = Section;
 
 /***/ },
-/* 306 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39667,11 +39415,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _cloneChildren = __webpack_require__(304);
+	var _cloneChildren = __webpack_require__(298);
 
 	var _cloneChildren2 = _interopRequireDefault(_cloneChildren);
 
@@ -39716,7 +39464,7 @@
 	exports.default = DropDownSection;
 
 /***/ },
-/* 307 */
+/* 301 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39731,7 +39479,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -39774,7 +39522,7 @@
 	exports.default = LinkList;
 
 /***/ },
-/* 308 */
+/* 302 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39790,15 +39538,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _clamp = __webpack_require__(283);
+	var _clamp = __webpack_require__(277);
 
 	var _clamp2 = _interopRequireDefault(_clamp);
 
-	var _shadows = __webpack_require__(284);
+	var _shadows = __webpack_require__(278);
 
 	var _shadows2 = _interopRequireDefault(_shadows);
 
@@ -39893,7 +39641,7 @@
 	exports.Cell = Cell;
 
 /***/ },
-/* 309 */
+/* 303 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39908,7 +39656,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -39939,7 +39687,7 @@
 	exports.default = Icon;
 
 /***/ },
-/* 310 */
+/* 304 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39954,15 +39702,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _Button = __webpack_require__(280);
+	var _Button = __webpack_require__(274);
 
 	var _Button2 = _interopRequireDefault(_Button);
 
-	var _Icon = __webpack_require__(309);
+	var _Icon = __webpack_require__(303);
 
 	var _Icon2 = _interopRequireDefault(_Icon);
 
@@ -39993,7 +39741,7 @@
 	exports.default = IconButton;
 
 /***/ },
-/* 311 */
+/* 305 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40012,15 +39760,15 @@
 
 	var _reactDom = __webpack_require__(33);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _Icon = __webpack_require__(309);
+	var _Icon = __webpack_require__(303);
 
 	var _Icon2 = _interopRequireDefault(_Icon);
 
-	var _mdlUpgrade = __webpack_require__(275);
+	var _mdlUpgrade = __webpack_require__(269);
 
 	var _mdlUpgrade2 = _interopRequireDefault(_mdlUpgrade);
 
@@ -40098,7 +39846,7 @@
 	exports.default = (0, _mdlUpgrade2.default)(IconToggle);
 
 /***/ },
-/* 312 */
+/* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40107,7 +39855,7 @@
 	  value: true
 	});
 
-	var _Layout = __webpack_require__(313);
+	var _Layout = __webpack_require__(307);
 
 	Object.defineProperty(exports, 'Layout', {
 	  enumerable: true,
@@ -40116,7 +39864,7 @@
 	  }
 	});
 
-	var _Content = __webpack_require__(314);
+	var _Content = __webpack_require__(308);
 
 	Object.defineProperty(exports, 'Content', {
 	  enumerable: true,
@@ -40125,7 +39873,7 @@
 	  }
 	});
 
-	var _Drawer = __webpack_require__(315);
+	var _Drawer = __webpack_require__(309);
 
 	Object.defineProperty(exports, 'Drawer', {
 	  enumerable: true,
@@ -40134,7 +39882,7 @@
 	  }
 	});
 
-	var _Header = __webpack_require__(316);
+	var _Header = __webpack_require__(310);
 
 	Object.defineProperty(exports, 'Header', {
 	  enumerable: true,
@@ -40143,7 +39891,7 @@
 	  }
 	});
 
-	var _HeaderRow = __webpack_require__(317);
+	var _HeaderRow = __webpack_require__(311);
 
 	Object.defineProperty(exports, 'HeaderRow', {
 	  enumerable: true,
@@ -40152,7 +39900,7 @@
 	  }
 	});
 
-	var _HeaderTabs = __webpack_require__(319);
+	var _HeaderTabs = __webpack_require__(313);
 
 	Object.defineProperty(exports, 'HeaderTabs', {
 	  enumerable: true,
@@ -40161,7 +39909,7 @@
 	  }
 	});
 
-	var _Navigation = __webpack_require__(321);
+	var _Navigation = __webpack_require__(315);
 
 	Object.defineProperty(exports, 'Navigation', {
 	  enumerable: true,
@@ -40170,7 +39918,7 @@
 	  }
 	});
 
-	var _Spacer = __webpack_require__(318);
+	var _Spacer = __webpack_require__(312);
 
 	Object.defineProperty(exports, 'Spacer', {
 	  enumerable: true,
@@ -40182,7 +39930,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 313 */
+/* 307 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40199,11 +39947,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _mdlUpgrade = __webpack_require__(275);
+	var _mdlUpgrade = __webpack_require__(269);
 
 	var _mdlUpgrade2 = _interopRequireDefault(_mdlUpgrade);
 
@@ -40272,7 +40020,7 @@
 	exports.default = (0, _mdlUpgrade2.default)(Layout);
 
 /***/ },
-/* 314 */
+/* 308 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40287,7 +40035,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -40317,7 +40065,7 @@
 	exports.default = Content;
 
 /***/ },
-/* 315 */
+/* 309 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40332,7 +40080,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -40368,7 +40116,7 @@
 	exports.default = Drawer;
 
 /***/ },
-/* 316 */
+/* 310 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40383,15 +40131,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _HeaderRow = __webpack_require__(317);
+	var _HeaderRow = __webpack_require__(311);
 
 	var _HeaderRow2 = _interopRequireDefault(_HeaderRow);
 
-	var _HeaderTabs = __webpack_require__(319);
+	var _HeaderTabs = __webpack_require__(313);
 
 	var _HeaderTabs2 = _interopRequireDefault(_HeaderTabs);
 
@@ -40451,7 +40199,7 @@
 	exports.default = Header;
 
 /***/ },
-/* 317 */
+/* 311 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40466,11 +40214,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _Spacer = __webpack_require__(318);
+	var _Spacer = __webpack_require__(312);
 
 	var _Spacer2 = _interopRequireDefault(_Spacer);
 
@@ -40509,7 +40257,7 @@
 	exports.default = HeaderRow;
 
 /***/ },
-/* 318 */
+/* 312 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40518,7 +40266,7 @@
 	  value: true
 	});
 
-	var _basicClassCreator = __webpack_require__(287);
+	var _basicClassCreator = __webpack_require__(281);
 
 	var _basicClassCreator2 = _interopRequireDefault(_basicClassCreator);
 
@@ -40527,7 +40275,7 @@
 	exports.default = (0, _basicClassCreator2.default)('Spacer', 'mdl-layout-spacer');
 
 /***/ },
-/* 319 */
+/* 313 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40542,11 +40290,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _TabBar = __webpack_require__(320);
+	var _TabBar = __webpack_require__(314);
 
 	var _TabBar2 = _interopRequireDefault(_TabBar);
 
@@ -40581,7 +40329,7 @@
 	exports.default = HeaderTabs;
 
 /***/ },
-/* 320 */
+/* 314 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40598,7 +40346,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -40683,7 +40431,7 @@
 	exports.default = TabBar;
 
 /***/ },
-/* 321 */
+/* 315 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40698,15 +40446,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _cloneChildren = __webpack_require__(304);
+	var _cloneChildren = __webpack_require__(298);
 
 	var _cloneChildren2 = _interopRequireDefault(_cloneChildren);
 
-	var _Spacer = __webpack_require__(318);
+	var _Spacer = __webpack_require__(312);
 
 	var _Spacer2 = _interopRequireDefault(_Spacer);
 
@@ -40739,7 +40487,7 @@
 	exports.default = Navigation;
 
 /***/ },
-/* 322 */
+/* 316 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40749,7 +40497,7 @@
 	});
 	exports.ListItemContent = exports.ListItemAction = exports.ListItem = exports.List = undefined;
 
-	var _ListItem = __webpack_require__(323);
+	var _ListItem = __webpack_require__(317);
 
 	Object.defineProperty(exports, 'ListItem', {
 	  enumerable: true,
@@ -40758,7 +40506,7 @@
 	  }
 	});
 
-	var _ListItemAction = __webpack_require__(325);
+	var _ListItemAction = __webpack_require__(319);
 
 	Object.defineProperty(exports, 'ListItemAction', {
 	  enumerable: true,
@@ -40767,7 +40515,7 @@
 	  }
 	});
 
-	var _ListItemContent = __webpack_require__(324);
+	var _ListItemContent = __webpack_require__(318);
 
 	Object.defineProperty(exports, 'ListItemContent', {
 	  enumerable: true,
@@ -40776,7 +40524,7 @@
 	  }
 	});
 
-	var _basicClassCreator = __webpack_require__(287);
+	var _basicClassCreator = __webpack_require__(281);
 
 	var _basicClassCreator2 = _interopRequireDefault(_basicClassCreator);
 
@@ -40785,7 +40533,7 @@
 	var List = exports.List = (0, _basicClassCreator2.default)('List', 'mdl-list', 'ul');
 
 /***/ },
-/* 323 */
+/* 317 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40800,11 +40548,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _ListItemContent = __webpack_require__(324);
+	var _ListItemContent = __webpack_require__(318);
 
 	var _ListItemContent2 = _interopRequireDefault(_ListItemContent);
 
@@ -40859,7 +40607,7 @@
 	exports.default = ListItem;
 
 /***/ },
-/* 324 */
+/* 318 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40874,11 +40622,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _Icon = __webpack_require__(309);
+	var _Icon = __webpack_require__(303);
 
 	var _Icon2 = _interopRequireDefault(_Icon);
 
@@ -40944,7 +40692,7 @@
 	exports.default = ListItemContent;
 
 /***/ },
-/* 325 */
+/* 319 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40959,7 +40707,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -41003,7 +40751,7 @@
 	exports.default = ListItemAction;
 
 /***/ },
-/* 326 */
+/* 320 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41021,15 +40769,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _mdlUpgrade = __webpack_require__(275);
+	var _mdlUpgrade = __webpack_require__(269);
 
 	var _mdlUpgrade2 = _interopRequireDefault(_mdlUpgrade);
 
-	var _basicClassCreator = __webpack_require__(287);
+	var _basicClassCreator = __webpack_require__(281);
 
 	var _basicClassCreator2 = _interopRequireDefault(_basicClassCreator);
 
@@ -41104,7 +40852,7 @@
 	var MenuItem = exports.MenuItem = (0, _basicClassCreator2.default)('MenuItem', 'mdl-menu__item', 'li');
 
 /***/ },
-/* 327 */
+/* 321 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41123,11 +40871,11 @@
 
 	var _reactDom = __webpack_require__(33);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _mdlUpgrade = __webpack_require__(275);
+	var _mdlUpgrade = __webpack_require__(269);
 
 	var _mdlUpgrade2 = _interopRequireDefault(_mdlUpgrade);
 
@@ -41208,7 +40956,7 @@
 	exports.default = (0, _mdlUpgrade2.default)(ProgressBar);
 
 /***/ },
-/* 328 */
+/* 322 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41227,11 +40975,11 @@
 
 	var _reactDom = __webpack_require__(33);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _mdlUpgrade = __webpack_require__(275);
+	var _mdlUpgrade = __webpack_require__(269);
 
 	var _mdlUpgrade2 = _interopRequireDefault(_mdlUpgrade);
 
@@ -41318,7 +41066,7 @@
 	exports.default = (0, _mdlUpgrade2.default)(Radio);
 
 /***/ },
-/* 329 */
+/* 323 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41333,7 +41081,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Radio = __webpack_require__(328);
+	var _Radio = __webpack_require__(322);
 
 	var _Radio2 = _interopRequireDefault(_Radio);
 
@@ -41384,7 +41132,7 @@
 	exports.default = RadioGroup;
 
 /***/ },
-/* 330 */
+/* 324 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41403,11 +41151,11 @@
 
 	var _reactDom = __webpack_require__(33);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _mdlUpgrade = __webpack_require__(275);
+	var _mdlUpgrade = __webpack_require__(269);
 
 	var _mdlUpgrade2 = _interopRequireDefault(_mdlUpgrade);
 
@@ -41470,7 +41218,7 @@
 	exports.default = (0, _mdlUpgrade2.default)(Slider);
 
 /***/ },
-/* 331 */
+/* 325 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41487,7 +41235,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -41627,7 +41375,7 @@
 	exports.default = Snackbar;
 
 /***/ },
-/* 332 */
+/* 326 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41644,11 +41392,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _mdlUpgrade = __webpack_require__(275);
+	var _mdlUpgrade = __webpack_require__(269);
 
 	var _mdlUpgrade2 = _interopRequireDefault(_mdlUpgrade);
 
@@ -41703,7 +41451,7 @@
 	exports.default = (0, _mdlUpgrade2.default)(Spinner);
 
 /***/ },
-/* 333 */
+/* 327 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41722,11 +41470,11 @@
 
 	var _reactDom = __webpack_require__(33);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _mdlUpgrade = __webpack_require__(275);
+	var _mdlUpgrade = __webpack_require__(269);
 
 	var _mdlUpgrade2 = _interopRequireDefault(_mdlUpgrade);
 
@@ -41807,7 +41555,7 @@
 	exports.default = (0, _mdlUpgrade2.default)(Switch);
 
 /***/ },
-/* 334 */
+/* 328 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41816,7 +41564,7 @@
 	  value: true
 	});
 
-	var _Tabs = __webpack_require__(335);
+	var _Tabs = __webpack_require__(329);
 
 	Object.defineProperty(exports, 'Tabs', {
 	  enumerable: true,
@@ -41825,7 +41573,7 @@
 	  }
 	});
 
-	var _TabBar = __webpack_require__(320);
+	var _TabBar = __webpack_require__(314);
 
 	Object.defineProperty(exports, 'TabBar', {
 	  enumerable: true,
@@ -41834,7 +41582,7 @@
 	  }
 	});
 
-	var _Tab = __webpack_require__(336);
+	var _Tab = __webpack_require__(330);
 
 	Object.defineProperty(exports, 'Tab', {
 	  enumerable: true,
@@ -41846,7 +41594,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 335 */
+/* 329 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41861,15 +41609,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _Tab = __webpack_require__(336);
+	var _Tab = __webpack_require__(330);
 
 	var _Tab2 = _interopRequireDefault(_Tab);
 
-	var _TabBar = __webpack_require__(320);
+	var _TabBar = __webpack_require__(314);
 
 	var _TabBar2 = _interopRequireDefault(_TabBar);
 
@@ -41917,7 +41665,7 @@
 	exports.default = Tabs;
 
 /***/ },
-/* 336 */
+/* 330 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41932,7 +41680,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -41989,7 +41737,7 @@
 	exports.default = Tab;
 
 /***/ },
-/* 337 */
+/* 331 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42008,11 +41756,11 @@
 
 	var _reactDom = __webpack_require__(33);
 
-	var _classnames = __webpack_require__(279);
+	var _classnames = __webpack_require__(273);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _mdlUpgrade = __webpack_require__(275);
+	var _mdlUpgrade = __webpack_require__(269);
 
 	var _mdlUpgrade2 = _interopRequireDefault(_mdlUpgrade);
 
@@ -42173,7 +41921,343 @@
 	exports.default = (0, _mdlUpgrade2.default)(Textfield);
 
 /***/ },
+/* 332 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(205);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function (props) {
+		return _react2.default.createElement(
+			'span',
+			null,
+			_react2.default.createElement(
+				'li',
+				null,
+				_react2.default.createElement(
+					_reactRouter.Link,
+					{ to: '/parts/' + props.id },
+					'Part Number: ',
+					props.partNumber,
+					' Description:',
+					props.description,
+					' '
+				)
+			)
+		);
+	};
+
+/***/ },
+/* 333 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(205);
+
+	var _reactMdl = __webpack_require__(268);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function (props) {
+		return _react2.default.createElement(
+			_reactMdl.DataTable,
+			{ className: 'mdl-cell mdl-cell--8-col', shadow: 0, rows: props.parts },
+			_react2.default.createElement(
+				_reactMdl.TableHeader,
+				{ name: 'partNumber' },
+				'Part Number'
+			),
+			_react2.default.createElement(
+				_reactMdl.TableHeader,
+				{ name: 'description' },
+				'Description'
+			),
+			_react2.default.createElement(
+				_reactMdl.TableHeader,
+				{ name: 'revision' },
+				'Revision'
+			)
+		);
+	};
+
+/***/ },
+/* 334 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(205);
+
+	var _reactMdl = __webpack_require__(268);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function (props) {
+		return _react2.default.createElement(
+			_reactMdl.Card,
+			{ className: 'mdl-cell mdl-cel--4-col', shadow: 0 },
+			_react2.default.createElement(
+				_reactMdl.CardTitle,
+				{ expand: true },
+				'Part'
+			),
+			_react2.default.createElement(
+				_reactMdl.CardText,
+				null,
+				'Description'
+			),
+			_react2.default.createElement(_reactMdl.CardActions, null),
+			_react2.default.createElement(
+				_reactMdl.CardMenu,
+				null,
+				_react2.default.createElement(_reactMdl.IconButton, { name: 'print' })
+			)
+		);
+	};
+
+/***/ },
+/* 335 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _reactRedux = __webpack_require__(185);
+
+	var _immutable = __webpack_require__(203);
+
+	var _Home = __webpack_require__(336);
+
+	var _Home2 = _interopRequireDefault(_Home);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var mapStateToProps = function mapStateToProps(state) {
+		return {
+			parts: state.get('parts').toJS()
+		};
+	};
+
+	var HomeContainer = (0, _reactRedux.connect)(mapStateToProps)(_Home2.default);
+
+	exports.default = HomeContainer;
+
+/***/ },
+/* 336 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(205);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function (props) {
+		return _react2.default.createElement(
+			'div',
+			{ className: 'container' },
+			_react2.default.createElement(
+				'h1',
+				null,
+				'Home'
+			),
+			_react2.default.createElement(
+				_reactRouter.Link,
+				{ to: '/parts' },
+				'All Parts'
+			)
+		);
+	};
+
+/***/ },
+/* 337 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _NavBarContainer = __webpack_require__(338);
+
+	var _NavBarContainer2 = _interopRequireDefault(_NavBarContainer);
+
+	var _routes = __webpack_require__(204);
+
+	var _routes2 = _interopRequireDefault(_routes);
+
+	var _reactMdl = __webpack_require__(268);
+
+	var _reactRouter = __webpack_require__(205);
+
+	__webpack_require__(340);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _react2.default.createClass({
+	  displayName: 'App',
+	  render: function render() {
+	    return _react2.default.createElement(
+	      _reactMdl.Layout,
+	      null,
+	      _react2.default.createElement(_NavBarContainer2.default, null),
+	      _react2.default.createElement(
+	        _reactMdl.Content,
+	        null,
+	        this.props.children
+	      )
+	    );
+	  }
+	});
+
+/***/ },
 /* 338 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _reactRedux = __webpack_require__(185);
+
+	var _immutable = __webpack_require__(203);
+
+	var _NavBar = __webpack_require__(339);
+
+	var _NavBar2 = _interopRequireDefault(_NavBar);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var mapStateToProps = function mapStateToProps(state) {
+		return {
+			NavBarInfo: state.get('user').toJS()
+		};
+	};
+
+	var NavBarContainer = (0, _reactRedux.connect)(mapStateToProps)(_NavBar2.default);
+
+	exports.default = NavBarContainer;
+
+/***/ },
+/* 339 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(205);
+
+	var _reactMdl = __webpack_require__(268);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function (props) {
+	  var login = function login(event) {
+	    event.preventDefault();
+	    console.log('trying to login', document.getElementById("login-form"));
+	    props.logIn(document.getElementById('email-input').value, document.getElementById('password-input').value);
+	  };
+	  var logOut = function logOut(event) {
+	    console.log('trying to logout', event);
+	    event.preventDefault();
+	    props.logOut();
+	  };
+	  return(
+	    // <div>
+	    _react2.default.createElement(
+	      _reactMdl.Header,
+	      { waterfall: true },
+	      _react2.default.createElement(
+	        _reactMdl.HeaderRow,
+	        { title: 'Parts' },
+	        _react2.default.createElement(_reactMdl.Textfield, {
+	          value: '',
+	          onChange: function onChange() {},
+	          label: 'Search',
+	          expandable: true,
+	          expandableIcon: 'search'
+	        })
+	      ),
+	      _react2.default.createElement(
+	        _reactMdl.HeaderRow,
+	        null,
+	        _react2.default.createElement(
+	          _reactMdl.Navigation,
+	          null,
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/parts' },
+	            'Part Index'
+	          ),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '' },
+	            'Something Else'
+	          )
+	        )
+	      )
+	    )
+
+	    // </div>
+
+	  );
+	};
+
+/***/ },
+/* 340 */
 /***/ function(module, exports) {
 
 	'use strict';var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol?"symbol":typeof obj;};;(function(){"use strict";if(typeof window==='undefined')return;/**
@@ -43669,7 +43753,7 @@
 	componentHandler.register({constructor:MaterialRipple,classAsString:'MaterialRipple',cssClass:'mdl-js-ripple-effect',widget:false});})();
 
 /***/ },
-/* 339 */
+/* 341 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43682,7 +43766,7 @@
 
 	var _immutable = __webpack_require__(203);
 
-	var _PartFullDetails = __webpack_require__(340);
+	var _PartFullDetails = __webpack_require__(342);
 
 	var _PartFullDetails2 = _interopRequireDefault(_PartFullDetails);
 
@@ -43711,7 +43795,7 @@
 	exports.default = PartFullDetailsContainer;
 
 /***/ },
-/* 340 */
+/* 342 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43726,7 +43810,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _PartDetail = __webpack_require__(268);
+	var _PartDetail = __webpack_require__(332);
 
 	var _PartDetail2 = _interopRequireDefault(_PartDetail);
 
@@ -43788,48 +43872,6 @@
 						'No Parts Found'
 					)
 				)
-			)
-		);
-	};
-
-/***/ },
-/* 341 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRouter = __webpack_require__(205);
-
-	var _reactMdl = __webpack_require__(274);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = function (props) {
-		return _react2.default.createElement(
-			_reactMdl.DataTable,
-			{ shadow: 0, rows: props.parts },
-			_react2.default.createElement(
-				_reactMdl.TableHeader,
-				{ name: 'partNumber' },
-				'Part Number'
-			),
-			_react2.default.createElement(
-				_reactMdl.TableHeader,
-				{ name: 'description' },
-				'Description'
-			),
-			_react2.default.createElement(
-				_reactMdl.TableHeader,
-				{ name: 'revision' },
-				'Revision'
 			)
 		);
 	};
