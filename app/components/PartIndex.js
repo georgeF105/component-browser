@@ -11,10 +11,3 @@ export default (props) => {
 		</div>
 	)
 }
-
-
-		// 	<ul>
-		// 	{props.parts ? 
-		// 		props.parts.map( (part, key) => {return <PartDetail {...part} key={key}/>}) :
-		// 		<h4>No Parts Found</h4>}
-		// 	</ul>
