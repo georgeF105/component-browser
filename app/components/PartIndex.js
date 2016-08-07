@@ -12,7 +12,7 @@ export default (props) => {
 	return (
 		<div className="content-grid mdl-grid">
 			<PartTable {...props} />
-			{part && <PartPreview />}
+			{part && <PartPreview part={part}/>}
 		</div>
 	)
 }

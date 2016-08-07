@@ -4,10 +4,11 @@ import { Card, CardTitle, CardText, CardMenu, CardActions, IconButton } from 're
 
 
 export default (props) => {
+	const part = props.part
 	return (
 		<Card className="mdl-cell mdl-cel--4-col" shadow={0}>
-			<CardTitle expand>Part</CardTitle>
-			<CardText>Description</CardText>
+			<CardTitle expand>{part.partNumber}</CardTitle>
+			<CardText>{part.description}</CardText>
 			<CardActions>
 
 			</CardActions>
