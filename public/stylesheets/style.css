@@ -1,3 +1,23 @@
 .content-grid {
-	max-width: 1150px;
+	/*max-width: 1150px;*/
+}
+
+.index-table {
+  border: 1px solid grey;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.col-part-num {
+  width: 150px;
+}
+
+.col-description {
+  width: 400px;
+}
+
+.col-revision {
+  width: 120px;
 }
