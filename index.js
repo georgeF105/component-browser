@@ -8,6 +8,7 @@ import { fetchAllParts, fetchPartInfo } from './app/actions'
 
 import reducer from './app/reducer'
 import routes from './app/components/routes'
+import 'react-mdl/extra/material.js'
 
 const logger = createLogger({collapsed:true,stateTransformer: state => state.toJS()})
 
