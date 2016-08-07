@@ -11,7 +11,7 @@
     "start:prod": "webpack && node bin/www",
     "test": "tape test/*.js | tap-spec",
     "lint": "standard",
-    "lintFix": "standard-format -w"
+    "lintFix": "standard --fix"
   },
   "dependencies": {
     "babel-preset-stage-0": "^6.5.0",
