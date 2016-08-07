@@ -1,15 +1,18 @@
 import React from 'react'
-import PartDetail from './PartDetail';
+import { DataTable, TableHeader } from 'react-mdl'
+
+import PartDetail from './PartDetail'
+import PartTable from './PartTable'
+import PartPreview from './PartPreview'
 
 export default (props) => {
+  const id = parseInt(props.location.query.preview)
+  const part = props.parts.find(part => part.id === id)
+
 	return (
-		<div className="container">
-			<h2>Components</h2>
-			<ul>
-			{props.parts ? 
-				props.parts.map( (part, key) => {return <PartDetail {...part} key={key}/>}) :
-				<h4>No Parts Found</h4>}
-			</ul>
+		<div className="content-grid mdl-grid">
+			<PartTable {...props} />
+			{part && <PartPreview part={part}/>}
 		</div>
 	)
 }

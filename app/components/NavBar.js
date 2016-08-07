@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
+import { Navigation, Header, HeaderRow, Drawer, Textfield } from 'react-mdl'
 
 export default (props) => {
 	const login = (event) => {
@@ -13,21 +14,25 @@ export default (props) => {
 		props.logOut()
 	}
   return (
-  	<nav className="navbar navbar-inverse navbar-fixed-top">
-  	  <div className="container">
-  	    <div className="navbar-header">
-  	      <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-  	        <span className="sr-only">Toggle navigation</span>
-  	        <span className="icon-bar"></span>
-  	        <span className="icon-bar"></span>
-  	        <span className="icon-bar"></span>
-  	      </button>
-  	      <Link className="navbar-brand" to="/">Component Browser</Link>
-  	    </div>
-  	    <div id="navbar" className="navbar-collapse collapse">
-
-  	    </div>
-  	  </div>
-  	</nav>
+    // <div>
+      <Header waterfall>
+        <HeaderRow title="Parts">
+          <Textfield
+            value=""
+            onChange={() => {}}
+            label="Search"
+            expandable
+            expandableIcon="search"
+          />
+        </HeaderRow>
+        <HeaderRow>
+          <Navigation>
+            <Link to="/parts">Part Index</Link>
+            <Link to="">Something Else</Link>
+          </Navigation>
+        </HeaderRow>
+      </Header>
+      
+    // </div>
   )
 }
