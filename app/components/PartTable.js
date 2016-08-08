@@ -1,11 +1,6 @@
 import React from 'react'
 import { IconButton } from 'react-mdl'
 
-const sortType = {
-  ASC: 'ASC',
-  DESC: 'DESC'
-}
-
 class PartTable extends React.Component {
   constructor (props) {
     super(props)
@@ -22,7 +17,7 @@ class PartTable extends React.Component {
   }
 
   componentDidUpdate () {
-    if(!this.state.sorted) {
+    if (!this.state.sorted) {
       this.sortColumn()
       return false
     }
@@ -41,11 +36,11 @@ class PartTable extends React.Component {
     if (sortBy === key) {
       if (sortDirAsc) {
         return (
-          <IconButton name='keyboard_arrow_down' onClick={this.flipSortDir}/>
+          <IconButton name='keyboard_arrow_down' onClick={this.flipSortDir} />
         )
       } else {
         return (
-          <IconButton name='keyboard_arrow_up' onClick={this.flipSortDir}/>
+          <IconButton name='keyboard_arrow_up' onClick={this.flipSortDir} />
         )
       }
     } else {
@@ -60,10 +55,10 @@ class PartTable extends React.Component {
     let unsortedParts = this.props.parts
     const sortX = this.state.sortDirAsc ? 1 : -1
     unsortedParts.sort((a, b) => {
-      if(a[key] > b[key]){
+      if (a[key] > b[key]) {
         return 1 * sortX
       }
-      if(a[key] < b[key]){
+      if (a[key] < b[key]) {
         return -1 * sortX
       }
       return 0
@@ -73,7 +68,6 @@ class PartTable extends React.Component {
 
   render () {
     const { selector } = this.props
-    const { sortBy, sortDirAsc } = this.state
     const parts = this.state.sortedParts
 
     return (
