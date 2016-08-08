@@ -9,8 +9,9 @@ export default (
   <Router history={browserHistory}>
     <Route path='/' component={App}>
       <IndexRoute component={HomeContainer} />
-      <Route path='parts' component={PartIndexContainer} />
-      <Route path='parts/:id' component={PartFullDetailsContainer} />
+      <Route path='/parts' component={PartIndexContainer} />
+      <Route path='/parts/:id' component={PartFullDetailsContainer} />
+      <Route path='/about' component={HomeContainer} />
     </Route>
   </Router>
 )
