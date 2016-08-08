@@ -17,7 +17,7 @@ class PartIndex extends React.Component {
   }
 
   render () {
-    const part = this.state.part//.find(part => part.id === id)
+    const part = this.state.part
     const parts = this.props.parts
     return (
       <div className='content-flexbox'>

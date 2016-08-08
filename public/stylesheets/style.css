@@ -48,13 +48,16 @@ a {
 
 .col-partnum {
   width: 150px;
+  margin-left: 5px;
 }
 
 .col-description {
   min-width: 400px;
   flex-grow: 1;
+  margin-left: 5px;
 }
 
 .col-revision {
   width: 120px;
+  margin-left: 5px;
 }
