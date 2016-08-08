@@ -5,25 +5,22 @@ import { DataTable, TableHeader, IconButton } from 'react-mdl'
 export default (props) => {
   const parts = props.parts
   return (
-    <table className="index-table">
-      <col className="col-part-num"/>
-      <col className="col-description"/>
-      <col className="col-revision"/>
-      <tr className="index-table-heading">
-        <th>Part Number</th>
-        <th>Description</th>
-        <th>Revision</th>
-      </tr>
+    <div className="index-table">
+      <div className="index-table-row heading">
+        <div className="col-partnum">Part Number</div>
+        <div className="col-description">Description</div>
+        <div className="col-revision">Revision</div>
+      </div>
       {parts.map(part => {
         return (
-          <tr className="part-row">
-            <td>{part.partNumber}</td>
-            <td>{part.description}</td>
-            <td>{part.revision}</td>
-          </tr>
+          <div className="index-table-row part">
+            <div className="col-partnum">{part.partNumber}</div>
+            <div className="col-description">{part.description}</div>
+            <div className="col-revision">{part.revision}</div>
+          </div>
         )
       })}
-    </table>
+    </div>
   )
 }
 
