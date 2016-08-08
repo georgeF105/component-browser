@@ -25,6 +25,12 @@ body {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   flex-grow: 1;
   margin: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.index-table-body {
   overflow-y: scroll;
   box-sizing: border-box;
 }
@@ -44,6 +50,7 @@ body {
   font-size: 16px;
   font-weight: bold;
   padding-bottom: 5px;
+  height: 50px;
   /*border-top: 1px solid grey;*/
   /*background: grey;*/
 }

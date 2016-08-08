@@ -10,6 +10,7 @@ export default (props) => {
         <div className='col-description'>Description</div>
         <div className='col-revision'>Revision</div>
       </div>
+      <div className='index-table-body'>
       {parts.map((part, key) => {
         return (
           <div key={key} className='index-table-row part' value='1' onClick={selector.bind(this, part.id)} >
@@ -19,6 +20,7 @@ export default (props) => {
           </div>
         )
       })}
+      </div>
     </div>
   )
 }
