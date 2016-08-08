@@ -55,7 +55,7 @@ export function fetchPartInfo (id) {
         console.log('request error', err)
         dispatch(error(err))
       } else {
-        console.log('PartInfo text', data.text)
+        // console.log('PartInfo text', data.text)
         const parts = JSON.parse(data.text)
         dispatch(recivePartInfo(parts))
       }

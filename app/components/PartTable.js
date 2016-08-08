@@ -10,18 +10,32 @@ class PartTable extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
+      sortedParts: this.props.parts,
       sortBy: 'partNumber',
-      sortDirAsc: true
+      sortDirAsc: true,
+      sorted: false
+    }
+  }
+
+  componentWillReceiveProps (nextProps) {
+    this.setState({sortedParts: nextProps.parts})
+  }
+
+  componentDidUpdate () {
+    if(!this.state.sorted) {
+      this.sortColumn()
+      return false
     }
   }
 
   flipSortDir = () => {
-    this.setState({sortDirAsc: !this.state.sortDirAsc})
+    this.setState({sortDirAsc: !this.state.sortDirAsc, sorted: false})
   }
 
   sortByColumn = (key) => {
-    this.setState({sortBy: key, sortDirAsc: true})
+    this.setState({sortBy: key, sortDirAsc: true, sorted: false})
   }
+
   getSortIcon = (key) => {
     const { sortBy, sortDirAsc } = this.state
     if (sortBy === key) {
@@ -41,9 +55,27 @@ class PartTable extends React.Component {
     }
   }
 
+  sortColumn = () => {
+    const key = this.state.sortBy
+    let unsortedParts = this.props.parts
+    const sortX = this.state.sortDirAsc ? 1 : -1
+    unsortedParts.sort((a, b) => {
+      if(a[key] > b[key]){
+        return 1 * sortX
+      }
+      if(a[key] < b[key]){
+        return -1 * sortX
+      }
+      return 0
+    })
+    this.setState({sortedParts: unsortedParts, sorted: true})
+  }
+
   render () {
-    const { parts, selector } = this.props
+    const { selector } = this.props
     const { sortBy, sortDirAsc } = this.state
+    const parts = this.state.sortedParts
+
     return (
       <div className='index-table'>
         <div className='index-table-row heading'>
