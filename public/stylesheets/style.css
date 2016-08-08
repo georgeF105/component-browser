@@ -46,6 +46,42 @@ body {
   height: 75px;
 }
 
+.search-input {
+  border: none;
+  background: transparent;
+  font-size: inherit;
+  font-weight: inherit;
+  color: black;
+}
+
+.search-input:hover {
+  border: 1px solid black;
+}
+
+::-webkit-input-placeholder {
+   color: black;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: black;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: black;  
+}
+
+:-ms-input-placeholder {  
+   color: black;  
+}
+
+.search-input.partNum {
+  width: 100px;
+}
+
+.search-input.revision {
+  width: 100px;
+}
+
 .index-table-rox:last-child {
   border-bottom: none;
 }
@@ -82,7 +118,6 @@ body {
 .index-col.heading {
   font-size: 16px;
   font-weight: bold;
-  padding-bottom: 5px;
   justify-content: space-between;
   align-items: center;
 }

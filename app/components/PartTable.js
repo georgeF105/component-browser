@@ -73,13 +73,16 @@ class PartTable extends React.Component {
     return (
       <div className='index-table'>
         <div className='index-table-row heading'>
-          <div className='index-col partnum heading'>Part Number
+          <div className='index-col partnum heading'>
+            <input className='search-input partnum' type='text' placeholder='Part Number'/>
             {this.getSortIcon('partNumber')}
           </div>
-          <div className='index-col description heading'>Description
+          <div className='index-col description heading'>
+            <input className='search-input description' type='text' placeholder='Description'/>
             {this.getSortIcon('description')}
           </div>
-          <div className='index-col revision heading'>Revision
+          <div className='index-col revision heading'>
+            <input className='search-input revision' type='text' placeholder='Revision'/>
             {this.getSortIcon('revision')}
           </div>
         </div>
