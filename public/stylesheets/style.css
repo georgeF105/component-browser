@@ -46,7 +46,7 @@ body {
   border-bottom: none;
 }
 
-.heading {
+.index-col.heading {
   font-size: 16px;
   font-weight: bold;
   padding-bottom: 5px;
@@ -68,18 +68,24 @@ a {
   background: #E0E0E0;
 }
 
-.col-partnum {
-  width: 150px;
-  margin-left: 5px;
+.index-col {
+  display: flex;
+  justify-content: space-between;
 }
 
-.col-description {
+.index-col.partnum {
+  width: 150px;
+  margin-left: 5px;
+  justify-content: center;
+}
+
+.index-col.description {
   min-width: 400px;
   flex-grow: 1;
   margin-left: 5px;
 }
 
-.col-revision {
+.index-col.revision {
   width: 120px;
   margin-left: 5px;
 }
