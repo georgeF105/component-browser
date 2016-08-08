@@ -42,26 +42,12 @@ body {
   padding: 3px;
 }
 
+.index-table-row.heading {
+  height: 75px;
+}
+
 .index-table-rox:last-child {
   border-bottom: none;
-}
-
-.index-col.heading {
-  font-size: 16px;
-  font-weight: bold;
-  padding-bottom: 5px;
-  height: 50px;
-  /*border-top: 1px solid grey;*/
-  /*background: grey;*/
-}
-
-.index-table-row .part {
-
-}
-
-a {
-  text-decoration: none;
-  color: #757575;
 }
 
 .part:hover {
@@ -71,23 +57,34 @@ a {
 .index-col {
   display: flex;
   justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .index-col.partnum {
   width: 150px;
-  margin-left: 5px;
   justify-content: center;
 }
 
 .index-col.description {
   min-width: 400px;
   flex-grow: 1;
-  margin-left: 5px;
 }
 
 .index-col.revision {
   width: 120px;
-  margin-left: 5px;
+}
+
+.index-col.revision.heading {
+  margin-right: 10px;
+}
+
+.index-col.heading {
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 5px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .tab-active {

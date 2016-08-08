@@ -6,7 +6,7 @@ export default (props) => {
   const selector = props.selector
   return (
     <div className='index-table'>
-      <div className='index-table-row'>
+      <div className='index-table-row heading'>
         <div className='index-col partnum heading'>Part Number
           <IconButton name='keyboard_arrow_down'/>
         </div>
