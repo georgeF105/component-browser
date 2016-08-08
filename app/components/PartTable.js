@@ -19,8 +19,9 @@ class PartTable extends React.Component {
 
   componentDidUpdate () {
     if (!this.state.sorted) {
-      this.sortColumn()
-      return false
+      let updatedParts = this.sortColumn(this.state.sortedParts)
+      updatedParts = this.filterColumns(updatedParts)
+      this.setState({sortedParts: updatedParts, sorted: true})
     }
   }
 
@@ -64,14 +65,27 @@ class PartTable extends React.Component {
       }
       return 0
     })
-    this.setState({sortedParts: unsortedParts, sorted: true})
+    return unsortedParts
   }
 
-  filterColumn = (e) => {
+  updateSearchField = (e) => {
     const searchObject = {}
     searchObject[e.target.name] = e.target.value
     const newSearchFeild = Object.assign(this.state.searchFeild, searchObject)
-    this.setState({searchFeild: newSearchFeild})
+    this.setState({searchFeild: newSearchFeild, sorted: false})
+  }
+
+  filterColumns = (columns) => {
+    let filteredColumns = columns
+    for (let searchKey in this.state.searchFeild) {
+      if (this.state.searchFeild[searchKey].length) {
+        console.log('searching for searchKey:', searchKey, 'value', this.state.searchFeild[searchKey])
+        filteredColumns = columns.filter(part => {
+          return part[searchKey].search(this.state.searchFeild[searchKey]) === -1 ? false : true
+        })
+      }
+    }
+    return  filteredColumns
   }
 
   render () {
@@ -82,15 +96,15 @@ class PartTable extends React.Component {
       <div className='index-table'>
         <div className='index-table-row heading'>
           <div className='index-col partnum heading'>
-            <input className='search-input partnum' type='text' placeholder='Part Number' name='partNumber' onChange={this.filterColumn.bind(this)}/>
+            <input className='search-input partnum' type='text' placeholder='Part Number' name='partNumber' onChange={this.updateSearchField.bind(this)}/>
             {this.getSortIcon('partNumber')}
           </div>
           <div className='index-col description heading'>
-            <input className='search-input description' type='text' placeholder='Description' name='discription' onChange={this.filterColumn.bind(this)}/>
+            <input className='search-input description' type='text' placeholder='Description' name='description' onChange={this.updateSearchField.bind(this)}/>
             {this.getSortIcon('description')}
           </div>
           <div className='index-col revision heading'>
-            <input className='search-input revision' type='text' placeholder='Revision' name='revision' onChange={this.filterColumn.bind(this)}/>
+            <input className='search-input revision' type='text' placeholder='Revision' name='revision' onChange={this.updateSearchField.bind(this)}/>
             {this.getSortIcon('revision')}
           </div>
         </div>
